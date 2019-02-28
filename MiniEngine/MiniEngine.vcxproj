@@ -139,11 +139,11 @@
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\SteeringBehavior.h" />
-    <ClInclude Include="Source\GameFramework\Entity.h" />
-    <ClInclude Include="Source\GameFramework\GameApp.h" />
-    <ClInclude Include="Source\GameFramework\GameInstance.h" />
-    <ClInclude Include="Source\GameFramework\Sprite.h" />
-    <ClInclude Include="Source\GameFramework\World.h" />
+    <ClInclude Include="Source\Gameplay\ECS\Entity.h" />
+    <ClInclude Include="Source\Core\AppCore\GameApp.h" />
+    <ClInclude Include="Source\Gameplay\GameFramework\GameInstance.h" />
+    <ClInclude Include="Source\Gameplay\GameFramework\Sprite.h" />
+    <ClInclude Include="Source\Gameplay\GameFramework\World.h" />
     <ClInclude Include="Source\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
@@ -154,11 +154,11 @@
     <ClCompile Include="Source\AI\Navigation\NavPoint.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
-    <ClCompile Include="Source\GameFramework\Entity.cpp" />
-    <ClCompile Include="Source\GameFramework\GameApp.cpp" />
-    <ClCompile Include="Source\GameFramework\GameInstance.cpp" />
-    <ClCompile Include="Source\GameFramework\Sprite.cpp" />
-    <ClCompile Include="Source\GameFramework\World.cpp" />
+    <ClCompile Include="Source\Gameplay\ECS\Entity.cpp" />
+    <ClCompile Include="Source\Core\AppCore\GameApp.cpp" />
+    <ClCompile Include="Source\Gameplay\GameFramework\GameInstance.cpp" />
+    <ClCompile Include="Source\Gameplay\GameFramework\Sprite.cpp" />
+    <ClCompile Include="Source\Gameplay\GameFramework\World.cpp" />
     <ClCompile Include="Source\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
   </ItemGroup>

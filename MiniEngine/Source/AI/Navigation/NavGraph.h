@@ -28,7 +28,7 @@ namespace Engine
 
 		}
 
-		/** Returns a const ref to a node at a given index. 
+		/** Returns a const ref to a node at a given index.
 		*	@param Index - Index of the node.
 		*/
 		const NodeType& GetNode(int Index) const
@@ -46,25 +46,42 @@ namespace Engine
 			return m_Points[Index];
 		}
 
-		/** Returns a const ref to an edge. 
-		*	@param From - 
-		*	@param To - 
+		/** Returns a const ref to an edge.
+		*	@param From -
+		*	@param To -
 		*/
 		const EdgeType& GetEdge(int From, int To) const
 		{
+			assert(From < m_Points.size() && From >= 0 && m_Points[From].Index() != 0 && "Invalid 'From' Index");
+
+			assert(To < m_Points.size() && To >= 0 && m_Points[To].Index() != 0 && "Invalid 'To' Index");
+
 			for (auto Path : m_Paths)
 			{
-				
+				if (Path->To() == To)
+					return *Path;
 			}
+
+			//assert(0 && "Path does not exist.");
 		}
 
 		/** Returns a ref to an edge.
 		*	@param From -
-		*	@param To - 
+		*	@param To -
 		*/
 		EdgeType& GetEdge(int From, int To)
 		{
+			assert(From < m_Points.size() && From >= 0 && m_Points[From].Index() != 0 && "Invalid 'From' Index");
 
+			assert(To < m_Points.size() && To >= 0 && m_Points[To].Index() != 0 && "Invalid 'To' Index");
+
+			for (auto Path : m_Paths)
+			{
+				if (Path->To() == To)
+					return *Path;
+			}
+
+			//assert(0 && "Path does not exist.");
 		}
 
 		/** Retunrs the next point index. */
@@ -89,17 +106,29 @@ namespace Engine
 
 		}
 
-		/** Remove a point from the navigation graph. 
-		*	@param 
+		/** Remove a point from the navigation graph.
+		*	@param
 		*/
 		void RemoveNode(int Node)
 		{
+			assert(Node < m_Points.size() && "Invalid Node Idex");
+
 
 		}
 
 		void AddEdge(EdgeType Edge)
 		{
+			assert((Edge.From() < m_NextPointIndex) && (Edge.To() < m_NextPointIndex) && "Invalid Node Index");
 
+			if ((m_Points[Edge.To()].Index() != 0) && (m_Points[Edge.From()].Index() != 0))
+			{
+				
+			}
+
+			if (!m_IsDirectedGraph)
+			{
+
+			}
 		}
 
 		void RemoveEdge(int From, int To)
@@ -120,24 +149,54 @@ namespace Engine
 
 		}
 
+		/** Returns the number of paths in the navigation graph. */
 		int NumEdges() const
 		{
-			
+			int PathAmount = 0;
+			for (auto Path : m_Paths)
+			{
+				PathAmount += Path->size();
+			}
+
+			return PathAmount;
 		}
 
+		/** Returns true if the graph is directed. */
 		bool IsDirectedGraph() const
 		{
-
+			return m_IsDirectedGraph;
 		}
 
+		/** Returns true if the navigation graph is empty. */
 		bool IsEmpty() const
 		{
+			return m_Points.empty();
+		}
+
+		/** Retunrs true if a given node is present in the graph. */
+		bool IsNodePresent(int Index) const
+		{
 
 		}
 
-		bool IsPresent(int Index) const
+		/** Returns true if a given path is present in the graph. */
+		bool IsPathPresent(int FirstNodeIndex, int SecondNodeIndex) const
 		{
 
+		}
+
+		/** Returns true if the path is not present in the navigation graph. */
+		bool IsUniquePath(int From, int To)
+		{
+			for (auto Path : m_Paths)
+			{
+				if (Path->To() == To)
+				{
+					return false;
+				}
+			}
+
+			return true;
 		}
 
 	private:

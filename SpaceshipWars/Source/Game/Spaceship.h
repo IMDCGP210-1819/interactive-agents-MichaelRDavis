@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameFramework/Entity.h"
+#include "Gameplay/ECS/Entity.h"
 
 namespace Game
 {

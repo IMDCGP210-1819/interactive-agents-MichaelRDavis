@@ -18,15 +18,6 @@
     <ClInclude Include="Source\Resource\ResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameFramework\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameFramework\GameApp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameFramework\GameInstance.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\AI\FSM\FinalStateMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -57,23 +48,23 @@
     <ClInclude Include="Source\AI\Navigation\NavPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameFramework\Sprite.h">
+    <ClInclude Include="Source\Gameplay\ECS\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameFramework\World.h">
+    <ClInclude Include="Source\Gameplay\GameFramework\World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Gameplay\GameFramework\GameInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Gameplay\GameFramework\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\AppCore\GameApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\GameFramework\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\GameFramework\GameApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\GameFramework\GameInstance.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -92,10 +83,19 @@
     <ClCompile Include="Source\AI\Navigation\NavPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GameFramework\Sprite.cpp">
+    <ClCompile Include="Source\Gameplay\ECS\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GameFramework\World.cpp">
+    <ClCompile Include="Source\Gameplay\GameFramework\GameInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\GameFramework\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gameplay\GameFramework\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\AppCore\GameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

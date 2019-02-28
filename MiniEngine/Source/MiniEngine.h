@@ -8,8 +8,11 @@
 #include "AI/Pathfinding/AStar.h"
 #include "AI/Steering/SteeringBehavior.h"
 
-#include "GameFramework/Entity.h"
-#include "GameFramework/GameApp.h"
-#include "GameFramework/GameInstance.h"
+#include "Core/AppCore/GameApp.h"
+
+#include "Gameplay/ECS/Entity.h"
+#include "Gameplay/GameFramework/GameInstance.h"
+#include "Gameplay/GameFramework/Sprite.h"
+#include "Gameplay/GameFramework/World.h"
 
 #include "Resource/ResourceManager.h"
