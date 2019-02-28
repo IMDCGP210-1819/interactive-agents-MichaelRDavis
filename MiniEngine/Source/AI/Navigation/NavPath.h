@@ -2,13 +2,13 @@
 
 namespace Engine
 {
-	class GraphEdge
+	class NavPath
 	{
 	public:
-		GraphEdge();
-		GraphEdge(int From, int To);
-		GraphEdge(int From, int To, int Cost);
-		virtual ~GraphEdge();
+		NavPath();
+		NavPath(int From, int To);
+		NavPath(int From, int To, int Cost);
+		virtual ~NavPath();
 
 		void SetFrom(int NewIndex);
 		void SetTo(int NewIndex);

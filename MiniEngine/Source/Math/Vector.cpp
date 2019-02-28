@@ -18,5 +18,5 @@ Engine::Vec2::Vec2(const sf::Vector2f& vec)
 
 Engine::Vec2::Vec2(float x, float y)
 {
-	m_Vec2 = sf::Vector2f(x, y);
+	sf::Vector2f(x, y);
 }

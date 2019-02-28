@@ -2,12 +2,12 @@
 
 namespace Engine
 {
-	class GraphNode
+	class NavPoint
 	{
 	public:
-		GraphNode();
-		GraphNode(int Index);
-		virtual ~GraphNode();
+		NavPoint();
+		NavPoint(int Index);
+		virtual ~NavPoint();
 
 		__forceinline int GetIndex() const { return m_Index; }
 		void SetIndex(int NewIndex);

@@ -1,9 +1,10 @@
 #include "MiniPCH.h"
 #include "GameFramework/GameApp.h"
+#include "GameFramework/GameInstance.h"
 
 Engine::GameApp::GameApp()
 {
-
+	m_Instance = std::make_unique<GameInstance>();
 }
 
 Engine::GameApp::~GameApp()
@@ -27,6 +28,9 @@ void Engine::GameApp::AppRun()
 			{
 				m_Window.close();
 			}
+
+			sf::Time DeltaTime = m_Clock.restart();
+
 		}
 
 		m_Window.clear();
@@ -36,5 +40,5 @@ void Engine::GameApp::AppRun()
 
 void Engine::GameApp::AppExit()
 {
-
+	m_Window.close();
 }

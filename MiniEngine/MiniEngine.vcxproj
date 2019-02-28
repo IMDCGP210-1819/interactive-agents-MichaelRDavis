@@ -134,27 +134,31 @@
   <ItemGroup>
     <ClInclude Include="Source\AI\FSM\FinalStateMachine.h" />
     <ClInclude Include="Source\AI\FSM\IState.h" />
-    <ClInclude Include="Source\AI\Graph\GraphEdge.h" />
-    <ClInclude Include="Source\AI\Graph\GraphNode.h" />
-    <ClInclude Include="Source\AI\Graph\SparseGraph.h" />
+    <ClInclude Include="Source\AI\Navigation\NavPath.h" />
+    <ClInclude Include="Source\AI\Navigation\NavPoint.h" />
+    <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\SteeringBehavior.h" />
     <ClInclude Include="Source\GameFramework\Entity.h" />
     <ClInclude Include="Source\GameFramework\GameApp.h" />
     <ClInclude Include="Source\GameFramework\GameInstance.h" />
+    <ClInclude Include="Source\GameFramework\Sprite.h" />
+    <ClInclude Include="Source\GameFramework\World.h" />
     <ClInclude Include="Source\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
     <ClInclude Include="Source\Resource\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\AI\Graph\GraphEdge.cpp" />
-    <ClCompile Include="Source\AI\Graph\GraphNode.cpp" />
+    <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
+    <ClCompile Include="Source\AI\Navigation\NavPoint.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
     <ClCompile Include="Source\GameFramework\Entity.cpp" />
     <ClCompile Include="Source\GameFramework\GameApp.cpp" />
     <ClCompile Include="Source\GameFramework\GameInstance.cpp" />
+    <ClCompile Include="Source\GameFramework\Sprite.cpp" />
+    <ClCompile Include="Source\GameFramework\World.cpp" />
     <ClCompile Include="Source\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
   </ItemGroup>

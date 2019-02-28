@@ -9,8 +9,5 @@ namespace Engine
 		Vec2(float x, float y);
 		Vec2(const sf::Vector2f& vec);
 		Vec2(const Vec2& vec);
-
-	private:
-		sf::Vector2f m_Vec2;
 	};
 }
