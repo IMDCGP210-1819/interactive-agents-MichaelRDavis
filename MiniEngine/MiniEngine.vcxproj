@@ -45,7 +45,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -147,6 +147,7 @@
     <ClInclude Include="Source\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
+    <ClInclude Include="Source\Rendering\SceneNode.h" />
     <ClInclude Include="Source\Resource\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,7 @@
     <ClCompile Include="Source\Gameplay\GameFramework\World.cpp" />
     <ClCompile Include="Source\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
+    <ClCompile Include="Source\Rendering\SceneNode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

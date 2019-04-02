@@ -30,7 +30,6 @@ void Engine::GameApp::AppRun()
 			}
 
 			sf::Time DeltaTime = m_Clock.restart();
-
 		}
 
 		m_Window.clear();

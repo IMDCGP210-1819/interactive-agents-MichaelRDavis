@@ -10,6 +10,9 @@ namespace Engine
 		Sprite();
 		~Sprite();
 
+		void SetTexture(sf::Texture NewTexture);
+		void SetPosition(sf::Vector2f NewPosition);
+
 		sf::Texture GetTexture() const { return m_Texture; }
 		sf::Sprite GetSprite() const { return m_Sprite; }
 

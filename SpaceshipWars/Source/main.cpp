@@ -7,7 +7,6 @@ int main()
 	if (GameApp)
 	{
 		GameApp->AppInit();
-
 		try
 		{
 			GameApp->AppRun();
@@ -15,10 +14,9 @@ int main()
 		catch (const std::exception& exception)
 		{
 			std::cout << "FATAL_ERROR: " << exception.what() << std::endl;
+			GameApp->AppExit();
 		}
-
 		GameApp->AppExit();
 	}
-
 	return 0;
 }

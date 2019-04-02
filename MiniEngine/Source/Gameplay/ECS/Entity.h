@@ -2,6 +2,9 @@
 
 namespace Engine
 {
+	/**
+	 * 
+	 */
 	class Entity
 	{
 	public:
@@ -14,8 +17,8 @@ namespace Engine
 
 		void SetObjectID(int NewObjectID);
 
-		FORCEINLINE int GetObjectID() const { return m_ObjectID; }
-		FORCEINLINE sf::Vector2f GetVelocity() const { return m_Velocity; }
+		inline int GetObjectID() const { return m_ObjectID; }
+		inline sf::Vector2f GetVelocity() const { return m_Velocity; }
 
 	private:
 		int m_ObjectID;

@@ -16,3 +16,13 @@ Engine::Sprite::~Sprite()
 
 }
 
+void Engine::Sprite::SetTexture(sf::Texture NewTexture)
+{
+	m_Sprite.setTexture(NewTexture);
+}
+
+void Engine::Sprite::SetPosition(sf::Vector2f NewPosition)
+{
+	m_Sprite.setPosition(NewPosition);
+}
+
