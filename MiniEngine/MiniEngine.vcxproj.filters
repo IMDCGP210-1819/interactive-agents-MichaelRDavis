@@ -68,9 +68,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\AI\Pathfinding\AStar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

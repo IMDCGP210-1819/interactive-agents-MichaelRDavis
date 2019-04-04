@@ -153,7 +153,6 @@
   <ItemGroup>
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavPoint.cpp" />
-    <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
     <ClCompile Include="Source\Gameplay\ECS\Entity.cpp" />
     <ClCompile Include="Source\Core\AppCore\GameApp.cpp" />

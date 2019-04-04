@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Gameplay/ECS/Entity.h"
+#include "Gameplay/GameFramework/Sprite.h"
 
 namespace Game
 {
-	class Spaceship : public Engine::Entity
+	class Spaceship : public Engine::Sprite
 	{
 	public:
 		Spaceship();

@@ -22,3 +22,8 @@ void Engine::NavPoint::SetIndex(int NewIndex)
 {
 	m_Index = NewIndex;
 }
+
+void Engine::NavPoint::SetPosition(Vec2 NewPosition)
+{
+	m_Position = NewPosition;
+}

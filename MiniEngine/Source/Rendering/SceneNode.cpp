@@ -19,5 +19,9 @@ void Engine::SceneNode::AddChildNode(std::unique_ptr<SceneNode> InSceneNode)
 
 std::unique_ptr<Engine::SceneNode> Engine::SceneNode::RemoveChildNode(const SceneNode& InSceneNode)
 {
-
+	auto Node = std::find_if(m_ChildNodes.begin(), m_ChildNodes.end(), [&](std::unique_ptr<SceneNode>& Ptr)-> bool {return Ptr.get() == &InSceneNode; });
+	std::unique_ptr<SceneNode> Result = std::move(*Node);
+	Result->m_ParentNode = nullptr;
+	m_ChildNodes.erase(Node);
+	return Result;
 }
