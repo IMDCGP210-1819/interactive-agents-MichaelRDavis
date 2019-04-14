@@ -3,13 +3,18 @@
 
 int main()
 {
-	std::unique_ptr<Engine::GameApp> GameApp = std::make_unique<Engine::GameApp>();
+	std::unique_ptr<App> GameApp = std::make_unique<App>();
 	if (GameApp)
 	{
 		GameApp->AppInit();
 		try
 		{
-			GameApp->AppRun();
+			while (GameApp->IsWindowOpen())
+			{
+				GameApp->Clear();
+				GameApp->ProcessEvents();
+				GameApp->DisplayWindow();
+			}
 		}
 		catch (const std::exception& exception)
 		{

@@ -2,17 +2,17 @@
 #include "World.h"
 #include "Gameplay/ECS/Entity.h"
 
-Engine::World::World()
+World::World()
 {
 
 }
 
-Engine::World::~World()
+World::~World()
 {
 
 }
 
-void Engine::World::Initialize()
+void World::Initialize()
 {
 	for (Entity* Object : m_Entities)
 	{
@@ -20,15 +20,15 @@ void Engine::World::Initialize()
 	}
 }
 
-void Engine::World::Update()
+void World::Update(float DeltaTime)
 {
 	for (Entity* Object : m_Entities)
 	{
-		Object->Update();
+		Object->Update(DeltaTime);
 	}
 }
 
-void Engine::World::Render()
+void World::Render()
 {
 	for (Entity* Object : m_Entities)
 	{

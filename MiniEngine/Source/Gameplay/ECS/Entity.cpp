@@ -1,17 +1,17 @@
 #include "MiniPCH.h"
 #include "Entity.h"
 
-Engine::Entity::Entity()
+Entity::Entity()
 {
 
 }
 
-Engine::Entity::~Entity()
+Entity::~Entity()
 {
 
 }
 
-void Engine::Entity::SetObjectID(int NewObjectID)
+void Entity::SetObjectID(int NewObjectID)
 {
 	m_ObjectID = NewObjectID;
 }

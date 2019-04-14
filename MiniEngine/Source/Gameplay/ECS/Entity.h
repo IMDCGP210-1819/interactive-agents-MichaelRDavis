@@ -1,27 +1,68 @@
 #pragma once
 
-namespace Engine
+#include "Math/Vector.h"
+
+class World;
+class Component;
+
+/**
+ * Entity is the base class for all game objects in the game world.
+ */
+class Entity
 {
-	/**
-	 * 
-	 */
-	class Entity
-	{
-	public:
-		Entity();
-		virtual ~Entity();
+public:
+	/** Default Entity constructor. */
+	Entity();
 
-		virtual void Initialize() = 0;
-		virtual void Update() = 0;
-		virtual void Render() = 0;
+	/** Default Entity destructor. */
+	virtual ~Entity();
 
-		void SetObjectID(int NewObjectID);
+	/** Initialize the entity. */
+	virtual void Initialize() = 0;
 
-		inline int GetObjectID() const { return m_ObjectID; }
-		inline sf::Vector2f GetVelocity() const { return m_Velocity; }
+	/** Update this entity, called once per frame. */
+	virtual void Update(float DeltaTime) = 0;
 
-	private:
-		int m_ObjectID;
-		sf::Vector2f m_Velocity;
-	};
-}
+	/** Submit this entity to the renderer. */
+	virtual void Render() = 0;
+
+	/** Set the entities ID. */
+	void SetObjectID(int NewObjectID);
+
+	/** Returns the entities ID. */
+	inline int GetObjectID() const { return m_ObjectID; }
+
+	/** Returns this entities velocity. */
+	inline Vec2 GetVelocity() const { return m_Velocity; }
+
+protected:
+	/** Name of this entity. */
+	std::string m_Typename;
+
+	/** Pointer the game world. */
+	std::shared_ptr<World> m_World;
+
+	/** Velocity of the entity. */
+	Vec2 m_Velocity;
+
+	/** Direction of the entity. */
+	Vec2 m_Direction;
+
+	/** Dot vector to the directional vector. */
+	Vec2 m_DotVector;
+
+	/** Entity ID. */
+	int m_ObjectID;
+
+	/** Mass of the entity. */
+	float m_Mass;
+
+	/** Speed of the entity. */
+	float m_Speed;
+
+	/** Force of the entity. */
+	float m_Force;
+
+	/** Turn rate of the entity. */
+	float m_TurnRate;
+};

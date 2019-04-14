@@ -1,17 +1,35 @@
 #pragma once
 
-namespace Engine
+template<class Asset, class AssetID>
+class TAssetManager
 {
-	template<class Type, class TypeID>
-	class TResourceManager
+public:
+	TAssetManager()
 	{
-	public:
-		TResourceManager()
-		{
 
-		}
+	}
 
-	private:
-		std::map<TypeID, std::unique_ptr<Type>> m_ResourceMap;
-	};
-}
+	void Load(AssetID ID, const std::string FileName)
+	{
+
+	}
+
+	Asset& Get(AssetID ID)
+	{
+
+	}
+
+	const Asset& Get(AssetID ID) const
+	{
+
+	}
+
+private:
+	void Insert(AssetID ID, std::unique_ptr<Asset> InAsset)
+	{
+
+	}
+
+private:
+	std::map<AssetID, std::unique_ptr<Asset>> m_AsseteMap;
+};

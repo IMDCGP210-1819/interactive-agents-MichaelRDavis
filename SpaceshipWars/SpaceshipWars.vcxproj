@@ -84,12 +84,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\GamePCH.cpp" />
+    <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\Spaceship.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GamePCH.h" />
+    <ClInclude Include="Source\Game\Asteroid.h" />
+    <ClInclude Include="Source\Game\FireState.h" />
     <ClInclude Include="Source\Game\Spaceship.h" />
+    <ClInclude Include="Source\Game\SpaceshipFSM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

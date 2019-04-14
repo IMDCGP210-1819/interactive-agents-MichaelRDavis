@@ -1,16 +1,28 @@
 #pragma once
 
 #include "Gameplay/GameFramework/Sprite.h"
+#include "AI/FSM/IState.h"
 
-namespace Game
+template<typename T>
+class IState;
+
+class SpaceshipFSM;
+
+class Spaceship : public Sprite
 {
-	class Spaceship : public Engine::Sprite
-	{
-	public:
-		Spaceship();
-		~Spaceship();
+public:
+	Spaceship();
+	~Spaceship();
 
-	private:
-		int m_Health;
-	};
-}
+	void Initialize() override;
+	void Update(float DeltaTime) override;
+	void Render() override;
+
+private:
+	//std::unique_ptr<SpaceshipFSM> m_FSM;
+
+	IState<Spaceship> m_CurrentState;
+	IState<Spaceship> m_PreviouState;
+
+	int m_Health;
+};

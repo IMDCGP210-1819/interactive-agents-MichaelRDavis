@@ -132,15 +132,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\AI\FSM\FinalStateMachine.h" />
+    <ClInclude Include="Source\AI\FSM\FiniteStateMachine.h" />
     <ClInclude Include="Source\AI\FSM\IState.h" />
     <ClInclude Include="Source\AI\Navigation\NavPath.h" />
     <ClInclude Include="Source\AI\Navigation\NavPoint.h" />
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\SteeringBehavior.h" />
+    <ClInclude Include="Source\Core\AppCore\Window.h" />
+    <ClInclude Include="Source\Gameplay\ECS\Component.h" />
     <ClInclude Include="Source\Gameplay\ECS\Entity.h" />
-    <ClInclude Include="Source\Core\AppCore\GameApp.h" />
+    <ClInclude Include="Source\Core\AppCore\App.h" />
     <ClInclude Include="Source\Gameplay\GameFramework\GameInstance.h" />
     <ClInclude Include="Source\Gameplay\GameFramework\Sprite.h" />
     <ClInclude Include="Source\Gameplay\GameFramework\World.h" />
@@ -154,8 +156,10 @@
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavPoint.cpp" />
     <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
+    <ClCompile Include="Source\Core\AppCore\Window.cpp" />
+    <ClCompile Include="Source\Gameplay\ECS\Component.cpp" />
     <ClCompile Include="Source\Gameplay\ECS\Entity.cpp" />
-    <ClCompile Include="Source\Core\AppCore\GameApp.cpp" />
+    <ClCompile Include="Source\Core\AppCore\App.cpp" />
     <ClCompile Include="Source\Gameplay\GameFramework\GameInstance.cpp" />
     <ClCompile Include="Source\Gameplay\GameFramework\Sprite.cpp" />
     <ClCompile Include="Source\Gameplay\GameFramework\World.cpp" />
