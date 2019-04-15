@@ -6,7 +6,7 @@ template<class Type>
 class FiniteStateMachine
 {
 public:
-	FiniteStateMachine(Type Owner)
+	FiniteStateMachine(Type* Owner)
 		: m_Owner(Owner)
 	{
 

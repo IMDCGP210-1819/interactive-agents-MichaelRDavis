@@ -1,51 +1,48 @@
 #pragma once
 
-namespace Engine
+/**
+ * Defines a navigation path connecting to points.
+ */
+class NavPath
 {
-	/**
-	 * Defines a navigation path connecting to points.
-	 */
-	class NavPath
-	{
-	public:
-		/** Default constructor. */
-		NavPath();
+public:
+	/** Default constructor. */
+	NavPath();
 
-		/** Constructor to initialize point indices. */
-		NavPath(int From, int To);
+	/** Constructor to initialize point indices. */
+	NavPath(int From, int To);
 
-		/** Constructor to initializes point indices, and cost. */
-		NavPath(int From, int To, int Cost);
+	/** Constructor to initializes point indices, and cost. */
+	NavPath(int From, int To, int Cost);
 
-		/** Default destructor. */
-		virtual ~NavPath();
+	/** Default destructor. */
+	virtual ~NavPath();
 
-		/**  */
-		void SetFrom(int NewIndex);
+	/**  */
+	void SetFrom(int NewIndex);
 
-		/**  */
-		void SetTo(int NewIndex);
+	/**  */
+	void SetTo(int NewIndex);
 
-		/**  */
-		void SetCost(int NewCost);
+	/**  */
+	void SetCost(int NewCost);
 
-		/**  */
-		inline int GetFrom() const { return m_From; }
+	/**  */
+	inline int GetFrom() const { return m_From; }
 
-		/**  */
-		inline int GetTo() const { return m_To; }
+	/**  */
+	inline int GetTo() const { return m_To; }
 
-		/**  */
-		inline double GetCost() { return m_Cost; }
+	/**  */
+	inline double GetCost() { return m_Cost; }
 
-	protected:
-		/**  */
-		int m_From;
+protected:
+	/**  */
+	int m_From;
 
-		/**  */
-		int m_To;
+	/**  */
+	int m_To;
 
-		/**  */
-		double m_Cost;
-	};
-}
+	/**  */
+	double m_Cost;
+};

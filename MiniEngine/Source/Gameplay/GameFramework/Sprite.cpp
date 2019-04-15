@@ -1,7 +1,7 @@
 #include "MiniPCH.h"
 #include "Sprite.h"
 
-Sprite::Sprite()
+SpriteComponent::SpriteComponent()
 {
 	if (!m_Texture.loadFromFile(""))
 	{
@@ -11,17 +11,17 @@ Sprite::Sprite()
 	m_Sprite = sf::Sprite(m_Texture);
 }
 
-Sprite::~Sprite()
+SpriteComponent::~SpriteComponent()
 {
 
 }
 
-void Sprite::SetTexture(sf::Texture NewTexture)
+void SpriteComponent::SetTexture(sf::Texture NewTexture)
 {
 	m_Sprite.setTexture(NewTexture);
 }
 
-void Sprite::SetPosition(sf::Vector2f NewPosition)
+void SpriteComponent::SetPosition(sf::Vector2f NewPosition)
 {
 	m_Sprite.setPosition(NewPosition);
 }

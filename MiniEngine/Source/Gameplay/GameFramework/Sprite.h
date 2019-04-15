@@ -1,12 +1,15 @@
 #pragma once
 
-#include "Gameplay/ECS/Entity.h"
+#include "Gameplay/ECS/Component.h"
 
-class Sprite : public Entity
+template<class Tx, class Ty>
+class TAssetManager;
+
+class SpriteComponent : public Component
 {
 public:
-	Sprite();
-	~Sprite();
+	SpriteComponent();
+	~SpriteComponent();
 
 	void SetTexture(sf::Texture NewTexture);
 	void SetPosition(sf::Vector2f NewPosition);
@@ -15,6 +18,7 @@ public:
 	sf::Sprite GetSprite() const { return m_Sprite; }
 
 private:
+	//TAssetManager<sf::Texture, int> m_SpriteManager;
 	sf::Texture m_Texture;
 	sf::Sprite m_Sprite;
 };

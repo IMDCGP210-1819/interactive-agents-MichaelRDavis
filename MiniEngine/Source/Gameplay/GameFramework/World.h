@@ -1,6 +1,7 @@
 #pragma once
 
 class Entity;
+class SceneNode;
 
 class World
 {
@@ -15,5 +16,6 @@ public:
 	inline const std::vector<Entity*> GetEntities() const { return m_Entities; }
 
 private:
+	SceneNode* m_SceneGraph;
 	std::vector<Entity*> m_Entities;
 };

@@ -1,9 +1,11 @@
 #pragma once
 
-namespace Engine
+class SteeringBehavior
 {
-	class SteeringBehavior
-	{
+public:
+	/** Default constructor. */
+	SteeringBehavior();
 
-	};
-}
+	/** Default destructor. */
+	~SteeringBehavior();
+};

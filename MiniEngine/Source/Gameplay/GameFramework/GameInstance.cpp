@@ -2,12 +2,12 @@
 #include "GameInstance.h"
 #include "Gameplay/GameFramework/World.h"
 
-GameInstance::GameInstance()
+Game::Game()
 {
 	m_World = std::make_unique<World>();
 }
 
-GameInstance::~GameInstance()
+Game::~Game()
 {
 
 }

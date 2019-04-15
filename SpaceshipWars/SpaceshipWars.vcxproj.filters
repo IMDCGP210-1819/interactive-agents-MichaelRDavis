@@ -27,6 +27,12 @@
     <ClCompile Include="Source\Game\Asteroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\FireState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\NavGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Game\Spaceship.h">
@@ -41,7 +47,7 @@
     <ClInclude Include="Source\Game\FireState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\SpaceshipFSM.h">
+    <ClInclude Include="Source\Game\NavGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

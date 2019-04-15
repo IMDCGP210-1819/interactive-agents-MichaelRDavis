@@ -1,28 +1,43 @@
 #pragma once
 
-#include "Gameplay/GameFramework/Sprite.h"
+#include "Gameplay/ECS/Entity.h"
 #include "AI/FSM/IState.h"
 
 template<typename T>
 class IState;
 
-class SpaceshipFSM;
+template<typename T>
+class FiniteStateMachine;
 
-class Spaceship : public Sprite
+class SpriteComponent;
+
+/**
+ * 
+ */
+class Spaceship : public Entity
 {
 public:
+	/** Default constructor. */
 	Spaceship();
+
+	/** Default destructor. */
 	~Spaceship();
 
+	// Entity interface
 	void Initialize() override;
 	void Update(float DeltaTime) override;
 	void Render() override;
 
 private:
-	//std::unique_ptr<SpaceshipFSM> m_FSM;
+	/** Spaceship AI behavior. */
+	std::unique_ptr<FiniteStateMachine<Spaceship>> m_FSM;
 
-	IState<Spaceship> m_CurrentState;
-	IState<Spaceship> m_PreviouState;
+	/** Spaceship sprite component. */
+	std::unique_ptr<SpriteComponent> m_Sprite;
 
+	/** Current health of the spaceship. */
 	int m_Health;
+
+	/** Max health of the spaceship. */
+	int m_MaxHealth;
 };

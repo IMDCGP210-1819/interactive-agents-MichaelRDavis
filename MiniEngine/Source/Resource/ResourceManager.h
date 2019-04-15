@@ -1,35 +1,55 @@
 #pragma once
 
-template<class Asset, class AssetID>
+/**
+ * 
+ */
+template<class AssetType, class AssetID>
 class TAssetManager
 {
 public:
+	/** Default constructor. */
 	TAssetManager()
 	{
 
 	}
 
+	/** Load asset into the asset map. */
 	void Load(AssetID ID, const std::string FileName)
 	{
+		std::unique_ptr<AssetType> Asset(new AssetType());
+		if (!Asset->loadFromFile(FileName))
+		{
+			std::cout << "Failed to load asset " << FileName << std::endl;
+		}
 
+		Insert(ID, std::move(Asset));
 	}
 
-	Asset& Get(AssetID ID)
+	/** Returns an asset from the map via its ID. */
+	AssetType& Get(AssetID ID)
 	{
-
+		auto Found = m_AsseteMap.find(ID);
+		assert(Found != m_AsseteMap.end());
+		return *Found->second;
 	}
 
-	const Asset& Get(AssetID ID) const
+	/** Returns an asset from the map via its ID, const version. */
+	const AssetType& Get(AssetID ID) const
 	{
-
+		auto Found = m_AsseteMap.find(ID);
+		assert(Found != m_AsseteMap.end());
+		return *Found->second;
 	}
 
 private:
-	void Insert(AssetID ID, std::unique_ptr<Asset> InAsset)
+	/** Insert asset into the asset map. */
+	void Insert(AssetID ID, std::unique_ptr<AssetType> InAsset)
 	{
-
+		auto Asset = m_AsseteMap.insert(std::make_pair(ID, std::move(InAsset)));
+		assert(Asset.second);
 	}
 
 private:
-	std::map<AssetID, std::unique_ptr<Asset>> m_AsseteMap;
+	/** Asset map for storing assets keyed with a unique ID. */
+	std::map<AssetID, std::unique_ptr<AssetType>> m_AsseteMap;
 };

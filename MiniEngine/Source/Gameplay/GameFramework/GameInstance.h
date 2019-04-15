@@ -2,11 +2,11 @@
 
 class World;
 
-class GameInstance
+class Game
 {
 public:
-	GameInstance();
-	~GameInstance();
+	Game();
+	~Game();
 
 	inline World* GetWorld() const { return m_World.get(); }
 
