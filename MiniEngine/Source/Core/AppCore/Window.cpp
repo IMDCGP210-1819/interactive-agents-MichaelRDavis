@@ -13,7 +13,12 @@ Window::~Window()
 
 void Window::InitializeWindow()
 { 
-	m_Window = new sf::RenderWindow(sf::VideoMode(640, 480), "Spaceship Wars", sf::Style::Close);
+	m_Width = sf::VideoMode::getDesktopMode().width;
+	m_Height = sf::VideoMode::getDesktopMode().height;
+
+	unsigned int WindowStyle = sf::Style::Default;
+
+	m_Window = new sf::RenderWindow(sf::VideoMode(m_Width, m_Height), "Spaceship Wars", WindowStyle);
 }
 
 void Window::DestroyWindow()

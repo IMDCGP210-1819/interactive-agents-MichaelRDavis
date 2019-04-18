@@ -43,5 +43,5 @@ void App::DisplayWindow()
 
 void App::Clear()
 {
-	m_Window->GetWindow()->clear(sf::Color::Blue);
+	m_Window->GetWindow()->clear(sf::Color::Black);
 }

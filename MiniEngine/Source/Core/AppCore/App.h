@@ -24,6 +24,11 @@ public:
 
 	void Clear();
 
+	inline std::shared_ptr<Window> GetWindow() const
+	{
+		return m_Window;
+	}
+
 	inline bool IsWindowOpen() const
 	{
 		return m_Window->GetWindow()->isOpen();

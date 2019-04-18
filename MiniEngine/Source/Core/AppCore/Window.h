@@ -18,4 +18,6 @@ public:
 
 private:
 	sf::RenderWindow* m_Window;
+	int m_Width;
+	int m_Height;
 };
