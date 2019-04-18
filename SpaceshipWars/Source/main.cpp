@@ -1,6 +1,9 @@
 #include "GamePCH.h"
 #include <MiniEngine.h>
 
+#include "Core/AppCore/App.h"
+#include "Game/Asteroid.h"
+
 int main()
 {
 	std::unique_ptr<App> GameApp = std::make_unique<App>();

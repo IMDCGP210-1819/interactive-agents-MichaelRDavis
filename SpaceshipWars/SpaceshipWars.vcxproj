@@ -85,16 +85,20 @@
   <ItemGroup>
     <ClCompile Include="Source\GamePCH.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
-    <ClCompile Include="Source\Game\FireState.cpp" />
-    <ClCompile Include="Source\Game\NavGrid.cpp" />
+    <ClCompile Include="Source\Game\AttackState.cpp" />
+    <ClCompile Include="Source\Game\DeathState.cpp" />
+    <ClCompile Include="Source\Game\PatrolState.cpp" />
+    <ClCompile Include="Source\Game\Projectile.cpp" />
     <ClCompile Include="Source\Game\Spaceship.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GamePCH.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
-    <ClInclude Include="Source\Game\FireState.h" />
-    <ClInclude Include="Source\Game\NavGrid.h" />
+    <ClInclude Include="Source\Game\AttackState.h" />
+    <ClInclude Include="Source\Game\DeathState.h" />
+    <ClInclude Include="Source\Game\PatrolState.h" />
+    <ClInclude Include="Source\Game\Projectile.h" />
     <ClInclude Include="Source\Game\Spaceship.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

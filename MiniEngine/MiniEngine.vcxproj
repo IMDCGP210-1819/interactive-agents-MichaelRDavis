@@ -132,40 +132,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\AI\FSM\FiniteStateMachine.h" />
-    <ClInclude Include="Source\AI\FSM\IState.h" />
-    <ClInclude Include="Source\AI\Navigation\NavPath.h" />
-    <ClInclude Include="Source\AI\Navigation\NavPoint.h" />
-    <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
-    <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
-    <ClInclude Include="Source\AI\Steering\SteeringBehavior.h" />
+    <ClInclude Include="Source\Core\Module\Engine.h" />
+    <ClInclude Include="Source\Core\Module\Game.h" />
+    <ClInclude Include="Source\Gameplay\Components\CollisionComponent.h" />
+    <ClInclude Include="Source\Gameplay\EventSystem\Event.h" />
+    <ClInclude Include="Source\GameSystems\AI\FSM\FiniteStateMachine.h" />
+    <ClInclude Include="Source\GameSystems\AI\FSM\IState.h" />
+    <ClInclude Include="Source\GameSystems\AI\Navigation\NavGrid.h" />
+    <ClInclude Include="Source\GameSystems\AI\Navigation\NavPath.h" />
+    <ClInclude Include="Source\GameSystems\AI\Navigation\NavPoint.h" />
+    <ClInclude Include="Source\GameSystems\AI\Navigation\NavGraph.h" />
+    <ClInclude Include="Source\GameSystems\AI\Pathfinding\AStar.h" />
+    <ClInclude Include="Source\GameSystems\AI\Steering\SteeringBehavior.h" />
     <ClInclude Include="Source\Core\AppCore\Window.h" />
-    <ClInclude Include="Source\Gameplay\ECS\Component.h" />
-    <ClInclude Include="Source\Gameplay\ECS\Entity.h" />
+    <ClInclude Include="Source\Gameplay\GameObject\Component.h" />
+    <ClInclude Include="Source\Gameplay\GameObject\Entity.h" />
     <ClInclude Include="Source\Core\AppCore\App.h" />
-    <ClInclude Include="Source\Gameplay\GameFramework\GameInstance.h" />
-    <ClInclude Include="Source\Gameplay\GameFramework\Sprite.h" />
-    <ClInclude Include="Source\Gameplay\GameFramework\World.h" />
-    <ClInclude Include="Source\Math\Vector.h" />
+    <ClInclude Include="Source\Gameplay\Components\SpriteComponent.h" />
+    <ClInclude Include="Source\Gameplay\World\World.h" />
+    <ClInclude Include="Source\Core\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
-    <ClInclude Include="Source\Rendering\SceneNode.h" />
+    <ClInclude Include="Source\Rendering\SceneGraph\SceneNode.h" />
     <ClInclude Include="Source\Resource\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
-    <ClCompile Include="Source\AI\Navigation\NavPoint.cpp" />
-    <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
+    <ClCompile Include="Source\Core\Module\Engine.cpp" />
+    <ClCompile Include="Source\Core\Module\Game.cpp" />
+    <ClCompile Include="Source\Gameplay\Components\CollisionComponent.cpp" />
+    <ClCompile Include="Source\Gameplay\EventSystem\Event.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Navigation\NavGrid.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Navigation\NavPath.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Navigation\NavPoint.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Steering\SteeringBehavior.cpp" />
     <ClCompile Include="Source\Core\AppCore\Window.cpp" />
-    <ClCompile Include="Source\Gameplay\ECS\Component.cpp" />
-    <ClCompile Include="Source\Gameplay\ECS\Entity.cpp" />
+    <ClCompile Include="Source\Gameplay\GameObject\Component.cpp" />
+    <ClCompile Include="Source\Gameplay\GameObject\Entity.cpp" />
     <ClCompile Include="Source\Core\AppCore\App.cpp" />
-    <ClCompile Include="Source\Gameplay\GameFramework\GameInstance.cpp" />
-    <ClCompile Include="Source\Gameplay\GameFramework\Sprite.cpp" />
-    <ClCompile Include="Source\Gameplay\GameFramework\World.cpp" />
-    <ClCompile Include="Source\Math\Vector.cpp" />
+    <ClCompile Include="Source\Gameplay\Components\SpriteComponent.cpp" />
+    <ClCompile Include="Source\Gameplay\World\World.cpp" />
+    <ClCompile Include="Source\Core\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
-    <ClCompile Include="Source\Rendering\SceneNode.cpp" />
+    <ClCompile Include="Source\Rendering\SceneGraph\SceneNode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

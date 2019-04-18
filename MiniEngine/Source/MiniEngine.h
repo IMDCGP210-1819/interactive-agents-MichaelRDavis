@@ -1,18 +1,20 @@
 #pragma once
 
-#include "AI/FSM/FiniteStateMachine.h"
-#include "AI/FSM/IState.h"
-#include "AI/Navigation/NavGraph.h"
-#include "AI/Navigation/NavPath.h"
-#include "AI/Navigation/NavPoint.h"
-#include "AI/Pathfinding/AStar.h"
-#include "AI/Steering/SteeringBehavior.h"
+#include "Gameplay/GameObject/Component.h"
+#include "Gameplay/GameObject/Entity.h"
 
-#include "Core/AppCore/App.h"
+#include "Gameplay/Components/SpriteComponent.h"
 
-#include "Gameplay/ECS/Entity.h"
-#include "Gameplay/GameFramework/GameInstance.h"
-#include "Gameplay/GameFramework/Sprite.h"
-#include "Gameplay/GameFramework/World.h"
+#include "Gameplay/World/World.h"
 
-#include "Resource/ResourceManager.h"
+#include "GameSystems/AI/FSM/FiniteStateMachine.h"
+#include "GameSystems/AI/FSM/IState.h"
+
+#include "GameSystems/AI/Navigation/NavGraph.h"
+#include "GameSystems/AI/Navigation/NavGrid.h"
+#include "GameSystems/AI/Navigation/NavPath.h"
+#include "GameSystems/AI/Navigation/NavPoint.h"
+
+#include "GameSystems/AI/Pathfinding/AStar.h"
+
+#include "GameSystems/AI/Steering/SteeringBehavior.h"

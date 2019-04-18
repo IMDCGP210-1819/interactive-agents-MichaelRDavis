@@ -1,7 +1,7 @@
 #include "GamePCH.h"
 #include "Spaceship.h"
-#include "AI/FSM/FiniteStateMachine.h"
-#include "Gameplay/GameFramework/Sprite.h"
+#include "GameSystems/AI/FSM/FiniteStateMachine.h"
+#include "Gameplay/Components/SpriteComponent.h"
 
 Spaceship::Spaceship()
 {
@@ -21,7 +21,7 @@ void Spaceship::Initialize()
 
 void Spaceship::Update(float DeltaTime)
 {
-
+	m_FSM->OnUpdate();
 }
 
 void Spaceship::Render()

@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Gameplay/ECS/Entity.h"
-#include "AI/FSM/IState.h"
+#include "Gameplay/GameObject/Entity.h"
+#include "GameSystems/AI/FSM/IState.h"
+
+#include "Game/Projectile.h"
 
 template<typename T>
 class IState;
@@ -28,6 +30,12 @@ public:
 	void Update(float DeltaTime) override;
 	void Render() override;
 
+	/** Return true if dead. */
+	inline bool IsDead() const
+	{
+		return m_Health <= 0;
+	}
+
 private:
 	/** Spaceship AI behavior. */
 	std::unique_ptr<FiniteStateMachine<Spaceship>> m_FSM;
@@ -35,9 +43,18 @@ private:
 	/** Spaceship sprite component. */
 	std::unique_ptr<SpriteComponent> m_Sprite;
 
+	/** Projectile class to fire. */
+	std::unique_ptr<Projectile> m_Bullet;
+
 	/** Current health of the spaceship. */
 	int m_Health;
 
 	/** Max health of the spaceship. */
 	int m_MaxHealth;
+
+	/** Current ammo. */
+	int m_Ammo;
+
+	/** Max ammo. */
+	int m_MaxAmmo;
 };
