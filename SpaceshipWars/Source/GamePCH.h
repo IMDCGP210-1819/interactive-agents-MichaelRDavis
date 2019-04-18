@@ -19,11 +19,6 @@
 #pragma comment(lib, "MiniEngine.lib")
 #endif
 
-#ifdef _WIN64
-#define INLINE __inline
-#define FORCEINLINE __forceinline
-#endif
-
 #include <memory>
 #include <list>
 #include <vector>

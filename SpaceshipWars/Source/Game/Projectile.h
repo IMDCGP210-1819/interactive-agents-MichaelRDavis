@@ -2,12 +2,33 @@
 
 #include "Gameplay/GameObject/Entity.h"
 
+/**
+ * 
+ */
 class Projectile : public Entity
 {
 public:
-	/**  */
+	/** Default constructor. */
 	Projectile();
 
-	/**  */
-	virtual ~Projectile();
+	/** Default destructor. */
+	~Projectile();
+
+	/** Set the owner of this projectile to a new oner. 
+	*	@param NewOwner - The projectiles new owner.
+	*/
+	void SetOwner(std::shared_ptr<Entity> NewOwner);
+
+	/** Returns the owner of this projectile. */
+	inline std::shared_ptr<Entity> GetOwner() const
+	{
+		return m_Owner;
+	}
+
+public:
+	/** Damage applied on collision. */
+	int m_Damage;
+
+	/** The projectiles owner. */
+	std::shared_ptr<Entity> m_Owner;
 };

@@ -10,12 +10,6 @@ Asteroid::Asteroid()
 	m_Sprite = std::make_unique<SpriteComponent>();
 }
 
-Asteroid::Asteroid(int SpriteID, std::string Filename)
-{
-	m_Behavior = std::make_unique<SteeringBehavior>();
-	m_Sprite = std::make_unique<SpriteComponent>(SpriteID, Filename);
-}
-
 Asteroid::~Asteroid()
 {
 
@@ -28,8 +22,8 @@ void Asteroid::Initialize()
 
 void Asteroid::Update(float DelaTime)
 {
-	Vec2 Steering;
-	//Vec2 Acceleration = Steering / m_Mass;
+	sf::Vector2f Steering = Vec2::Zerovector;
+	sf::Vector2f Acceleration = Steering / m_Mass;
 }
 
 void Asteroid::Render()

@@ -1,5 +1,5 @@
 #include "MiniPCH.h"
-#include "NavPoint.h"
+#include "NavNode.h"
 
 NavNode::NavNode()
 {

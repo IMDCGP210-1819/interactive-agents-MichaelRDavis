@@ -6,11 +6,11 @@
  *   
  */
 template<class Type>
-class FiniteStateMachine
+class TFiniteStateMachine
 {
 public:
 	/** Default constructor. */
-	FiniteStateMachine()
+	TFiniteStateMachine()
 		: m_Owner(nullptr)
 	{
 
@@ -19,14 +19,14 @@ public:
 	/** Initialize the owner of this state machine. 
 	*	@param Owner - Template owner to initialize.
 	*/
-	FiniteStateMachine(Type* Owner)
+	TFiniteStateMachine(Type* Owner)
 		: m_Owner(Owner)
 	{
 
 	}
 
 	/** Default constructor. */
-	~FiniteStateMachine()
+	~TFiniteStateMachine()
 	{
 
 	}

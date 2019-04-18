@@ -1,141 +1,31 @@
 #include "MiniPCH.h"
 #include "Vector.h"
 
-Vec2::Vec2()
-	: X(0.0f)
-	, Y(0.0f)
+float Vec2::Size(const sf::Vector2f& Vec)
 {
-	
+	float Length = sqrt((Vec.x * Vec.x) + (Vec.y * Vec.y));
+	return Length;
 }
 
-float Vec2::Length() const
+float Vec2::SizeSquared(const sf::Vector2f& Vec)
 {
-	return sqrt(X * X + Y * Y);
+	return 0.0f;
 }
 
-float Vec2::LengthSquared() const
+sf::Vector2f Vec2::Normlaize(const sf::Vector2f& Vec)
 {
-	return (X * X + Y * Y);
-}
-
-void Vec2::Normlaize()
-{
-	float VecLength = Length();
-	if (VecLength > std::numeric_limits<float>::epsilon())
+	float Length = Size(Vec);
+	if (Length != 0)
 	{
-		X /= VecLength;
-		Y /= VecLength;
+		return sf::Vector2f(Vec.x / Length, Vec.y / Length);
 	}
+
+	return Vec;
 }
 
-float Vec2::DotProduct(const Vec2 Vec)
+float Vec2::DotProduct(const sf::Vector2f VecA, const sf::Vector2f VecB)
 {
-	return X * Vec.X + Y * Vec.Y;
+	return VecA.x * VecB.x + VecA.y * VecB.y;
 }
 
-const Vec2& Vec2::operator/=(const Vec2& Vec)
-{
-	X /= Vec.X;
-	Y /= Vec.Y;
-	return *this;
-}
-
-bool Vec2::operator==(const Vec2& Vec) const
-{
-	return (X == Vec.X) && (Y == Vec.Y);
-}
-
-bool Vec2::operator!=(const Vec2& Vec) const
-{
-	return (X != Vec.X) || (Y != Vec.Y);
-}
-
-const Vec2& Vec2::operator+=(float Scale)
-{
-	X += Scale;
-	Y += Scale;
-	return *this;
-}
-
-const Vec2& Vec2::operator-=(float Scale)
-{
-	X -= Scale;
-	Y -= Scale;
-	return *this;
-}
-
-const Vec2& Vec2::operator/=(float Scale)
-{
-	X /= Scale;
-	Y /= Scale;
-	return *this;
-}
-
-const Vec2& Vec2::operator*=(float Scale)
-{
-	X *= Scale;
-	Y *= Scale;
-	return *this;
-}
-
-const Vec2& Vec2::operator*=(const Vec2& Vec)
-{
-	X *= Vec.X;
-	Y *= Vec.Y;
-	return *this;
-}
-
-const Vec2& Vec2::operator-=(const Vec2& Vec)
-{
-	X -= Vec.X;
-	Y -= Vec.Y;
-	return *this;
-}
-
-const Vec2& Vec2::operator+=(const Vec2& Vec)
-{
-	X += Vec.X;
-	Y += Vec.Y;
-	return *this;
-}
-
-Vec2 operator*(float Scale, const Vec2& Vec)
-{
-	Vec2 Result(Vec);
-	Result *= Scale;
-	return Result;
-}
-
-Vec2 operator*(const Vec2& Vec, float Scale)
-{
-	Vec2 Result(Vec);
-	Result *= Scale;
-	return Result;
-}
-
-Vec2 operator+(const Vec2& VecA, const Vec2& VecB)
-{
-	return Vec2(VecA.X + VecB.X, VecA.Y + VecB.Y);
-}
-
-Vec2 operator-(const Vec2& VecA, const Vec2& VecB)
-{
-	return Vec2(VecA.X - VecB.X, VecA.Y - VecB.Y);
-}
-
-Vec2 operator*(const Vec2& VecA, const Vec2& VecB)
-{
-	return Vec2(VecA.X * VecB.X, VecA.Y * VecB.Y);
-}
-
-Vec2 operator/(const Vec2& VecA, const Vec2& VecB)
-{
-	return Vec2(VecA.X / VecB.X, VecA.Y / VecB.Y);
-}
-
-Vec2::Vec2(float InX, float InY)
-	: X(InX)
-	, Y(InY)
-{
-	
-}
+sf::Vector2f Vec2::Zerovector(0.0f, 0.0f);

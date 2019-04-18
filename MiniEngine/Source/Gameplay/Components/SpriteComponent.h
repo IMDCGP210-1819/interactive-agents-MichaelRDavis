@@ -5,6 +5,11 @@
 template<class Tx, class Ty>
 class TAssetManager;
 
+class SceneNode;
+
+/**
+ * 
+ */
 class SpriteComponent : public Component
 {
 public:
@@ -14,19 +19,21 @@ public:
 	
 	void Draw(sf::RenderWindow* Window);
 
+	void LoadTexture(int SpriteID, std::string FileName);
 	void SetTexture(sf::Texture NewTexture);
 	void SetPosition(sf::Vector2f NewPosition);
 
 	sf::Texture GetTexture() const { return m_Texture; }
 	sf::Sprite GetSprite() const { return m_Sprite; }
 
-	inline TAssetManager<sf::Texture, int>* GetSpriteManager() const
+	inline std::shared_ptr<TAssetManager<sf::Texture, int>> GetSpriteManager() const
 	{
 		return m_SpriteManager;
 	}
 
 private:
-	TAssetManager<sf::Texture, int>* m_SpriteManager;
+	std::shared_ptr<TAssetManager<sf::Texture, int>> m_SpriteManager;
+	std::unique_ptr<SceneNode> m_SpriteNode;
 	sf::Texture m_Texture;
 	sf::Sprite m_Sprite;
 };

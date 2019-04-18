@@ -1,5 +1,6 @@
 #include "GamePCH.h"
 #include "AttackState.h"
+#include "Spaceship.h"
 
 void AttackState::OnEnter(Spaceship* Owner)
 {
@@ -11,6 +12,7 @@ void AttackState::OnEnter(Spaceship* Owner)
 void AttackState::OnExecute(Spaceship* Owner)
 {
 	// Fire at enemy spaceship if in range.
+	Owner->Fire();
 }
 
 void AttackState::OnExit(Spaceship* Owner)

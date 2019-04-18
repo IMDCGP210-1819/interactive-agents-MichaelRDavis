@@ -9,7 +9,7 @@ template<typename T>
 class IState;
 
 template<typename T>
-class FiniteStateMachine;
+class TFiniteStateMachine;
 
 class SpriteComponent;
 
@@ -30,15 +30,26 @@ public:
 	void Update(float DeltaTime) override;
 	void Render() override;
 
+	/** Fire projectile. */
+	void Fire();
+
+	/** Return true if we can fire right now. */
+	bool CanFire();
+
 	/** Return true if dead. */
 	inline bool IsDead() const
 	{
 		return m_Health <= 0;
 	}
 
+	inline int GetHealth() const { return m_Health; }
+	inline int GetMaxHealth() const { return m_MaxHealth; }
+	inline int GetAmmo() const { return m_Ammo; }
+	inline int GetMaxAmmo() const { return m_MaxAmmo; }
+
 private:
 	/** Spaceship AI behavior. */
-	std::unique_ptr<FiniteStateMachine<Spaceship>> m_FSM;
+	std::unique_ptr<TFiniteStateMachine<Spaceship>> m_FSM;
 
 	/** Spaceship sprite component. */
 	std::unique_ptr<SpriteComponent> m_Sprite;

@@ -25,3 +25,14 @@ std::unique_ptr<SceneNode> SceneNode::RemoveChildNode(const SceneNode& InSceneNo
 	m_ChildNodes.erase(Node);
 	return Result;
 }
+
+sf::Transform SceneNode::GetTransform() const
+{
+	sf::Transform Transform = sf::Transform::Identity;
+	for (const SceneNode* Node = this; Node != nullptr; Node = Node->m_ParentNode.get())
+	{
+		Transform = Node->getTransform() * Transform;
+	}
+
+	return Transform;
+}

@@ -13,7 +13,7 @@
 #include "GameSystems/AI/Navigation/NavGraph.h"
 #include "GameSystems/AI/Navigation/NavGrid.h"
 #include "GameSystems/AI/Navigation/NavPath.h"
-#include "GameSystems/AI/Navigation/NavPoint.h"
+#include "GameSystems/AI/Navigation/NavNode.h"
 
 #include "GameSystems/AI/Pathfinding/AStar.h"
 

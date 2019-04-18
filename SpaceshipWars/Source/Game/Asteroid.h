@@ -14,9 +14,6 @@ public:
 	/** Default constructor. */
 	Asteroid();
 
-	/**  */
-	Asteroid(int SpriteID, std::string Filename);
-
 	/** Default destructor. */
 	~Asteroid();
 

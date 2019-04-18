@@ -33,7 +33,7 @@ public:
 	inline int GetObjectID() const { return m_ObjectID; }
 
 	/** Returns this entities velocity. */
-	inline Vec2 GetVelocity() const { return m_Velocity; }
+	inline sf::Vector2f GetVelocity() const { return m_Velocity; }
 
 protected:
 	/** Name of this entity. */
@@ -43,13 +43,13 @@ protected:
 	std::shared_ptr<World> m_World;
 
 	/** Velocity of the entity. */
-	Vec2 m_Velocity;
+	sf::Vector2f m_Velocity;
 
 	/** Direction of the entity. */
-	Vec2 m_Direction;
+	sf::Vector2f m_Direction;
 
 	/** Dot vector to the directional vector. */
-	Vec2 m_DotVector;
+	sf::Vector2f m_DotVector;
 
 	/** Entity ID. */
 	int m_ObjectID;

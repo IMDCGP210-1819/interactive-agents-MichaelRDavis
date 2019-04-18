@@ -3,35 +3,17 @@
 struct Vec2 : public sf::Vector2f
 {
 public:
-	Vec2();
-	Vec2(float InX, float InY);
+	/** Length of the vector. */
+	static float Size(const sf::Vector2f& Vec);
 
-	float Length() const;
-	float LengthSquared() const;
-	void Normlaize();
-	float DotProduct(const Vec2 Vec);
+	/** Length squared of the vector. */
+	static float SizeSquared(const sf::Vector2f& Vec);
+	
+	/** Normalize the vector. */
+	static sf::Vector2f Normlaize(const sf::Vector2f& Vec);
 
-	const Vec2& operator+=(const Vec2& Vec);
-	const Vec2& operator-=(const Vec2& Vec);
-	const Vec2& operator*=(const Vec2& Vec);
-	const Vec2& operator/=(const Vec2& Vec);
+	/** Calculate the dot product of the vector. */
+	static float DotProduct(const sf::Vector2f VecA, const sf::Vector2f VecB);
 
-	const Vec2& operator+=(float Scale);
-	const Vec2& operator-=(float Scale);
-	const Vec2& operator*=(float Scale);
-	const Vec2& operator/=(float Scale);
-
-	bool operator==(const Vec2& Vec) const;
-	bool operator!=(const Vec2& Vec) const;
-
-	friend Vec2 operator*(const Vec2& Vec, float Scale);
-	friend Vec2 operator*(float Scale, const Vec2& Vec);
-
-	friend Vec2 operator+(const Vec2& VecA, const Vec2& VecB);
-	friend Vec2 operator-(const Vec2& VecA, const Vec2& VecB);
-	friend Vec2 operator*(const Vec2& VecA, const Vec2& VecB);
-	friend Vec2 operator/(const Vec2& VecA, const Vec2& VecB);
-
-	float X;
-	float Y;
+	static sf::Vector2f Zerovector;
 };

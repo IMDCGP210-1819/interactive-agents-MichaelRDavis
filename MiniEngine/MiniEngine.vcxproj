@@ -140,7 +140,7 @@
     <ClInclude Include="Source\GameSystems\AI\FSM\IState.h" />
     <ClInclude Include="Source\GameSystems\AI\Navigation\NavGrid.h" />
     <ClInclude Include="Source\GameSystems\AI\Navigation\NavPath.h" />
-    <ClInclude Include="Source\GameSystems\AI\Navigation\NavPoint.h" />
+    <ClInclude Include="Source\GameSystems\AI\Navigation\NavNode.h" />
     <ClInclude Include="Source\GameSystems\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\GameSystems\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\GameSystems\AI\Steering\SteeringBehavior.h" />
@@ -163,7 +163,8 @@
     <ClCompile Include="Source\Gameplay\EventSystem\Event.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Navigation\NavGrid.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Navigation\NavPath.cpp" />
-    <ClCompile Include="Source\GameSystems\AI\Navigation\NavPoint.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Navigation\NavNode.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Steering\SteeringBehavior.cpp" />
     <ClCompile Include="Source\Core\AppCore\Window.cpp" />
     <ClCompile Include="Source\Gameplay\GameObject\Component.cpp" />

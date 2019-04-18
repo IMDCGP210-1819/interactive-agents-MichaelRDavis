@@ -9,7 +9,7 @@ public:
 	/** Default constructor. */
 	SceneNode();
 	
-	/** Default constructor. */
+	/** Default destructor. */
 	~SceneNode();
 
 	/** Add a scene node to the list of scene nodes. 
@@ -21,6 +21,15 @@ public:
 	*	@param InSceneNode - Scene node to remove.
 	*/
 	std::unique_ptr<SceneNode> RemoveChildNode(const SceneNode& InSceneNode);
+
+	/** Returns the transform of the scene node. */
+	sf::Transform GetTransform() const;
+
+	/** Retunrs the position of the scene node. */
+	inline sf::Vector2f GetPosition() const
+	{
+		return GetTransform() * sf::Vector2f();
+	}
 
 private:
 	/** List of scene nodes. */
