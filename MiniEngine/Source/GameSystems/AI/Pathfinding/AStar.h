@@ -1,6 +1,14 @@
 #pragma once
 
 /**
+ * 
+ */
+struct AStarData
+{
+
+};
+
+/**
  *
  */
 class AStar
@@ -12,5 +20,6 @@ public:
 	/** Default destructor. */
 	~AStar();
 
+private:
 
 };

@@ -2,6 +2,9 @@
 
 #include "Gameplay/GameObject/Entity.h"
 
+class CollisionComponent;
+class SpriteComponent;
+
 /**
  * 
  */
@@ -25,10 +28,16 @@ public:
 		return m_Owner;
 	}
 
-public:
-	/** Damage applied on collision. */
-	int m_Damage;
+private:
+	/** The projectiles collision component. */
+	std::unique_ptr<CollisionComponent> m_CollisionComp;
+
+	/** The projectiles sprite component. */
+	std::unique_ptr<SpriteComponent> m_Sprite;
 
 	/** The projectiles owner. */
 	std::shared_ptr<Entity> m_Owner;
+
+	/** Damage applied on collision. */
+	int m_Damage;
 };

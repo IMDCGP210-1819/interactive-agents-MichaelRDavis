@@ -31,6 +31,7 @@ public:
 
 	}
 
+	/** Update the state machine, called every frame. */
 	void OnUpdate()
 	{
 		if (m_State)

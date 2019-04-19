@@ -161,6 +161,7 @@
     <ClCompile Include="Source\Core\Module\Game.cpp" />
     <ClCompile Include="Source\Gameplay\Components\CollisionComponent.cpp" />
     <ClCompile Include="Source\Gameplay\EventSystem\Event.cpp" />
+    <ClCompile Include="Source\GameSystems\AI\Navigation\NavGraph.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Navigation\NavGrid.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\GameSystems\AI\Navigation\NavNode.cpp" />

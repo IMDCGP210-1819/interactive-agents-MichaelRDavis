@@ -4,7 +4,7 @@ class NavPath;
 
 /**
  * Represents a single node in the navigation graph.
- * Contains a list of adjacent nodes.
+ * Contains a list of adjacent navigation paths.
  */
 class NavNode
 {
@@ -15,13 +15,13 @@ public:
 	/** Default destructor. */
 	~NavNode();
 
-	/** Returns the adjacent list of nodes. */
-	inline std::vector<NavNode*> GetNodeList() const
+	/** Returns the list of adjacent of navigation paths for this node. */
+	inline std::vector<NavPath*> GetPathList() const
 	{
 		return m_NodeList;
 	}
 
 private:
-	/** List of adjacent nodes. */
-	std::vector<NavNode*> m_NodeList;
+	/** List of adjacent navigation paths. */
+	std::vector<NavPath*> m_PathList;
 };
