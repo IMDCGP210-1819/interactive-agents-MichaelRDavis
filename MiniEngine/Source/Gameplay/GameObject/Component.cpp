@@ -11,3 +11,13 @@ Component::~Component()
 
 }
 
+void Component::Update(float DeltaTime)
+{
+
+}
+
+void Component::SetOwner(std::shared_ptr<Entity> NewOwner)
+{
+	m_Owner = NewOwner;
+}
+

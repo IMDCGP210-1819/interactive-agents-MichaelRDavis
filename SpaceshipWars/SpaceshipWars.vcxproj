@@ -90,6 +90,7 @@
     <ClCompile Include="Source\Game\PatrolState.cpp" />
     <ClCompile Include="Source\Game\Projectile.cpp" />
     <ClCompile Include="Source\Game\Spaceship.cpp" />
+    <ClCompile Include="Source\Game\SpaceshipWars.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +101,7 @@
     <ClInclude Include="Source\Game\PatrolState.h" />
     <ClInclude Include="Source\Game\Projectile.h" />
     <ClInclude Include="Source\Game\Spaceship.h" />
+    <ClInclude Include="Source\Game\SpaceshipWars.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

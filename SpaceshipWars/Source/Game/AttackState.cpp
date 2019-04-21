@@ -7,6 +7,7 @@ void AttackState::OnEnter(Spaceship* Owner)
 	// Check if enemy spaceship is within range.
 	// Check if spaceship has ammo.
 	// Check if spaceship is not dead.
+	// Move toward enemy spaceship.
 }
 
 void AttackState::OnExecute(Spaceship* Owner)
@@ -20,4 +21,5 @@ void AttackState::OnExit(Spaceship* Owner)
 	// If out of ammo leave this state.
 	// If dead leave this state.
 	// If out of range exit state.
+	// Move away from enemy spaceship if low on health or ammo.
 }

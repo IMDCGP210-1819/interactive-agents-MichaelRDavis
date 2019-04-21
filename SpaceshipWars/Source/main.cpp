@@ -8,6 +8,8 @@ int main()
 {
 	std::unique_ptr<App> GameApp = std::make_unique<App>();
 
+
+
 	std::unique_ptr<SpriteComponent> Background = std::make_unique<SpriteComponent>(0, "Content/Background.png");
 
 	if (GameApp)

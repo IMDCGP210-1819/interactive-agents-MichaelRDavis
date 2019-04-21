@@ -3,7 +3,7 @@
 class NavNode;
 
 /**
- * Defines a navigation path connecting to nodes.
+ * Defines a navigation path connecting two nodes.
  */
 class NavPath
 {
