@@ -5,7 +5,7 @@ class NavNode;
 class NavGraph;
 
 /**
- * 
+ * Navigation node data
  */
 struct AStarData
 {
@@ -14,15 +14,19 @@ struct AStarData
 	{
 		ParentPath = nullptr;
 		Heuristic = 0.0f;
+		Distance = 0.0f;
 		IsOpenSet = false;
 		IsClosedSet = false;
 	}
 
-	/**  */
+	/** Pointer the parent path node. */
 	const NavPath* ParentPath;
 
 	/**  */
 	float Heuristic;
+
+	/** Distance from the actual start node. */
+	float Distance;
 
 	/** True if node is not already considered. */
 	bool IsOpenSet;
@@ -48,8 +52,4 @@ public:
 
 	/** Searches a given graph for a path, returns true if a path is found. */
 	bool Search(const NavGraph& Graph, const NavNode* StartNode, const NavNode* EndNode);
-
-private:
-	/**  */
-	std::unordered_map<const NavNode*, AStarData> m_AStarMap;
 };

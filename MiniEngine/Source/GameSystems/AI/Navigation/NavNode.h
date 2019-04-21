@@ -16,9 +16,9 @@ public:
 	~NavNode();
 
 	/** Returns the list of adjacent of navigation paths for this node. */
-	inline std::vector<NavPath*> GetPathList() const
+	std::vector<NavPath*> GetPathList() const
 	{
-		return m_NodeList;
+		return m_PathList;
 	}
 
 private:

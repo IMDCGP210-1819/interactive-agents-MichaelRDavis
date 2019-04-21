@@ -90,6 +90,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>MiniPCH.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)MiniEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
