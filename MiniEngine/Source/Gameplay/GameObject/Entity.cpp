@@ -17,7 +17,7 @@ void Entity::Initialize()
 {
 	if (m_IsRegistered)
 	{
-		m_World->GetEntities().push_back(this);
+		
 	}
 }
 

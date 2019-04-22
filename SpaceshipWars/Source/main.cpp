@@ -3,13 +3,13 @@
 
 #include "Core/AppCore/App.h"
 #include "Game/Asteroid.h"
+#include "Core/Module/Game.h"
 
 int main()
 {
 	std::unique_ptr<App> GameApp = std::make_unique<App>();
 
-
-
+	std::unique_ptr<Game> GameInst = std::make_unique<Game>();
 	std::unique_ptr<SpriteComponent> Background = std::make_unique<SpriteComponent>(0, "Content/Background.png");
 
 	if (GameApp)
@@ -23,7 +23,7 @@ int main()
 
 				GameApp->Clear();
 
-				Background->Draw(GameApp->GetWindow()->GetWindow());
+				//Background->Draw(GameApp->GetWindow()->GetWindow());
 
 				GameApp->DisplayWindow();
 			}

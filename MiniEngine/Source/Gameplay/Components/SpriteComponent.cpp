@@ -21,9 +21,9 @@ SpriteComponent::~SpriteComponent()
 
 }
 
-void SpriteComponent::Draw(sf::RenderWindow* Window)
+void SpriteComponent::Draw()
 {
-	Window->draw(m_Sprite);
+	//m_SpriteNode->Draw(m_Sprite, sf::RenderStates)
 }
 
 void SpriteComponent::LoadTexture(int SpriteID, std::string FileName)

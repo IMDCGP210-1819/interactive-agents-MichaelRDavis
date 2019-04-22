@@ -20,7 +20,7 @@ public:
 	/** Remove a scene node from the list of scene nodes. 
 	*	@param InSceneNode - Scene node to remove.
 	*/
-	std::unique_ptr<SceneNode> RemoveChildNode(const SceneNode& InSceneNode);
+	std::shared_ptr<SceneNode> RemoveChildNode(const SceneNode& InSceneNode);
 
 	/** Returns the transform of the scene node. */
 	sf::Transform GetTransform() const;
@@ -31,9 +31,19 @@ public:
 		return GetTransform() * sf::Vector2f();
 	}
 
+	/**  */
+	void Draw(sf::RenderTarget& Target, sf::RenderStates States) const;
+
+private:
+	/**  */
+	void DrawCurrentNode(sf::RenderTarget& Target, sf::RenderStates States) const;
+
+	/**  */
+	void DrawChildNodes(sf::RenderTarget& Target, sf::RenderStates States) const;
+
 private:
 	/** List of scene nodes. */
-	std::vector<std::unique_ptr<SceneNode>> m_ChildNodes;
+	std::vector<std::shared_ptr<SceneNode>> m_ChildNodes;
 
 	/** Parent scene node. */
 	std::unique_ptr<SceneNode> m_ParentNode;

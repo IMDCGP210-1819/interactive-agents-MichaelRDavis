@@ -25,3 +25,4 @@
 #include <queue>
 #include <typeindex>
 #include <unordered_map>
+#include <algorithm>

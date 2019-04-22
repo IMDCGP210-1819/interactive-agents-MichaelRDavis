@@ -17,7 +17,7 @@ public:
 	SpriteComponent(int SpriteID, std::string Filename);
 	~SpriteComponent();
 	
-	void Draw(sf::RenderWindow* Window);
+	void Draw();
 
 	void LoadTexture(int SpriteID, std::string FileName);
 	void SetTexture(sf::Texture NewTexture);
