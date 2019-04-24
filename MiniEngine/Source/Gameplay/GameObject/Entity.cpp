@@ -5,7 +5,7 @@
 Entity::Entity()
 	: m_IsRegistered(true)
 {
-	m_World = std::make_shared<World>();
+	
 }
 
 Entity::~Entity()

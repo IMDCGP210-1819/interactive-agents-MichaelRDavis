@@ -32,30 +32,12 @@ public:
 	/** Returns the entities ID. */
 	inline int GetObjectID() const { return m_ObjectID; }
 
-	/** Returns this entities velocity. */
-	inline sf::Vector2f GetVelocity() const { return m_Velocity; }
-
-	/**  */
-	inline const sf::Vector2f& GetPosition() const { return m_Position; }
-
 protected:
 	/** Name of this entity. */
 	std::string m_Typename;
 
 	/** Pointer the game world. */
 	std::shared_ptr<World> m_World;
-
-	/** Velocity of the entity. */
-	sf::Vector2f m_Velocity;
-
-	/** Direction of the entity. */
-	sf::Vector2f m_Direction;
-
-	/** Dot vector to the directional vector. */
-	sf::Vector2f m_DotVector;
-
-	/**  */
-	sf::Vector2f m_Position;
 
 	/** Entity ID. */
 	int m_ObjectID;

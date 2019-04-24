@@ -30,9 +30,6 @@ public:
 		return m_Radius;
 	}
 
-	/** Returns the component location. */
-	const sf::Vector2f& GetComponentLocation() const;
-
 private:
 	/** Collision component radius. */
 	float m_Radius;

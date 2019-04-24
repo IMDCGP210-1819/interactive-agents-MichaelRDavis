@@ -1,24 +1,5 @@
 #pragma once
 
-#define SFML_STATIC
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#ifdef _DEBUG
-#pragma comment(lib, "sfml-graphics-s-d.lib")
-#pragma comment(lib, "sfml-window-s-d.lib")
-#pragma comment(lib, "sfml-system-s-d.lib")
-#pragma comment(lib, "opengl32.lib")
-#pragma comment(lib, "winmm.lib")
-#pragma comment(lib, "MiniEngine.lib")
-#else
-#pragma comment(lib, "sfml-graphics-s.lib")
-#pragma comment(lib, "sfml-window-s.lib")
-#pragma comment(lib, "sfml-system-s.lib")
-#pragma comment(lib, "opengl32.lib")
-#pragma comment(lib, "winmm.lib")
-#pragma comment(lib, "MiniEngine.lib")
-#endif
-
 #include <memory>
 #include <list>
 #include <vector>

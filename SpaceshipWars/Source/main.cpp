@@ -17,7 +17,7 @@ int main()
 		GameApp->AppInit();
 		try
 		{
-			while (GameApp->IsWindowOpen())
+			while (true)
 			{
 				GameApp->ProcessEvents();
 

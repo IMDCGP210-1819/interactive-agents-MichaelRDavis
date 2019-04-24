@@ -22,8 +22,7 @@ void Asteroid::Initialize()
 
 void Asteroid::Update(float DelaTime)
 {
-	sf::Vector2f Steering = Vec2::Zerovector;
-	sf::Vector2f Acceleration = Steering / m_Mass;
+
 }
 
 void Asteroid::Render()

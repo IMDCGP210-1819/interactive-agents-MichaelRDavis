@@ -35,16 +35,7 @@ public:
 		return m_Window;
 	}
 
-	/** Return true if the window is currently open. */
-	inline bool IsWindowOpen() const
-	{
-		return m_Window->GetWindow()->isOpen();
-	}
-
 private:
 	/** Pointer to the application window. */
 	std::shared_ptr<Window> m_Window;
-
-	/** Handle to the system time. */
-	sf::Clock m_Clock;
 };
