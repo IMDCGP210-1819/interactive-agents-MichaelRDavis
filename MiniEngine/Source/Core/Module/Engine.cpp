@@ -15,7 +15,7 @@ Engine::~Engine()
 
 }
 
-void Engine::Update()
+void Engine::Update(float DeltaTime)
 {
 	m_App->ProcessEvents();
 }

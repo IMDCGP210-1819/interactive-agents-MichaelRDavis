@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Core\Math\Vector.h" />
     <ClInclude Include="Source\Core\Module\Engine.h" />
     <ClInclude Include="Source\Core\Module\Game.h" />
     <ClInclude Include="Source\Gameplay\Components\CollisionComponent.h" />
@@ -151,12 +152,12 @@
     <ClInclude Include="Source\Core\AppCore\App.h" />
     <ClInclude Include="Source\Gameplay\Components\SpriteComponent.h" />
     <ClInclude Include="Source\Gameplay\World\World.h" />
-    <ClInclude Include="Source\Core\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
     <ClInclude Include="Source\Rendering\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\Math\Vector.cpp" />
     <ClCompile Include="Source\Core\Module\Engine.cpp" />
     <ClCompile Include="Source\Core\Module\Game.cpp" />
     <ClCompile Include="Source\Gameplay\Components\CollisionComponent.cpp" />
@@ -173,7 +174,6 @@
     <ClCompile Include="Source\Core\AppCore\App.cpp" />
     <ClCompile Include="Source\Gameplay\Components\SpriteComponent.cpp" />
     <ClCompile Include="Source\Gameplay\World\World.cpp" />
-    <ClCompile Include="Source\Core\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
     <ClCompile Include="Source\Rendering\Renderer.cpp" />
   </ItemGroup>

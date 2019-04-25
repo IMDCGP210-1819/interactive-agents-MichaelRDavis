@@ -24,7 +24,7 @@ void Spaceship::Update(float DeltaTime)
 	m_FSM->OnUpdate();
 }
 
-void Spaceship::Render()
+void Spaceship::Draw(SDL_Renderer* Renderer)
 {
 
 }

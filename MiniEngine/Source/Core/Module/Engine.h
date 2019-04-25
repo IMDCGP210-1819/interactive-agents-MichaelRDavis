@@ -13,9 +13,9 @@ public:
 	virtual ~Engine();
 
 	/** Update everything, called once per frame. */
-	virtual void Update();
+	virtual void Update(float DeltaTime);
 
-private:
+protected:
 	/** Pointer to the core application. */
 	std::unique_ptr<App> m_App;
 

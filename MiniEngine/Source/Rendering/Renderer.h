@@ -15,6 +15,11 @@ public:
 
 	void ClearBuffer();
 
+	inline SDL_Renderer* GetSDLRenderer() const
+	{
+		return m_Renderer;
+	}
+
 private:
 	SDL_Renderer* m_Renderer;
 };

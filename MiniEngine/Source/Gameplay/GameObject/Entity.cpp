@@ -13,12 +13,18 @@ Entity::~Entity()
 
 }
 
-void Entity::Initialize()
+void Entity::AddToWorld(std::shared_ptr<World> WorldObject)
 {
 	if (m_IsRegistered)
 	{
-		
+		m_World = WorldObject;
+		m_World->AttachEntity(this);
 	}
+}
+
+void Entity::Initialize()
+{
+
 }
 
 void Entity::Update(float DeltaTime)
@@ -26,7 +32,7 @@ void Entity::Update(float DeltaTime)
 
 }
 
-void Entity::Render()
+void Entity::Draw(SDL_Renderer* Renderer)
 {
 
 }

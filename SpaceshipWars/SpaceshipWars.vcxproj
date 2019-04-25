@@ -89,6 +89,7 @@
     <ClCompile Include="Source\GamePCH.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\AttackState.cpp" />
+    <ClCompile Include="Source\Game\Background.cpp" />
     <ClCompile Include="Source\Game\DeathState.cpp" />
     <ClCompile Include="Source\Game\PatrolState.cpp" />
     <ClCompile Include="Source\Game\Projectile.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="Source\GamePCH.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
     <ClInclude Include="Source\Game\AttackState.h" />
+    <ClInclude Include="Source\Game\Background.h" />
     <ClInclude Include="Source\Game\DeathState.h" />
     <ClInclude Include="Source\Game\PatrolState.h" />
     <ClInclude Include="Source\Game\Projectile.h" />

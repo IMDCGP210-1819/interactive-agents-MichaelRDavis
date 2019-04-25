@@ -20,7 +20,7 @@ public:
 	// Entity interface
 	void Initialize() override;
 	void Update(float DeltaTime) override;
-	void Render() override;
+	void Draw(SDL_Renderer* Renderer) override;
 
 private:
 	/** Asteroid AI driven behavior. */

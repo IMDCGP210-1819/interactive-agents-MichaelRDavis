@@ -17,6 +17,9 @@ public:
 	/** Default Entity destructor. */
 	virtual ~Entity();
 
+	/** Add to world */
+	void AddToWorld(std::shared_ptr<World> WorldObject);
+
 	/** Initialize the entity. */
 	virtual void Initialize();
 
@@ -24,7 +27,7 @@ public:
 	virtual void Update(float DeltaTime);
 
 	/** Submit this entity to the renderer. */
-	virtual void Render();
+	virtual void Draw(SDL_Renderer* Renderer);
 
 	/** Set the entities ID. */
 	void SetObjectID(int NewObjectID);

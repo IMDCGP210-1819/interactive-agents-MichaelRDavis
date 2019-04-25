@@ -25,7 +25,7 @@ void Asteroid::Update(float DelaTime)
 
 }
 
-void Asteroid::Render()
+void Asteroid::Draw(SDL_Renderer* Renderer)
 {
 
 }
