@@ -18,3 +18,5 @@
 #include "GameSystems/AI/Pathfinding/AStar.h"
 
 #include "GameSystems/AI/Steering/SteeringBehavior.h"
+
+#include "Core/Module/Game.h"

@@ -16,6 +16,9 @@ public:
 	/** Default destructor. */
 	virtual ~Game();
 
+	/** Update the game, called once per frame. */
+	virtual void Update() override;
+
 	/** Returns a pointer to the world object. */
 	inline std::shared_ptr<World> GetWorld() const
 	{

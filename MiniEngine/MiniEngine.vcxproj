@@ -154,6 +154,7 @@
     <ClInclude Include="Source\Core\Math\Vector.h" />
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
+    <ClInclude Include="Source\Rendering\Renderer.h" />
     <ClInclude Include="Source\Resource\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,7 @@
     <ClCompile Include="Source\Gameplay\World\World.cpp" />
     <ClCompile Include="Source\Core\Math\Vector.cpp" />
     <ClCompile Include="Source\MiniPCH.cpp" />
+    <ClCompile Include="Source\Rendering\Renderer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

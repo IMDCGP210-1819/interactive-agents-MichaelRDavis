@@ -1,5 +1,8 @@
 #pragma once
 
+#include <SDL.h>
+#undef main
+
 #include <memory>
 #include <list>
 #include <vector>
@@ -9,3 +12,4 @@
 #include <typeindex>
 #include <unordered_map>
 #include <algorithm>
+#include <cstdint>

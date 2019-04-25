@@ -3,12 +3,12 @@
 
 App::App()
 {
-	
+	AppInit();
 }
 
 App::~App()
 {
-
+	AppExit();
 }
 
 void App::AppInit()
@@ -23,15 +23,14 @@ void App::AppExit()
 
 void App::ProcessEvents()
 {
-
-}
-
-void App::DisplayWindow()
-{
-	
-}
-
-void App::Clear()
-{
-	
+	SDL_Event Event;
+	while (SDL_PollEvent(&Event))
+	{
+		switch (Event.type)
+		{
+		case SDL_QUIT:
+			AppExit();
+			break;
+		}
+	}
 }

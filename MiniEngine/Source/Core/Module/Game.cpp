@@ -3,6 +3,7 @@
 #include "Gameplay/World/World.h"
 
 Game::Game()
+	: Engine()
 {
 	m_World = std::make_shared<World>();
 }
@@ -10,4 +11,9 @@ Game::Game()
 Game::~Game()
 {
 
+}
+
+void Game::Update()
+{
+	Engine::Update();
 }

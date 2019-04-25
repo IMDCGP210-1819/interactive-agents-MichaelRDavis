@@ -13,6 +13,8 @@ void PatrolState::OnExecute(Spaceship* Owner)
 
 void PatrolState::OnExit(Spaceship* Owner)
 {
-	// Exit if dead
+	// Exit if spaceship is in range.
+	// Exit if out of ammo.
+	// Exit if dead.
 }
 

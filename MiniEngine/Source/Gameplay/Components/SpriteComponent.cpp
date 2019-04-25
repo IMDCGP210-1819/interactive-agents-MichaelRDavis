@@ -17,4 +17,13 @@ SpriteComponent::~SpriteComponent()
 
 }
 
+void SpriteComponent::Draw(SDL_Renderer* Renderer)
+{
+
+}
+
+void SpriteComponent::SetTexture(SDL_Texture* NewTexture)
+{
+
+}
 
