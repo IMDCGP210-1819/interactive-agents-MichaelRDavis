@@ -9,7 +9,6 @@ class SpriteComponent : public Component
 {
 public:
 	SpriteComponent();
-	SpriteComponent(int SpriteID, std::string Filename);
 	~SpriteComponent();
 
 	void Draw(SDL_Renderer* Renderer);

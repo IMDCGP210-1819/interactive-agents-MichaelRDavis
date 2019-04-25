@@ -155,7 +155,6 @@
     <ClInclude Include="Source\MiniEngine.h" />
     <ClInclude Include="Source\MiniPCH.h" />
     <ClInclude Include="Source\Rendering\Renderer.h" />
-    <ClInclude Include="Source\Resource\ResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\Module\Engine.cpp" />
