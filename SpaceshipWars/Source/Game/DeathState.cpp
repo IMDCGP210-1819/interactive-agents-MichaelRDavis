@@ -1,4 +1,4 @@
-#include "GamePCH.h"
+#include "stdafx.h"
 #include "DeathState.h"
 
 void DeathState::OnEnter(Spaceship* Owner)

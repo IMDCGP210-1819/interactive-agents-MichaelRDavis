@@ -1,9 +1,7 @@
 #pragma once
 
-#include "Gameplay/GameObject/Entity.h"
-#include "GameSystems/AI/Steering/SteeringBehavior.h"
-
-class SpriteComponent;
+#include "GameObject/Entity.h"
+#include "AI/Steering/SteeringBehavior.h"
 
 /**
  * 
@@ -25,7 +23,4 @@ public:
 private:
 	/** Asteroid AI driven behavior. */
 	std::unique_ptr<SteeringBehavior> m_Behavior;
-
-	/** Asteroid sprite component. */
-	std::unique_ptr<SpriteComponent> m_Sprite;
 };

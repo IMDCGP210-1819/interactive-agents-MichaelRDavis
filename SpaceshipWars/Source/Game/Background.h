@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Gameplay/GameObject/Entity.h"
+#include "GameObject/Entity.h"
 
 class SpriteComponent;
 
@@ -12,7 +12,4 @@ public:
 	~Background();
 
 	virtual void Initialize() override;
-
-private:
-	std::unique_ptr<SpriteComponent> m_Sprite;
 };

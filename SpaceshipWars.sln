@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceshipWars", "SpaceshipWars\SpaceshipWars.vcxproj", "{20BF114B-6387-48C5-8A8D-96B09AEFB1E5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18} = {CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiniEngine", "MiniEngine\MiniEngine.vcxproj", "{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +19,6 @@ Global
 		{20BF114B-6387-48C5-8A8D-96B09AEFB1E5}.Release|x64.ActiveCfg = Release|x64
 		{20BF114B-6387-48C5-8A8D-96B09AEFB1E5}.Release|x64.Build.0 = Release|x64
 		{20BF114B-6387-48C5-8A8D-96B09AEFB1E5}.Release|x86.ActiveCfg = Release|x64
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Debug|x64.ActiveCfg = Debug|x64
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Debug|x64.Build.0 = Debug|x64
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Debug|x86.ActiveCfg = Debug|Win32
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Debug|x86.Build.0 = Debug|Win32
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Release|x64.ActiveCfg = Release|x64
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Release|x64.Build.0 = Release|x64
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Release|x86.ActiveCfg = Release|Win32
-		{CE70BDEF-205C-4D6F-9F1D-B6B1C4949A18}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

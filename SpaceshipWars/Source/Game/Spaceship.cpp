@@ -1,12 +1,10 @@
-#include "GamePCH.h"
+#include "stdafx.h"
 #include "Spaceship.h"
-#include "GameSystems/AI/FSM/FiniteStateMachine.h"
-#include "Gameplay/Components/SpriteComponent.h"
+#include "AI/FSM/FiniteStateMachine.h"
 
 Spaceship::Spaceship()
 {
 	m_FSM = std::make_unique<TFiniteStateMachine<Spaceship>>(this);
-	m_Sprite = std::make_unique<SpriteComponent>();
 }
 
 Spaceship::~Spaceship()

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Gameplay/GameObject/Entity.h"
-#include "GameSystems/AI/FSM/IState.h"
+#include "GameObject/Entity.h"
+#include "AI/FSM/IState.h"
 
 #include "Game/Projectile.h"
 
@@ -50,9 +50,6 @@ public:
 private:
 	/** Spaceship AI behavior. */
 	std::unique_ptr<TFiniteStateMachine<Spaceship>> m_FSM;
-
-	/** Spaceship sprite component. */
-	std::unique_ptr<SpriteComponent> m_Sprite;
 
 	/** Projectile class to fire. */
 	std::unique_ptr<Projectile> m_Bullet;

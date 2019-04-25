@@ -1,4 +1,4 @@
-#include "GamePCH.h"
+#include "stdafx.h"
 #include "AttackState.h"
 #include "Spaceship.h"
 

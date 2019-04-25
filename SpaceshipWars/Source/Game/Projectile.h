@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Gameplay/GameObject/Entity.h"
+#include "GameObject/Entity.h"
 
 class CollisionComponent;
 class SpriteComponent;
@@ -29,12 +29,6 @@ public:
 	}
 
 private:
-	/** The projectiles collision component. */
-	std::unique_ptr<CollisionComponent> m_CollisionComp;
-
-	/** The projectiles sprite component. */
-	std::unique_ptr<SpriteComponent> m_Sprite;
-
 	/** The projectiles owner. */
 	std::shared_ptr<Entity> m_Owner;
 

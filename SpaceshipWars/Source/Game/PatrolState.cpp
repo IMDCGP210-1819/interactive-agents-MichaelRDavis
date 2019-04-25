@@ -1,4 +1,4 @@
-#include "GamePCH.h"
+#include "stdafx.h"
 #include "PatrolState.h"
 
 void PatrolState::OnEnter(Spaceship* Owner)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameSystems/AI/FSM/IState.h"
+#include "AI/FSM/IState.h"
 
 class Spaceship;
 
