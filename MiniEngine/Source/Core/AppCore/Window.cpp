@@ -33,6 +33,10 @@ void Window::InitializeWindow()
 	{
 		std::cout << "Could not create window: " << SDL_GetError() << std::endl;
 	}
+
+	SDL_SetWindowFullscreen(m_Window, 0);
+	SDL_SetWindowBordered(m_Window, SDL_TRUE);
+	SDL_MaximizeWindow(m_Window);
 }
 
 void Window::DestroyWindow()
