@@ -7,7 +7,7 @@ int main()
 	try
 	{
 		app->Startup();
-		while (true)
+		while (app->GetIsRunning())
 		{
 
 		}

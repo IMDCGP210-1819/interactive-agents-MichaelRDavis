@@ -7,6 +7,7 @@ AIApp::AIApp()
 	m_appTitle = "Spaceship Wars";
 	m_width = 0;
 	m_height = 0;
+	m_isRunning = true;
 }
 
 AIApp::~AIApp()
@@ -41,4 +42,19 @@ void AIApp::Shutdown()
 {
 	SDL_DestroyWindow(m_window);
 	SDL_Quit();
+}
+
+void AIApp::HandleMessages()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event))
+	{
+		switch (event.type)
+		{
+		case SDL_QUIT:
+			Shutdown();
+			m_isRunning = false;
+			break;
+		}
+	}
 }

@@ -18,6 +18,15 @@ public:
 	/**  */
 	void Shutdown();
 
+	/**  */
+	void HandleMessages();;
+
+	/**  */
+	inline bool GetIsRunning() const
+	{
+		return m_isRunning;
+	}
+
 private:
 	/**  */
 	SDL_Window* m_window;
@@ -30,4 +39,7 @@ private:
 
 	/**  */
 	int32_t m_height;
+
+	/**  */
+	bool m_isRunning;
 };
