@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "AIApp.h"
+#include "GameObject/World.h"
 
 AIApp::AIApp()
 {
 	m_window = nullptr;
+	m_renderer = nullptr;
 	m_appTitle = "Spaceship Wars";
 	m_width = 0;
 	m_height = 0;
@@ -13,6 +15,7 @@ AIApp::AIApp()
 AIApp::~AIApp()
 {
 	m_window = nullptr;
+	m_renderer = nullptr;
 }
 
 void AIApp::Startup()
@@ -36,12 +39,29 @@ void AIApp::Startup()
 	{
 		std::cout << "Could not create window: " << SDL_GetError() << std::endl;
 	}
+
+	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
+
+	m_world = std::make_unique<World>(m_renderer);
+	if (m_world)
+	{
+		m_world->Initialize();
+	}
 }
 
 void AIApp::Shutdown()
 {
+	SDL_DestroyRenderer(m_renderer);
 	SDL_DestroyWindow(m_window);
 	SDL_Quit();
+}
+
+void AIApp::Update()
+{
+	float deltaTime = SDL_GetTicks();
+
+	HandleMessages();
+	m_world->Update(deltaTime);
 }
 
 void AIApp::HandleMessages()
@@ -57,4 +77,22 @@ void AIApp::HandleMessages()
 			break;
 		}
 	}
+}
+
+void AIApp::Render()
+{
+	Clear();
+	m_world->Draw();
+	SwapBuffers();
+}
+
+void AIApp::Clear()
+{
+	SDL_RenderClear(m_renderer);
+	SDL_SetRenderDrawColor(m_renderer, 100, 149, 237, 255);
+}
+
+void AIApp::SwapBuffers()
+{
+	SDL_RenderPresent(m_renderer);
 }

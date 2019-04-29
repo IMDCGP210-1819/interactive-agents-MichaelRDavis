@@ -1,5 +1,7 @@
 #pragma once
 
+class World;
+
 /**
  * 
  */
@@ -19,7 +21,19 @@ public:
 	void Shutdown();
 
 	/**  */
-	void HandleMessages();;
+	void Update();
+
+	/**  */
+	void HandleMessages();
+
+	/**  */
+	void Render();
+
+	/**  */
+	void Clear();
+
+	/**  */
+	void SwapBuffers();
 
 	/**  */
 	inline bool GetIsRunning() const
@@ -30,6 +44,12 @@ public:
 private:
 	/**  */
 	SDL_Window* m_window;
+
+	/**  */
+	SDL_Renderer* m_renderer;
+
+	/**  */
+	std::unique_ptr<World> m_world;
 
 	/**  */
 	std::string m_appTitle;

@@ -9,7 +9,8 @@ int main()
 		app->Startup();
 		while (app->GetIsRunning())
 		{
-
+			app->Update();
+			app->Render();
 		}
 		app->Shutdown();
 	}
