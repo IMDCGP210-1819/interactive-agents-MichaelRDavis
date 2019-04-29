@@ -1,19 +1,22 @@
 #include "stdafx.h"
-
-#include "Game/Background.h"
+#include "App/AIApp.h"
 
 int main()
 {
+	std::unique_ptr<AIApp> app = std::make_unique<AIApp>();
 	try
 	{
+		app->Startup();
 		while (true)
 		{
 
 		}
+		app->Shutdown();
 	}
 	catch (const std::exception& exception)
 	{
 		std::cout << exception.what() << std::endl;
+		app->Shutdown();
 	}
 
 	return 0;
