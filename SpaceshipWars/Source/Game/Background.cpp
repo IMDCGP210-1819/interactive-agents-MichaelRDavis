@@ -27,6 +27,7 @@ void Background::CreateTexture(const std::string& filePath)
 	{
 		std::cout << "Failed to create texture for " << filePath.c_str() << std::endl;
 	}
+
 }
 
 void Background::Draw()
@@ -38,6 +39,8 @@ void Background::Draw()
 		rect.h = m_texHeight;
 		rect.x = rect.w / 2;
 		rect.y = rect.h / 2;
+
+		SDL_QueryTexture(m_texture, nullptr, nullptr, &rect.w, &rect.h);
 
 		SDL_RenderCopyEx(
 			m_renderer,
