@@ -32,6 +32,7 @@ bool AStar::Search(const NavGraph& Graph, const NavNode* StartNode, const NavNod
 		for (auto Path : CurrentNode->GetPathList())
 		{
 			const NavNode* NextNode = Path->GetToNode();
+			AStarData& data = AStarMap[NextNode];
 		}
 
 	} while (CurrentNode != EndNode);

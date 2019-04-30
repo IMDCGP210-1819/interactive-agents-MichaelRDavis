@@ -30,6 +30,9 @@ public:
 	inline int GetObjectID() const { return m_ObjectID; }
 
 protected:
+	/** Texture for this entity. */
+	SDL_Texture* m_texture;
+
 	/** Name of this entity. */
 	std::string m_Typename;
 

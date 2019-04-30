@@ -10,8 +10,3 @@ NavGrid::~NavGrid()
 {
 
 }
-
-void NavGrid::DrawGrid()
-{
-
-}

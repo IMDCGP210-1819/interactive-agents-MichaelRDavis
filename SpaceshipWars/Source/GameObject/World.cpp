@@ -2,12 +2,14 @@
 #include "World.h"
 #include "Entity.h"
 #include "Game/Background.h"
+#include "AI/Navigation/NavGrid.h"
 
 World::World(SDL_Renderer* renderer)
 {
 	m_renderer = renderer;
 	m_background = std::make_unique<Background>(m_renderer);
 	m_background->CreateTexture("Content/Background.png");
+	m_grid = std::make_unique<NavGrid>();
 }
 
 World::~World()

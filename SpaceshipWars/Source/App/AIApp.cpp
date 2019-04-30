@@ -101,7 +101,6 @@ void AIApp::Render()
 void AIApp::Clear()
 {
 	SDL_RenderClear(m_renderer);
-	//SDL_SetRenderDrawColor(m_renderer, 100, 149, 237, 255);
 }
 
 void AIApp::SwapBuffers()

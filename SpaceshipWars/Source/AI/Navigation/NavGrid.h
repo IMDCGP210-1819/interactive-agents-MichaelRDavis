@@ -13,13 +13,7 @@ public:
 	~NavGrid();
 
 	/** Draw the grid. */
-	void DrawGrid();
-
-	/** Grid width. */
-	float m_GridWidth;
-
-	/** Grid height. */
-	float m_GridHeight;
+	void DrawGrid(SDL_Renderer* renderer);
 
 	/** Number of grid cells in the X axis. */
 	int m_GridsX;

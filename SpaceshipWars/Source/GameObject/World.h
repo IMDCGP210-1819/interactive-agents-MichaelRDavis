@@ -2,6 +2,8 @@
 
 class Entity;
 class Background;
+class NavGrid;
+class Spaceship;
 
 class World
 {
@@ -27,6 +29,15 @@ private:
 
 	/**  */
 	std::unique_ptr<Background> m_background;
+
+	/**  */
+	std::unique_ptr<Spaceship> m_mantis;
+
+	/**  */
+	std::unique_ptr<Spaceship> m_scarab;
+
+	/**  */
+	std::unique_ptr<NavGrid> m_grid;
 
 	/**  */
 	std::vector<Entity*> m_entityList;
