@@ -40,7 +40,19 @@ void AIApp::Startup()
 		std::cout << "Could not create window: " << SDL_GetError() << std::endl;
 	}
 
+	SDL_SetWindowBordered(m_window, SDL_TRUE);
+	SDL_MaximizeWindow(m_window);
+
 	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
+	if (m_renderer == nullptr)
+	{
+		std::cout << "Failed to create renderer: " << SDL_GetError() << std::endl;
+	}
+
+	if (IMG_Init(IMG_INIT_PNG) == 0)
+	{
+		std::cout << "Unable to initialize SDL_image: " << SDL_GetError() << std::endl;
+	}
 
 	m_world = std::make_unique<World>(m_renderer);
 	if (m_world)
@@ -89,7 +101,7 @@ void AIApp::Render()
 void AIApp::Clear()
 {
 	SDL_RenderClear(m_renderer);
-	SDL_SetRenderDrawColor(m_renderer, 100, 149, 237, 255);
+	//SDL_SetRenderDrawColor(m_renderer, 100, 149, 237, 255);
 }
 
 void AIApp::SwapBuffers()

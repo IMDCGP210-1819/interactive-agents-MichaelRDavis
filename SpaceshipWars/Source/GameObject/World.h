@@ -1,6 +1,7 @@
 #pragma once
 
 class Entity;
+class Background;
 
 class World
 {
@@ -23,6 +24,9 @@ public:
 private:
 	/**  */
 	SDL_Renderer* m_renderer;
+
+	/**  */
+	std::unique_ptr<Background> m_background;
 
 	/**  */
 	std::vector<Entity*> m_entityList;

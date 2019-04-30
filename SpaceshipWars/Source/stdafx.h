@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 #undef main
+#include <SDL_image.h>
 
 #include <memory>
 #include <list>
