@@ -12,9 +12,9 @@ Spaceship::~Spaceship()
 
 }
 
-void Spaceship::Initialize()
+void Spaceship::Initialize(SDL_Renderer* Renderer)
 {
-
+	m_renderer = Renderer;
 }
 
 void Spaceship::Update(float DeltaTime)
@@ -22,7 +22,7 @@ void Spaceship::Update(float DeltaTime)
 	m_FSM->OnUpdate();
 }
 
-void Spaceship::Draw(SDL_Renderer* Renderer)
+void Spaceship::Draw()
 {
 
 }

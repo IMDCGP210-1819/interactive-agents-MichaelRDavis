@@ -24,7 +24,7 @@ void World::Initialize()
 {
 	for (auto entity : m_entityList)
 	{
-		entity->Initialize();
+		entity->Initialize(m_renderer);
 	}
 }
 
@@ -45,6 +45,6 @@ void World::Draw()
 
 	for (auto entity : m_entityList)
 	{
-		entity->Draw(m_renderer);
+		entity->Draw();
 	}
 }

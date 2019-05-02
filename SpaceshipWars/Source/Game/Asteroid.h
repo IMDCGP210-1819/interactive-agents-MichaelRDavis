@@ -16,9 +16,9 @@ public:
 	~Asteroid();
 
 	// Entity interface
-	void Initialize() override;
+	void Initialize(SDL_Renderer* Renderer) override;
 	void Update(float DeltaTime) override;
-	void Draw(SDL_Renderer* Renderer) override;
+	void Draw() override;
 
 private:
 	/** Asteroid AI driven behavior. */

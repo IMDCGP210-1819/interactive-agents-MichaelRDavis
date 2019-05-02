@@ -15,48 +15,57 @@ public:
 	virtual ~Entity();
 
 	/** Initialize the entity. */
-	virtual void Initialize();
+	virtual void Initialize(SDL_Renderer* renderer);
 
 	/** Update this entity, called once per frame. */
 	virtual void Update(float DeltaTime);
 
 	/** Submit this entity to the renderer. */
-	virtual void Draw(SDL_Renderer* Renderer);
+	virtual void Draw();
 
-	/** Set the entities ID. */
-	void SetObjectID(int NewObjectID);
+	/** Creates a texture for this entity. */
+	void CreateTexture(const std::string& filePath);
 
-	/** Returns the entities ID. */
-	inline int GetObjectID() const { return m_ObjectID; }
+	/** Detects collision with another entity. */
+	bool Intersect(const Entity& otherEntity);
 
 protected:
 	/** Texture for this entity. */
 	SDL_Texture* m_texture;
 
-	/** Name of this entity. */
-	std::string m_Typename;
+	/** Cached pointer to the renderer object. */
+	SDL_Renderer* m_renderer;
 
-	/**  */
+	/** Position of this entity in 2D space. */
+	Vec2 m_position;
+
+	/** Width of the entities texture. */
 	int32_t m_texWdith;
 
-	/**  */
+	/** Height of this entities texture. */
 	int32_t m_texHeight;
 
-	/** Entity ID. */
-	int m_ObjectID;
+	/** Draw order of the sprite. */
+	int32_t m_drawOrder;
+
+	/** Scale of this entity texture.. */
+	float m_scale;
+
+	/** Rotation of the entity. */
+	float m_rotation;
 
 	/** Mass of the entity. */
-	float m_Mass;
+	float m_mass;
 
 	/** Speed of the entity. */
-	float m_Speed;
+	float m_speed;
 
 	/** Force of the entity. */
-	float m_Force;
+	float m_force;
 
 	/** Turn rate of the entity. */
-	float m_TurnRate;
+	float m_turnRate;
 
-	/** Flag to register this entity with the world. */
-	bool m_IsRegistered;
+	/** Radius of this entities collision. */
+	float m_radius;
 };

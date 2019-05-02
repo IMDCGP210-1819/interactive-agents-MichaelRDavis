@@ -26,8 +26,8 @@ private:
 	std::vector<std::vector<NavNode*>> m_nodes;
 
 	/** Number of navigation nodes in the x axis. */
-	const size_t m_xNodes;
+	const size_t m_xNodes = 10;
 
 	/** Number of navigation nodes in the y axis. */
-	const size_t m_yNodes;
+	const size_t m_yNodes = 10;
 };

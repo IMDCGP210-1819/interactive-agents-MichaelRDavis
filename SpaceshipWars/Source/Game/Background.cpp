@@ -27,7 +27,6 @@ void Background::CreateTexture(const std::string& filePath)
 	{
 		std::cout << "Failed to create texture for " << filePath.c_str() << std::endl;
 	}
-
 }
 
 void Background::Draw()
