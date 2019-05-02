@@ -10,3 +10,13 @@ NavGrid::~NavGrid()
 {
 
 }
+
+void NavGrid::CreateNavGrid()
+{
+
+}
+
+bool NavGrid::FindNavigationPath(NavNode* startNode, NavNode* endNode)
+{
+	return true;
+}

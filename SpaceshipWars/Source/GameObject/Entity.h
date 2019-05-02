@@ -36,6 +36,12 @@ protected:
 	/** Name of this entity. */
 	std::string m_Typename;
 
+	/**  */
+	int32_t m_texWdith;
+
+	/**  */
+	int32_t m_texHeight;
+
 	/** Entity ID. */
 	int m_ObjectID;
 

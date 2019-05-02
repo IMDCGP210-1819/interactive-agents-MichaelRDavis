@@ -1,7 +1,10 @@
 #pragma once
 
+class NavNode;
+
 /**
- * 
+ * A navigation grid is a 2D array of navigation nodes.
+ * AI driven entities can use the navigation grid to find a navigation path.
  */
 class NavGrid
 {
@@ -12,12 +15,19 @@ public:
 	/** Default destructor. */
 	~NavGrid();
 
-	/** Draw the grid. */
-	void DrawGrid(SDL_Renderer* renderer);
+	/** Initializes the navigation grid. */
+	void CreateNavGrid();
 
-	/** Number of grid cells in the X axis. */
-	int m_GridsX;
+	/** Find a navigation path using A*. */
+	bool FindNavigationPath(NavNode* startNode, NavNode* endNode);
 
-	/** Number of grid cells in the Y axis. */
-	int m_GridsY;
+private:
+	/** 2D array of navigation node. */
+	std::vector<std::vector<NavNode*>> m_nodes;
+
+	/** Number of navigation nodes in the x axis. */
+	const size_t m_xNodes;
+
+	/** Number of navigation nodes in the y axis. */
+	const size_t m_yNodes;
 };
