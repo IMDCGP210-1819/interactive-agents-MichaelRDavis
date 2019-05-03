@@ -29,7 +29,7 @@ void Entity::Initialize()
 	
 }
 
-void Entity::Update(float DeltaTime)
+void Entity::Update(float deltaTime)
 {
 
 }
@@ -76,4 +76,9 @@ void Entity::CreateTexture(const std::string& filePath)
 bool Entity::Intersect(const Entity& otherEntity)
 {
 	return true;
+}
+
+void Entity::SetPosition(Vec2 newPosition)
+{
+	m_position = newPosition;
 }

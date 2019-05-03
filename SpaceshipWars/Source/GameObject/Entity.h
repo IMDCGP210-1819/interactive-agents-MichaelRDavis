@@ -18,7 +18,7 @@ public:
 	virtual void Initialize();
 
 	/** Update this entity, called once per frame. */
-	virtual void Update(float DeltaTime);
+	virtual void Update(float deltaTime);
 
 	/** Submit this entity to the renderer. */
 	virtual void Draw();
@@ -28,6 +28,28 @@ public:
 
 	/** Detects collision with another entity. */
 	bool Intersect(const Entity& otherEntity);
+
+	void SetPosition(Vec2 newPosition);
+
+	inline SDL_Texture* GetTexture() const
+	{
+		return m_texture;
+	}
+
+	inline Vec2 GetPosition() const
+	{
+		return m_position;
+	}
+
+	inline float GetScale() const
+	{
+		return m_scale;
+	}
+
+	inline float GetRotation() const
+	{
+		return m_rotation;
+	}
 
 protected:
 	/** Texture for this entity. */

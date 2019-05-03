@@ -14,7 +14,9 @@ World::World(SDL_Renderer* renderer)
 	m_mantis = std::make_unique<Spaceship>(m_renderer);
 	m_scarab = std::make_unique<Spaceship>(m_renderer);
 	m_mantis->CreateTexture("Content/Mantis.png");
+	m_mantis->SetPosition(Vec2(1000.0f, 750.0f));
 	m_scarab->CreateTexture("Content/Scarab.png");
+	m_scarab->SetPosition(Vec2(750.0f, 500.0f));
 	m_entityList.push_back(m_mantis.get());
 	m_entityList.push_back(m_scarab.get());
 }
