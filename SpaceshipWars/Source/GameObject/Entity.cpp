@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Entity.h"
 
-Entity::Entity()
+Entity::Entity(SDL_Renderer* renderer)
 {
 	m_texture = nullptr;
-	m_renderer = nullptr;
+	m_renderer = renderer;
 	m_position = Vec2::zeroVector;
 	m_texWdith = 0;
 	m_texHeight = 0;
@@ -24,9 +24,9 @@ Entity::~Entity()
 	m_renderer = nullptr;
 }
 
-void Entity::Initialize(SDL_Renderer* renderer)
+void Entity::Initialize()
 {
-	m_renderer = renderer;
+	
 }
 
 void Entity::Update(float DeltaTime)
@@ -43,6 +43,8 @@ void Entity::Draw()
 		rect.h = (m_texHeight * m_scale);
 		rect.x = (m_position.x - rect.w / 2);
 		rect.y = (m_position.y - rect.h / 2);
+
+		SDL_QueryTexture(m_texture, nullptr, nullptr, &rect.w, &rect.h);
 
 		SDL_RenderCopyEx(
 			m_renderer,

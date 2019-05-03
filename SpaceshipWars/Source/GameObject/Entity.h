@@ -9,13 +9,13 @@ class Entity
 {
 public:
 	/** Default Entity constructor. */
-	Entity();
+	Entity(SDL_Renderer* renderer);
 
 	/** Default Entity destructor. */
 	virtual ~Entity();
 
 	/** Initialize the entity. */
-	virtual void Initialize(SDL_Renderer* renderer);
+	virtual void Initialize();
 
 	/** Update this entity, called once per frame. */
 	virtual void Update(float DeltaTime);

@@ -20,13 +20,13 @@ class Spaceship : public Entity
 {
 public:
 	/** Default constructor. */
-	Spaceship();
+	Spaceship(SDL_Renderer* renderer);
 
 	/** Default destructor. */
 	~Spaceship();
 
 	// Entity interface
-	void Initialize(SDL_Renderer* Renderer) override;
+	void Initialize() override;
 	void Update(float DeltaTime) override;
 	void Draw() override;
 

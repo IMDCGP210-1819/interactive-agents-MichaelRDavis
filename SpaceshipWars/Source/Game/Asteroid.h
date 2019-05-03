@@ -10,13 +10,13 @@ class Asteroid : public Entity
 {
 public:
 	/** Default constructor. */
-	Asteroid();
+	Asteroid(SDL_Renderer* renderer);
 
 	/** Default destructor. */
 	~Asteroid();
 
 	// Entity interface
-	void Initialize(SDL_Renderer* Renderer) override;
+	void Initialize() override;
 	void Update(float DeltaTime) override;
 	void Draw() override;
 

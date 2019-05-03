@@ -2,8 +2,8 @@
 #include "Asteroid.h"
 #include "Math/Vector.h"
 
-
-Asteroid::Asteroid()
+Asteroid::Asteroid(SDL_Renderer* renderer)
+	: Entity(renderer)
 {
 	m_Behavior = std::make_unique<SteeringBehavior>();
 }
@@ -13,9 +13,9 @@ Asteroid::~Asteroid()
 
 }
 
-void Asteroid::Initialize(SDL_Renderer* Renderer)
+void Asteroid::Initialize()
 {
-	m_renderer = Renderer;
+	
 }
 
 void Asteroid::Update(float DelaTime)

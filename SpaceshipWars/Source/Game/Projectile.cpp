@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Projectile.h"
 
-Projectile::Projectile()
+Projectile::Projectile(SDL_Renderer* renderer)
+	: Entity(renderer)
 {
 
 }
@@ -9,6 +10,11 @@ Projectile::Projectile()
 Projectile::~Projectile()
 {
 
+}
+
+void Projectile::Initialize()
+{
+	Entity::Initialize();
 }
 
 void Projectile::SetOwner(std::shared_ptr<Entity> NewOwner)

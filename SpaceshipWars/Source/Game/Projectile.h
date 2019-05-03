@@ -12,10 +12,13 @@ class Projectile : public Entity
 {
 public:
 	/** Default constructor. */
-	Projectile();
+	Projectile(SDL_Renderer* renderer);
 
 	/** Default destructor. */
 	~Projectile();
+
+	// Entity interface
+	void Initialize() override;
 
 	/** Set the owner of this projectile to a new oner. 
 	*	@param NewOwner - The projectiles new owner.
