@@ -4,21 +4,38 @@
 #include "Game/Background.h"
 #include "AI/Navigation/NavGrid.h"
 #include "Game/Spaceship.h"
+#include "Game/Asteroid.h"
 
 World::World(SDL_Renderer* renderer)
 {
+	m_maxAsteroids = 5;
+	m_currentAsteroids = m_maxAsteroids;
+
 	m_renderer = renderer;
+
 	m_grid = std::make_unique<NavGrid>();
+
 	m_background = std::make_unique<Background>(m_renderer);
 	m_background->CreateTexture("Content/Background.png");
+
 	m_mantis = std::make_unique<Spaceship>(m_renderer);
 	m_scarab = std::make_unique<Spaceship>(m_renderer);
+
 	m_mantis->CreateTexture("Content/Mantis.png");
-	m_mantis->SetPosition(Vec2(1000.0f, 750.0f));
 	m_scarab->CreateTexture("Content/Scarab.png");
+
+	m_mantis->SetPosition(Vec2(1000.0f, 750.0f));
 	m_scarab->SetPosition(Vec2(750.0f, 500.0f));
+
 	m_entityList.push_back(m_mantis.get());
 	m_entityList.push_back(m_scarab.get());
+
+	m_asteroid = std::make_unique<Asteroid>(m_renderer);
+	m_asteroid->CreateTexture("Content/Asteroid.png");
+	for (int32_t i = 0; i < m_maxAsteroids; i++)
+	{
+		m_entityList.push_back(m_asteroid.get());
+	}
 }
 
 World::~World()
@@ -32,6 +49,7 @@ void World::Initialize()
 	{
 		entity->Initialize();
 	}
+	LogEntityList();
 }
 
 void World::Update(float deltaTime)

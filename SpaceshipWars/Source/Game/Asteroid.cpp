@@ -15,15 +15,15 @@ Asteroid::~Asteroid()
 
 void Asteroid::Initialize()
 {
-	
+	Entity::Initialize();
 }
 
 void Asteroid::Update(float DelaTime)
 {
-
+	Entity::Update(DelaTime);
 }
 
 void Asteroid::Draw()
 {
-
+	Entity::Draw();
 }
