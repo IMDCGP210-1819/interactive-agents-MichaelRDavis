@@ -93,7 +93,6 @@
     <ClCompile Include="Source\AI\Navigation\NavNode.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
-    <ClCompile Include="Source\AI\Steering\SteeringBehavior.cpp" />
     <ClCompile Include="Source\GameObject\World.cpp" />
     <ClCompile Include="Source\stdafx.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
@@ -116,7 +115,6 @@
     <ClInclude Include="Source\AI\Navigation\NavNode.h" />
     <ClInclude Include="Source\AI\Navigation\NavPath.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
-    <ClInclude Include="Source\AI\Steering\SteeringBehavior.h" />
     <ClInclude Include="Source\GameObject\World.h" />
     <ClInclude Include="Source\stdafx.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />

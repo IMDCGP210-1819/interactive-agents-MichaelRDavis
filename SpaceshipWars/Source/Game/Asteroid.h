@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GameObject/Entity.h"
-#include "AI/Steering/SteeringBehavior.h"
 
 /**
  * 
@@ -17,10 +16,14 @@ public:
 
 	// Entity interface
 	void Initialize() override;
-	void Update(float DeltaTime) override;
+	void Update(float deltaTime) override;
 	void Draw() override;
 
+	// Steering Behavior
+
+	Vec2 Wander();
+
 private:
-	/** Asteroid AI driven behavior. */
-	std::unique_ptr<SteeringBehavior> m_Behavior;
+	Vec2 m_circleCenter;
+	float m_cirleDistance;
 };

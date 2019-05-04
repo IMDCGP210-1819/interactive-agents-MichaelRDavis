@@ -20,6 +20,11 @@ Vec2::Vec2(const Vec2& vec)
 	Vec2(vec.x, vec.y);
 }
 
+void Vec2::Normalize()
+{
+
+}
+
 Vec2 operator+(const Vec2& vecA, const Vec2& vecB)
 {
 	return Vec2(vecA.x + vecB.x, vecA.y + vecB.y);

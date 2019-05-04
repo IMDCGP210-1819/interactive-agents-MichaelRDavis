@@ -61,6 +61,9 @@ protected:
 	/** Position of this entity in 2D space. */
 	Vec2 m_position;
 
+	/** Velocity of the entity in 2D space. */
+	Vec2 m_velocity;
+
 	/** Width of the entities texture. */
 	int32_t m_texWdith;
 
