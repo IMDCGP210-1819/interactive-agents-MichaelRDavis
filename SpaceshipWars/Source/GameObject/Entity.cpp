@@ -75,7 +75,12 @@ void Entity::CreateTexture(const std::string& filePath)
 
 bool Entity::Intersect(const Entity& otherEntity)
 {
-	return true;
+	Vec2 diff = this->GetPosition() - otherEntity.GetPosition();
+	float distSq = diff.SizeSquared();
+
+	float radiusSq = this->m_scale * this->m_radius + otherEntity.m_scale * otherEntity.m_radius;
+	radiusSq *= radiusSq;
+	return distSq <= radiusSq;
 }
 
 void Entity::SetPosition(Vec2 newPosition)

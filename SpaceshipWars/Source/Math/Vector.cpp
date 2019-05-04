@@ -20,9 +20,21 @@ Vec2::Vec2(const Vec2& vec)
 	Vec2(vec.x, vec.y);
 }
 
+float Vec2::SizeSquared() const
+{
+	return (x * x + y * y);
+}
+
+float Vec2::Size() const
+{
+	return sqrtf(SizeSquared());
+}
+
 void Vec2::Normalize()
 {
-
+	float Length = Size();
+	x /= Length;
+	y /= Length;
 }
 
 Vec2 operator+(const Vec2& vecA, const Vec2& vecB)

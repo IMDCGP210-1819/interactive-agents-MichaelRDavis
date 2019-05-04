@@ -6,6 +6,8 @@ struct Vec2
 	Vec2(float inX, float inY);
 	Vec2(const Vec2& vec);
 
+	float SizeSquared() const;
+	float Size() const;
 	void Normalize();
 
 	friend Vec2 operator+(const Vec2& vecA, const Vec2& vecB);

@@ -19,6 +19,8 @@ public:
 	void Update(float deltaTime) override;
 	void Draw() override;
 
+	void ApplyDamage(int32_t damage, Entity* otherEntity);
+
 	// Steering Behavior
 
 	Vec2 Wander();
@@ -26,4 +28,6 @@ public:
 private:
 	Vec2 m_circleCenter;
 	float m_cirleDistance;
+	float m_circleRadius;
+	int32_t m_damage;
 };
