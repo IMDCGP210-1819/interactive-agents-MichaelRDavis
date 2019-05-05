@@ -85,6 +85,9 @@ protected:
 	/** Speed of the entity. */
 	float m_speed;
 
+	/** Max speed of this entity. */
+	float m_maxSpeed;
+
 	/** Force of the entity. */
 	float m_force;
 

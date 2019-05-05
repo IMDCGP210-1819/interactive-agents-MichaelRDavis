@@ -35,6 +35,7 @@ World::World(SDL_Renderer* renderer)
 	for (int32_t i = 0; i < m_maxAsteroids; i++)
 	{
 		m_entityList.push_back(m_asteroid.get());
+		m_asteroid->SetPosition(Vec2(1000.0f, 750.0f));
 	}
 }
 

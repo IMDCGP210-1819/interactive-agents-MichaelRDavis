@@ -63,6 +63,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)SpaceshipWars\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -86,6 +87,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AI\SteeringBehavior\SteeringBehavior.cpp" />
     <ClCompile Include="Source\App\AIApp.cpp" />
     <ClCompile Include="Source\GameObject\Entity.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
@@ -94,6 +96,7 @@
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\GameObject\World.cpp" />
+    <ClCompile Include="Source\Math\Random.cpp" />
     <ClCompile Include="Source\stdafx.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\AttackState.cpp" />
@@ -106,6 +109,7 @@
     <ClCompile Include="Source\Math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\AI\SteeringBehavior\SteeringBehavior.h" />
     <ClInclude Include="Source\App\AIApp.h" />
     <ClInclude Include="Source\GameObject\Entity.h" />
     <ClInclude Include="Source\AI\FSM\FiniteStateMachine.h" />
@@ -116,6 +120,7 @@
     <ClInclude Include="Source\AI\Navigation\NavPath.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\GameObject\World.h" />
+    <ClInclude Include="Source\Math\Random.h" />
     <ClInclude Include="Source\stdafx.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
     <ClInclude Include="Source\Game\AttackState.h" />

@@ -15,9 +15,12 @@ Vec2::Vec2(float inX, float inY)
 	y = inY;
 }
 
-Vec2::Vec2(const Vec2& vec)
+Vec2 operator/(const Vec2& vec, float scalar)
 {
-	Vec2(vec.x, vec.y);
+	Vec2 result(vec);
+	result.x /= scalar;
+	result.y /= scalar;
+	return result;
 }
 
 float Vec2::SizeSquared() const
@@ -35,6 +38,15 @@ void Vec2::Normalize()
 	float Length = Size();
 	x /= Length;
 	y /= Length;
+}
+
+void Vec2::Truncate(float scale)
+{
+	if (this->Size() > scale)
+	{
+		this->Normalize();
+		*this *= scale;
+	}
 }
 
 Vec2 operator+(const Vec2& vecA, const Vec2& vecB)

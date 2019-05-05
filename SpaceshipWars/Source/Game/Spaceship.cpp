@@ -1,11 +1,13 @@
 #include "stdafx.h"
 #include "Spaceship.h"
 #include "AI/FSM/FiniteStateMachine.h"
+#include "AI/SteeringBehavior/SteeringBehavior.h"
 
 Spaceship::Spaceship(SDL_Renderer* renderer)
 	: Entity(renderer)
 {
 	m_FSM = std::make_unique<TFiniteStateMachine<Spaceship>>(this);
+	m_behavior = std::make_unique<SteeringBehavior>();
 }
 
 Spaceship::~Spaceship()

@@ -2,9 +2,8 @@
 
 #include "GameObject/Entity.h"
 
-/**
- * 
- */
+class SteeringBehavior;
+
 class Asteroid : public Entity
 {
 public:
@@ -19,15 +18,10 @@ public:
 	void Update(float deltaTime) override;
 	void Draw() override;
 
+	/** Apply damage upon collision with another entity. */
 	void ApplyDamage(int32_t damage, Entity* otherEntity);
 
-	// Steering Behavior
-
-	Vec2 Wander();
-
 private:
-	Vec2 m_circleCenter;
-	float m_cirleDistance;
-	float m_circleRadius;
-	int32_t m_damage;
+	/** Behavior of the asteroid. */
+	std::unique_ptr<SteeringBehavior> m_behavior;
 };

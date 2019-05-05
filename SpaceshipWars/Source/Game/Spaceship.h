@@ -11,11 +11,8 @@ class IState;
 template<typename T>
 class TFiniteStateMachine;
 
-class SpriteComponent;
+class SteeringBehavior;
 
-/**
- * 
- */
 class Spaceship : public Entity
 {
 public:
@@ -30,7 +27,7 @@ public:
 	void Update(float DeltaTime) override;
 	void Draw() override;
 
-	/** Fire projectile. */
+	/** Fires a projectile. */
 	void Fire();
 
 	/** Return true if we can fire right now. */
@@ -48,8 +45,11 @@ public:
 	inline int GetMaxAmmo() const { return m_MaxAmmo; }
 
 private:
-	/** Spaceship AI behavior. */
+	/** Spaceship AI state machine. */
 	std::unique_ptr<TFiniteStateMachine<Spaceship>> m_FSM;
+
+	/** Space steering behavior. */
+	std::unique_ptr<SteeringBehavior> m_behavior;
 
 	/** Projectile class to fire. */
 	std::unique_ptr<Projectile> m_Bullet;
