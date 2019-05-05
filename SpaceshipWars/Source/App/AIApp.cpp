@@ -70,7 +70,7 @@ void AIApp::Shutdown()
 
 void AIApp::Update()
 {
-	float deltaTime = SDL_GetTicks();
+	float deltaTime = SDL_GetTicks() / 1000;
 
 	HandleMessages();
 	m_world->Update(deltaTime);

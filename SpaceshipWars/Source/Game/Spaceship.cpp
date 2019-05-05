@@ -8,6 +8,7 @@ Spaceship::Spaceship(SDL_Renderer* renderer)
 {
 	m_FSM = std::make_unique<TFiniteStateMachine<Spaceship>>(this);
 	m_behavior = std::make_unique<SteeringBehavior>();
+	m_radius = 5.0f;
 }
 
 Spaceship::~Spaceship()
@@ -23,12 +24,33 @@ void Spaceship::Initialize()
 void Spaceship::Update(float DeltaTime)
 {
 	Entity::Update(DeltaTime);
-	m_FSM->OnUpdate();
+	if (m_isActive)
+	{
+		m_FSM->OnUpdate();
+	}
 }
 
 void Spaceship::Draw()
 {
 	Entity::Draw();
+}
+
+bool Spaceship::CanTakeDamage(int32_t damage)
+{
+	return GetIsActive() && damage > 0 && !IsDead();
+}
+
+void Spaceship::TakeDamage(int32_t damage, Entity* otherEntity)
+{
+	if (CanTakeDamage(damage))
+	{
+		m_Health -= damage;
+		if (m_Health <= 0)
+		{
+			m_Health = 0;
+			Disable();
+		}
+	}
 }
 
 void Spaceship::Fire()
@@ -37,6 +59,7 @@ void Spaceship::Fire()
 	{
 		m_Bullet = std::make_unique<Projectile>(m_renderer);
 		m_Bullet->SetOwner(std::make_shared<Entity>(*this));
+		--m_Ammo;
 	}
 }
 

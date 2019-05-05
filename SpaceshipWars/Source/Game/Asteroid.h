@@ -19,7 +19,7 @@ public:
 	void Draw() override;
 
 	/** Apply damage upon collision with another entity. */
-	void ApplyDamage(int32_t damage, Entity* otherEntity);
+	void ApplyDamage(int32_t damage, Entity* otherEntity = nullptr);
 
 private:
 	/** Behavior of the asteroid. */

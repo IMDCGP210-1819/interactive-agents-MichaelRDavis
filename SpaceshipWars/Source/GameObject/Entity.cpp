@@ -16,6 +16,7 @@ Entity::Entity(SDL_Renderer* renderer)
 	m_force = 0.0f;
 	m_turnRate = 0.0f;
 	m_radius = 0.0f;
+	m_isActive = true;
 }
 
 Entity::~Entity()
@@ -31,7 +32,10 @@ void Entity::Initialize()
 
 void Entity::Update(float deltaTime)
 {
+	if (m_isActive)
+	{
 
+	}
 }
 
 void Entity::Draw()
@@ -81,6 +85,39 @@ bool Entity::Intersect(const Entity& otherEntity)
 	float radiusSq = this->m_scale * this->m_radius + otherEntity.m_scale * otherEntity.m_radius;
 	radiusSq *= radiusSq;
 	return distSq <= radiusSq;
+}
+
+void Entity::Constrain(Vec2& position, int32_t viewWidth, int32_t viewHeight)
+{
+	if (position.x > viewWidth)
+	{
+		position.x = 0.0f;
+	}
+	
+	if (position.x < 0)
+	{
+		position.x = static_cast<float>(viewWidth);
+	}
+
+	if (position.y > viewHeight)
+	{
+		position.y = viewHeight;
+	}
+
+	if (position.y < 0)
+	{
+		position.y = static_cast<float>(viewHeight);
+	}
+}
+
+void Entity::Enable()
+{
+	m_isActive = true;
+}
+
+void Entity::Disable()
+{
+	m_isActive = false;
 }
 
 void Entity::SetPosition(Vec2 newPosition)

@@ -2,6 +2,8 @@
 
 #include "Math/Vector.h"
 
+class World;
+
 /**
  * Entity is the base class for all game objects in the game world.
  */
@@ -29,6 +31,16 @@ public:
 	/** Detects collision with another entity. */
 	bool Intersect(const Entity& otherEntity);
 
+	void Constrain(Vec2& position, int32_t viewWidth, int32_t viewHeight);
+
+	void Enable();
+	void Disable();
+
+	inline bool GetIsActive() const
+	{
+		return m_isActive;
+	}
+
 	void SetPosition(Vec2 newPosition);
 
 	inline SDL_Texture* GetTexture() const
@@ -51,12 +63,20 @@ public:
 		return m_rotation;
 	}
 
+	inline World* GetWorld() const
+	{
+		return m_world;
+	}
+
 protected:
 	/** Texture for this entity. */
 	SDL_Texture* m_texture;
 
 	/** Cached pointer to the renderer object. */
 	SDL_Renderer* m_renderer;
+
+	/** Pointer to the world object. */
+	World* m_world;
 
 	/** Position of this entity in 2D space. */
 	Vec2 m_position;
@@ -96,4 +116,7 @@ protected:
 
 	/** Radius of this entities collision. */
 	float m_radius;
+
+	/** Flag to active this entity. */
+	bool m_isActive;
 };

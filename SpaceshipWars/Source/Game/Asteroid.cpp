@@ -9,7 +9,9 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 {
 	m_behavior = std::make_unique<SteeringBehavior>();
 	m_behavior->SetOwner(this);
-	m_maxSpeed = 50.0f;
+	m_maxSpeed = 0.05f;
+	m_radius = 1.0f;
+	m_mass = 1.0f;
 }
 
 Asteroid::~Asteroid()
@@ -32,6 +34,10 @@ void Asteroid::Update(float deltaTime)
 	m_velocity += accel * deltaTime;
 	m_velocity.Truncate(m_maxSpeed);
 	m_position += m_velocity * deltaTime;
+
+	Constrain(m_position, 1920, 1080);
+
+	//ApplyDamage(10);
 }
 
 void Asteroid::Draw()
@@ -46,7 +52,7 @@ void Asteroid::ApplyDamage(int32_t damage, Entity* otherEntity)
 		Spaceship* ship = dynamic_cast<Spaceship*>(otherEntity);
 		if (!ship->IsDead())
 		{
-
+			ship->TakeDamage(damage, otherEntity);
 		}
 	}
 }

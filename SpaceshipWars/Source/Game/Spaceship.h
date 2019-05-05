@@ -27,6 +27,12 @@ public:
 	void Update(float DeltaTime) override;
 	void Draw() override;
 
+	/** Returns true if spaceship can take damage. */
+	bool CanTakeDamage(int32_t damage);
+
+	/** Take damage */
+	void TakeDamage(int32_t damage, Entity* otherEntity);
+
 	/** Fires a projectile. */
 	void Fire();
 
