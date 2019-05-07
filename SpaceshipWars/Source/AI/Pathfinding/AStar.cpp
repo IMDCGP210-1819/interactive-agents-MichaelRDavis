@@ -20,22 +20,5 @@ float AStar::CalculateHeuristic(const NavNode* StartNode, const NavNode* EndNode
 
 bool AStar::Search(const NavGraph& Graph, const NavNode* StartNode, const NavNode* EndNode)
 {
-	std::unordered_map<const NavNode*, AStarData> AStarMap;
-
-	std::vector<const NavNode*> OpenSet;
-
-	const NavNode* CurrentNode = StartNode;
-	AStarMap[CurrentNode].IsClosedSet = true;
-
-	do
-	{
-		for (auto Path : CurrentNode->GetPathList())
-		{
-			const NavNode* NextNode = Path->GetToNode();
-			AStarData& data = AStarMap[NextNode];
-		}
-
-	} while (CurrentNode != EndNode);
-
-	return CurrentNode == EndNode ? true : false;
+	return true;
 }
