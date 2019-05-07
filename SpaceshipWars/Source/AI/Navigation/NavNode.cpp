@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "NavNode.h"
-#include "NavPath.h"
+#include "NavLink.h"
 
 NavNode::NavNode()
 	: m_position(Vec2::zeroVector)
@@ -21,32 +21,36 @@ NavNode::~NavNode()
 
 }
 
-void NavNode::InsertNavPath(NavPath* inPath)
+void NavNode::InsertNavLink(NavLink* inLink)
 {
-	m_pathList.push_back(inPath);
+	m_linkList.push_back(inLink);
 }
 
-void NavNode::GetNearestNavPaths(std::list<NavPath*>& inPaths)
+void NavNode::GetNearestNavLink(std::list<NavNode*>& inNodes)
 {
-	for (auto it : m_pathList)
+	for (auto it : m_linkList)
 	{
-		NavPath* path = it;
+		NavLink* link = it;
+		inNodes.push_back(link->GetNearestNavNode(this));
 	}
 }
 
 float NavNode::GetNavCost(NavNode* inNode)
 {
-	NavPath* path = GetNavPath(inNode);
+	NavLink* link = GetNavLink(inNode);
 	Vec2 diff = inNode->GetPosition() - m_position;
-	return path->GetWeight() * diff.Size();
+	return link->GetWeight() * diff.Size();
 }
 
-NavPath* NavNode::GetNavPath(NavNode* inNode)
+NavLink* NavNode::GetNavLink(NavNode* inNode)
 {
-	for (auto it : m_pathList)
+	for (auto it : m_linkList)
 	{
-		NavPath* path = it;
-		return path;
+		NavLink* link = it;
+		if (link->GetNearestNavNode(this) == inNode)
+		{
+			return link;
+		}
 	}
 
 	return nullptr;

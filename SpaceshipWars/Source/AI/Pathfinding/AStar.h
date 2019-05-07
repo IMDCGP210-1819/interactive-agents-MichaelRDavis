@@ -1,6 +1,6 @@
 #pragma once
 
-class NavPath;
+class NavLink;
 class NavNode;
 class NavGraph;
 
@@ -20,7 +20,7 @@ struct AStarData
 	}
 
 	/** Pointer the parent path node. */
-	const NavPath* ParentPath;
+	const NavLink* ParentPath;
 
 	/**  */
 	float Heuristic;

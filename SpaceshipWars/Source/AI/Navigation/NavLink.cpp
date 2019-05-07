@@ -1,30 +1,30 @@
 #include "stdafx.h"
-#include "NavPath.h"
+#include "NavLink.h"
 
-NavPath::NavPath()
+NavLink::NavLink()
 	: m_weight(0.0f)
 {
 
 }
 
-NavPath::NavPath(float weight)
+NavLink::NavLink(float weight)
 	: m_weight(weight)
 {
 
 }
 
-NavPath::~NavPath()
+NavLink::~NavLink()
 {
 
 }
 
-void NavPath::ConnectNodes(NavNode* nodeA, NavNode* nodeB)
+void NavLink::ConnectNodes(NavNode* nodeA, NavNode* nodeB)
 {
 	m_nodes[0] = nodeA;
 	m_nodes[1] = nodeB;
 }
 
-NavNode* NavPath::GetNearestNavNode(NavNode* inNode)
+NavNode* NavLink::GetNearestNavNode(NavNode* inNode)
 {
 	if (m_nodes[0] == inNode)
 	{

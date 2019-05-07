@@ -92,7 +92,7 @@
     <ClCompile Include="Source\GameObject\Entity.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavNode.cpp" />
-    <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
+    <ClCompile Include="Source\AI\Navigation\NavLink.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\GameObject\World.cpp" />
     <ClCompile Include="Source\Math\Random.cpp" />
@@ -115,7 +115,7 @@
     <ClInclude Include="Source\AI\FSM\IState.h" />
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\AI\Navigation\NavNode.h" />
-    <ClInclude Include="Source\AI\Navigation\NavPath.h" />
+    <ClInclude Include="Source\AI\Navigation\NavLink.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\GameObject\World.h" />
     <ClInclude Include="Source\Math\Random.h" />

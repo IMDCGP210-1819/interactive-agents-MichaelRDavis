@@ -3,22 +3,22 @@
 class NavNode;
 
 /** Default weighting for a navigation path. */
-static constexpr float DEFAULT_PATH_WEIGHT{ 1.0f };
+static constexpr float DEFAULT_LINK_WEIGHT{ 1.0f };
 
 /**
- * Defines a navigation path connecting two nodes.
+ * Defines a navigation link connecting two nodes.
  */
-class NavPath
+class NavLink
 {
 public:
 	/** Default constructor. */
-	NavPath();
+	NavLink();
 
-	/** Initializes a navigation path with a given weight. */
-	explicit NavPath(float weight = DEFAULT_PATH_WEIGHT);
+	/** Initializes a navigation link with a given weight. */
+	explicit NavLink(float weight = DEFAULT_LINK_WEIGHT);
 
 	/** Default destructor. */
-	~NavPath();
+	~NavLink();
 
 	/** Joins two navigation nodes together. */
 	void ConnectNodes(NavNode* nodeA, NavNode* nodeB);
@@ -26,16 +26,16 @@ public:
 	/** Returns the nearest navigation node. */
 	NavNode* GetNearestNavNode(NavNode* inNode);
 
-	/** Returns the weight of this navigation path. */
+	/** Returns the weight of this navigation link. */
 	inline float GetWeight() const
 	{
 		return m_weight;
 	}
 
 private:
-	/** The weight for this navigation path. */
+	/** The weight for this navigation link. */
 	float m_weight;
 
-	/** A navigation path connects two nodes together. */
+	/** A navigation link connects two nodes together. */
 	NavNode* m_nodes[2];
 };

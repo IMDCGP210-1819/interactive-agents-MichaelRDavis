@@ -2,14 +2,14 @@
 
 #include "Math/Vector.h"
 
-class NavPath;
+class NavLink;
 
 /** Default weighting for a navigation nodes. */
 static constexpr float DEFAULT_NODE_WEIGHT{ 5.0f };
 
 /**
  * Represents a single node in the navigation graph.
- * Contains a list of adjacent navigation paths.
+ * Contains a list of adjacent navigation links.
  */
 class NavNode
 {
@@ -23,11 +23,11 @@ public:
 	/** Default destructor. */
 	~NavNode();
 
-	/** Add a navigation path to the navigation list. */
-	void InsertNavPath(NavPath* inPath);
+	/** Add a navigation link to the navigation link list. */
+	void InsertNavLink(NavLink* inLink);
 
-	/** Gets the nearest navigation paths for this node. */
-	void GetNearestNavPaths(std::list<NavPath*>& inPaths);
+	/** Gets the nearest navigation link for this node. */
+	void GetNearestNavLink(std::list<NavNode*>& inNodes);
 
 	/** Returns the navigation cost from a given node. */
 	float GetNavCost(NavNode* inNode);
@@ -45,12 +45,12 @@ public:
 	}
 
 private:
-	/** Returns a navigation path from a given node. */
-	NavPath* GetNavPath(NavNode* inNode);
+	/** Returns a navigation link from a given node. */
+	NavLink* GetNavLink(NavNode* inNode);
 
 private:
-	/** List of adjacent navigation paths. */
-	std::list<NavPath*> m_pathList;
+	/** List of adjacent navigation links. */
+	std::list<NavLink*> m_linkList;
 
 	/** Location of the navigation node in 2D space. */
 	Vec2 m_position;
