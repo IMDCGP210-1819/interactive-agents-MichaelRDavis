@@ -54,7 +54,10 @@ void World::Update(float deltaTime)
 {
 	for (auto entity : m_entityList)
 	{
-		entity->Update(deltaTime);
+		if (entity->GetIsActive())
+		{
+			entity->Update(deltaTime);
+		}
 	}
 }
 

@@ -10,8 +10,9 @@ Asteroid::Asteroid(SDL_Renderer* renderer)
 	m_behavior = std::make_unique<SteeringBehavior>();
 	m_behavior->SetOwner(this);
 	m_maxSpeed = 0.05f;
-	m_radius = 1.0f;
+	m_radius = 5.0f;
 	m_mass = 1.0f;
+	m_isActive = true;
 }
 
 Asteroid::~Asteroid()
@@ -28,7 +29,7 @@ void Asteroid::Update(float deltaTime)
 {
 	Entity::Update(deltaTime);
 
-	Vec2 force;
+	Vec2 force = Vec2::zeroVector;
 	force = m_behavior->Wander(deltaTime);
 	Vec2 accel = force / m_mass;
 	m_velocity += accel * deltaTime;
@@ -36,8 +37,6 @@ void Asteroid::Update(float deltaTime)
 	m_position += m_velocity * deltaTime;
 
 	Constrain(m_position, 1920, 1080);
-
-	//ApplyDamage(10);
 }
 
 void Asteroid::Draw()

@@ -54,6 +54,8 @@ void AIApp::Startup()
 		std::cout << "Unable to initialize SDL_image: " << SDL_GetError() << std::endl;
 	}
 
+	srand(static_cast<uint32_t>(time(0)));
+
 	m_world = std::make_unique<World>(m_renderer);
 	if (m_world)
 	{
