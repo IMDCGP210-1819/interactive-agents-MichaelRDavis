@@ -4,7 +4,7 @@
 
 class NavPath;
 
-/** Default weighting for navigation nodes. */
+/** Default weighting for a navigation nodes. */
 static constexpr float DEFAULT_NODE_WEIGHT{ 5.0f };
 
 /**

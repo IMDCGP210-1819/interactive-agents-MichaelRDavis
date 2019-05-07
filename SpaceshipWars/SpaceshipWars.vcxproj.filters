@@ -45,9 +45,6 @@
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AI\Navigation\NavGrid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\AI\Navigation\NavNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,9 +105,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\AI\Navigation\NavGraph.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\AI\Navigation\NavGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\AI\Navigation\NavNode.h">

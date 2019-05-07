@@ -91,7 +91,6 @@
     <ClCompile Include="Source\App\AIApp.cpp" />
     <ClCompile Include="Source\GameObject\Entity.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
-    <ClCompile Include="Source\AI\Navigation\NavGrid.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavNode.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
@@ -115,7 +114,6 @@
     <ClInclude Include="Source\AI\FSM\FiniteStateMachine.h" />
     <ClInclude Include="Source\AI\FSM\IState.h" />
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
-    <ClInclude Include="Source\AI\Navigation\NavGrid.h" />
     <ClInclude Include="Source\AI\Navigation\NavNode.h" />
     <ClInclude Include="Source\AI\Navigation\NavPath.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />

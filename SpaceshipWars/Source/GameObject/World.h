@@ -52,9 +52,6 @@ private:
 	std::unique_ptr<Asteroid> m_asteroid;
 
 	/**  */
-	std::unique_ptr<NavGrid> m_grid;
-
-	/**  */
 	std::vector<Entity*> m_entityList;
 
 	/** Current number of asteroids in the game world. */
