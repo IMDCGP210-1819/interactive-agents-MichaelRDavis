@@ -9,3 +9,4 @@ Spaceship Wars is an AI driven game where two spaceships engage in space-based c
 * McShaffry, MS, Graham, DG. (2012) Game Coding Complete. Fourth Edition. USA. Cengage Learning PTR.
 * Amit Patel, AP. (2018) Amit’s A* Pages. Available at: [Link](http://theory.stanford.edu/~amitp/GameProgramming/)
 * Amit Patel, AP. (2019) Introduction to the A* Algorithm. Available at: [Link](https://www.redblobgames.com/pathfinding/a-star/introduction.html) 
+* Art Assets [Link](https://opengameart.org/content/space-game-art-pack-extended)

@@ -1,42 +1,10 @@
 #pragma once
 
-class NavLink;
 class NavNode;
-class NavGraph;
+class NavNodeData;
 
 /**
- * Navigation node data
- */
-struct AStarData
-{
-	/** Default constructor. */
-	AStarData()
-	{
-		ParentPath = nullptr;
-		Heuristic = 0.0f;
-		Distance = 0.0f;
-		IsOpenSet = false;
-		IsClosedSet = false;
-	}
-
-	/** Pointer the parent path node. */
-	const NavLink* ParentPath;
-
-	/**  */
-	float Heuristic;
-
-	/** Distance from the actual start node. */
-	float Distance;
-
-	/** True if node is not already considered. */
-	bool IsOpenSet;
-
-	/** True if node is already considered. */
-	bool IsClosedSet;
-};
-
-/**
- *
+ *	A* algorithm implemtation. 
  */
 class AStar
 {
@@ -47,9 +15,13 @@ public:
 	/** Default destructor. */
 	~AStar();
 
-	/**  */
-	float CalculateHeuristic(const NavNode* StartNode, const NavNode* EndNode);
+private:
+	/** Start node */
+	NavNode* m_startNode;
 
-	/** Searches a given graph for a path, returns true if a path is found. */
-	bool Search(const NavGraph& Graph, const NavNode* StartNode, const NavNode* EndNode);
+	/** Target node. */
+	NavNode* m_targetNode;
+
+	/**  */
+	std::list<NavNodeData*> m_openSet;
 };
