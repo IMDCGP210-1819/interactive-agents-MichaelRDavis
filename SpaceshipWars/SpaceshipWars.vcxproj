@@ -87,6 +87,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AI\Navigation\NavNodeData.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavPath.cpp" />
     <ClCompile Include="Source\AI\SteeringBehavior\SteeringBehavior.cpp" />
     <ClCompile Include="Source\App\AIApp.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="Source\Math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\AI\Navigation\NavNodeData.h" />
     <ClInclude Include="Source\AI\Navigation\NavPath.h" />
     <ClInclude Include="Source\AI\SteeringBehavior\SteeringBehavior.h" />
     <ClInclude Include="Source\App\AIApp.h" />

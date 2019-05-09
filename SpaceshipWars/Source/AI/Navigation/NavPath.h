@@ -36,7 +36,7 @@ public:
 	}
 
 private:
-	/** Add a navigation to the navigation path. */
+	/** Add a navigation node to the navigation path. */
 	void AddNavNode(NavNode* inNode);
 
 private:
