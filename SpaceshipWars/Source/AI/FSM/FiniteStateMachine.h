@@ -3,9 +3,9 @@
 #include "AI/FSM/IState.h"
 
 /**
- *   
+ * A generic finite state machine implementation.  
  */
-template<class Type>
+template<class T>
 class TFiniteStateMachine
 {
 public:
@@ -16,10 +16,8 @@ public:
 
 	}
 
-	/** Initialize the owner of this state machine. 
-	*	@param Owner - Template owner to initialize.
-	*/
-	TFiniteStateMachine(Type* Owner)
+	/** Initialize the owner of this state machine. */
+	TFiniteStateMachine(T* Owner)
 		: m_Owner(Owner)
 	{
 
@@ -45,37 +43,49 @@ public:
 		}
 	}
 
-	void ChangeState(std::shared_ptr<IState<Type>> NewState)
+	/** Switch to a new state. */
+	void ChangeState(std::shared_ptr<IState<T>> NewState)
 	{
-		m_PreviousState = std::make_shared<IState<Type>>().swap(m_CurrentState);
+		m_PreviousState = std::make_shared<IState<T>>().swap(m_CurrentState);
 		m_CurrentState->OnExit(m_Owner);
-		m_CurrentState = std::make_shared<IState<Type>>().swap(NewState);
+		m_CurrentState = std::make_shared<IState<T>>().swap(NewState);
 		m_CurrentState->OnEnter(m_Owner);
 	}
 
+	/** Switch to the previous state. */
 	void RevertToPreviousState()
 	{
 		ChangeState(m_PreviousState);
 	}
 
-	void SetState(std::shared_ptr<IState<Type>> NewState)
+	/** Set the global state. */
+	void SetState(std::shared_ptr<IState<T>> NewState)
 	{
-		m_State = std::make_shared<IState<Type>>().swap(NewState);
+		m_State = std::make_shared<IState<T>>().swap(NewState);
 	}
 
-	void SetCurrentState(std::shared_ptr<IState<Type>> NewState)
+	/** Set the current state. */
+	void SetCurrentState(std::shared_ptr<IState<T>> NewState)
 	{
-		m_CurrentState = std::make_shared<IState<Type>>().swap(NewState);
+		m_CurrentState = std::make_shared<IState<T>>().swap(NewState);
 	}
 
-	void SetPreviousState(std::shared_ptr<IState<Type>> NewState)
+	/** Set the previous state. */
+	void SetPreviousState(std::shared_ptr<IState<T>> NewState)
 	{
-		m_PreviousState = std::make_shared<IState<Type>>().swap(NewState);
+		m_PreviousState = std::make_shared<IState<T>>().swap(NewState);
 	}
 
 private:
-	Type* m_Owner;
-	std::shared_ptr<IState<Type>> m_State;
-	std::shared_ptr<IState<Type>> m_CurrentState;
-	std::shared_ptr<IState<Type>> m_PreviousState;
+	/** The owner of this state machine. */
+	T* m_Owner;
+
+	/** The global state of the state machine. */
+	std::shared_ptr<IState<T>> m_State;
+
+	/** The current state of the state machine. */
+	std::shared_ptr<IState<T>> m_CurrentState;
+
+	/** The previous state of the state machine. */
+	std::shared_ptr<IState<T>> m_PreviousState;
 };

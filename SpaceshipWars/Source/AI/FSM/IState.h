@@ -1,24 +1,24 @@
 #pragma once
 
 /**
- * 
+ * Interface class for all state machine states.
  */
-template<class Type>
+template<class T>
 class IState
 {
 public:
-	/**  */
+	/** Default constructor. */
 	IState() {}
 
-	/**  */
+	/** Default destructor. */
 	virtual ~IState() {}
 
-	/**  */
-	virtual void OnEnter(Type* Owner) {}
+	/** Called on entry to this state. */
+	virtual void OnEnter(T* Owner) {}
 
-	/**  */
-	virtual void OnExecute(Type* Owner) {}
+	/** Called when this state is updated, called once per frame. */
+	virtual void OnExecute(T* Owner) {}
 
-	/**  */
-	virtual void OnExit(Type* Owner) {}
+	/** Called when exiting this state. */
+	virtual void OnExit(T* Owner) {}
 };
