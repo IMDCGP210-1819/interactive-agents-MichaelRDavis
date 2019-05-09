@@ -29,14 +29,13 @@ void Asteroid::Update(float deltaTime)
 {
 	Entity::Update(deltaTime);
 
+	Constrain(m_position, 1920, 1080);
 	Vec2 force = Vec2::zeroVector;
 	force = m_behavior->Wander(deltaTime);
-	Vec2 accel = force / m_mass;
-	m_velocity += accel * deltaTime;
+	force = force / m_mass;
+	m_velocity += force * deltaTime;
 	m_velocity.Truncate(m_maxSpeed);
 	m_position += m_velocity * deltaTime;
-
-	Constrain(m_position, 1920, 1080);
 }
 
 void Asteroid::Draw()

@@ -17,8 +17,9 @@ SteeringBehavior::~SteeringBehavior()
 
 Vec2 SteeringBehavior::Wander(float deltaTime)
 {
+	Random rand;
 	float displacementTime = m_displacement * deltaTime;
-	float randVal = std::clamp(Random::Rand(), 1000.0f, 1000.0f) * displacementTime;
+	float randVal = rand.Rand() * displacementTime;
 	m_wander += Vec2(randVal, randVal);
 	m_wander.Normalize();
 	m_wander *= m_circleRadius;
