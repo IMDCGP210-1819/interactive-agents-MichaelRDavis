@@ -22,6 +22,6 @@ private:
 	/** Target node. */
 	NavNode* m_targetNode;
 
-	/**  */
+	/** Nodes in the open set. */
 	std::list<NavNodeData*> m_openSet;
 };
