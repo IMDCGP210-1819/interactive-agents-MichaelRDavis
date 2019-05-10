@@ -2,6 +2,7 @@
 
 class NavNode;
 class NavNodeData;
+class NavPath;
 
 /**
  *	A* algorithm implemtation. 
@@ -14,6 +15,14 @@ public:
 
 	/** Default destructor. */
 	~AStar();
+
+	/** Destroys the navigation path found by this algorithm. */
+	void Destroy();
+
+	/** Searches the navigation graph for a navigation path.
+	*	Returns the found navigation path.
+	*/
+	NavPath* Search(NavNode* startNode, NavNode* targetNode);
 
 private:
 	/** Start node */

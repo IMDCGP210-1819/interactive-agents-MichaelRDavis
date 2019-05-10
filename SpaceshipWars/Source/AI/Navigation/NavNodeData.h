@@ -24,8 +24,10 @@ private:
 	/** Pointer to the target node. */
 	NavNode* m_targetNode;
 
+	/** Navigation cost to this navigation node (g). */
+	float m_goal;
+
 	/**  */
-	float m_pathCost;
 
 	/** Flag true if the node has been already considered for navigation. */
 	bool m_isClosed;

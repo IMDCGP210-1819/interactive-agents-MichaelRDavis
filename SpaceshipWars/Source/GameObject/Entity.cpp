@@ -43,10 +43,10 @@ void Entity::Draw()
 	if (m_texture)
 	{
 		SDL_Rect rect;
-		rect.w = (m_texWdith * m_scale);
-		rect.h = (m_texHeight * m_scale);
-		rect.x = (m_position.x - rect.w / 2);
-		rect.y = (m_position.y - rect.h / 2);
+		rect.w = static_cast<int32_t>(m_texWdith * m_scale);
+		rect.h = static_cast<int32_t>(m_texHeight * m_scale);
+		rect.x = static_cast<int32_t>(m_position.x - rect.w / 2);
+		rect.y = static_cast<int32_t>(m_position.y - rect.h / 2);
 
 		SDL_QueryTexture(m_texture, nullptr, nullptr, &rect.w, &rect.h);
 
@@ -94,17 +94,17 @@ void Entity::Constrain(Vec2& position, int32_t viewWidth, int32_t viewHeight)
 		position.x = 0.0f;
 	}
 	
-	if (position.x < 0)
+	if (position.x < 0.0f)
 	{
 		position.x = static_cast<float>(viewWidth);
 	}
 
 	if (position.y > viewHeight)
 	{
-		position.y = viewHeight;
+		position.y = 0.0f;
 	}
 
-	if (position.y < 0)
+	if (position.y < 0.0f)
 	{
 		position.y = static_cast<float>(viewHeight);
 	}

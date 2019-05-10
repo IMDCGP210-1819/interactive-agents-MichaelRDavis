@@ -12,3 +12,13 @@ AStar::~AStar()
 {
 
 }
+
+void AStar::Destroy()
+{
+
+}
+
+NavPath* AStar::Search(NavNode* startNode, NavNode* targetNode)
+{
+	return nullptr;
+}
