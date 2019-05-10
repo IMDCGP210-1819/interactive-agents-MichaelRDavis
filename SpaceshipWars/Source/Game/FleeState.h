@@ -4,7 +4,7 @@
 
 class Spaceship;
 
-class DeathState : public IState<Spaceship>
+class FleeState : public IState<Spaceship>
 {
 public:
 	// IState interface

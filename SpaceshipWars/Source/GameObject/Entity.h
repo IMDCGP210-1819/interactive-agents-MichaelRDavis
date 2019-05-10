@@ -31,38 +31,49 @@ public:
 	/** Detects collision with another entity. */
 	bool Intersect(const Entity& otherEntity);
 
+	/** Constrains this entities position to the current viewport. */
 	void Constrain(Vec2& position, int32_t viewWidth, int32_t viewHeight);
 
+	/** Enable this entity. */
 	void Enable();
+
+	/** Disable this entity. */
 	void Disable();
 
+	/** Returns true if this entity is currently active. */
 	inline bool GetIsActive() const
 	{
 		return m_isActive;
 	}
 
+	/** Set the position of this entity. */
 	void SetPosition(Vec2 newPosition);
 
+	/** Returns a pointer to the texture. */
 	inline SDL_Texture* GetTexture() const
 	{
 		return m_texture;
 	}
 
+	/** Returns the position of this entity in 2D space. */
 	inline Vec2 GetPosition() const
 	{
 		return m_position;
 	}
 
+	/** Returns the scale of this entity. */
 	inline float GetScale() const
 	{
 		return m_scale;
 	}
 
+	/** Returns the rotation of this entity. */
 	inline float GetRotation() const
 	{
 		return m_rotation;
 	}
 
+	/** Returns a pointer to the world object. */
 	inline World* GetWorld() const
 	{
 		return m_world;
