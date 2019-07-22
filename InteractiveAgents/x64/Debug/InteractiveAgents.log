@@ -1,0 +1,36 @@
+﻿  Grid.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,15): error C2143:  syntax error: missing ';' before '('
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,45): error C2143:  syntax error: missing ',' before '&'
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(21,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,27): error C2065:  'node': undeclared identifier
+  BreadthFirstSearch.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,37): error C2065:  'node': undeclared identifier
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,15): error C2143:  syntax error: missing ';' before '('
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,45): error C2143:  syntax error: missing ',' before '&'
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(21,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,27): error C2065:  'node': undeclared identifier
+  DijkstraSearch.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,37): error C2065:  'node': undeclared identifier
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,15): error C2143:  syntax error: missing ';' before '('
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,45): error C2143:  syntax error: missing ',' before '&'
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(21,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,27): error C2065:  'node': undeclared identifier
+  Spaceship.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,37): error C2065:  'node': undeclared identifier
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,15): error C2143:  syntax error: missing ';' before '('
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,45): error C2143:  syntax error: missing ',' before '&'
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(21,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,27): error C2065:  'node': undeclared identifier
+  World.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,37): error C2065:  'node': undeclared identifier
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,15): error C2143:  syntax error: missing ';' before '('
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(20,45): error C2143:  syntax error: missing ',' before '&'
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(21,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,27): error C2065:  'node': undeclared identifier
+  Generating Code...
+C:\Users\Micha\Documents\Code\GameProgramming\AI\InteractiveAgents\Source\AI\Navigation\Grid.h(22,37): error C2065:  'node': undeclared identifier
