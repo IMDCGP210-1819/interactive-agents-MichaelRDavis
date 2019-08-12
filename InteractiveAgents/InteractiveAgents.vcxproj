@@ -88,8 +88,8 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)x64\Debug
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\AI\Navigation\Grid.cpp" />
-    <ClCompile Include="Source\AI\Pathfinding\BreadthFirstSearch.cpp" />
-    <ClCompile Include="Source\AI\Pathfinding\DijkstraSearch.cpp" />
+    <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
+    <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\Steering.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\Entity.cpp" />
@@ -104,8 +104,8 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)x64\Debug
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AI\Navigation\Grid.h" />
-    <ClInclude Include="Source\AI\Pathfinding\BreadthFirstSearch.h" />
-    <ClInclude Include="Source\AI\Pathfinding\DijkstraSearch.h" />
+    <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
+    <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\Steering.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
     <ClInclude Include="Source\Game\Entity.h" />

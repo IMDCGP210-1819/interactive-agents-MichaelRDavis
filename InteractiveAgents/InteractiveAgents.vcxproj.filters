@@ -51,10 +51,10 @@
     <ClCompile Include="Source\Game\SpaceshipTransitions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AI\Pathfinding\BreadthFirstSearch.cpp">
+    <ClCompile Include="Source\AI\Navigation\NavGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AI\Pathfinding\DijkstraSearch.cpp">
+    <ClCompile Include="Source\AI\Pathfinding\AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,13 +101,13 @@
     <ClInclude Include="Source\Game\SpaceshipTransitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\AI\Pathfinding\BreadthFirstSearch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\AI\Pathfinding\DijkstraSearch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Math\Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Navigation\NavGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Pathfinding\AStar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
