@@ -3,7 +3,6 @@
 #include "Entity.h"
 
 class SpaceshipFSM;
-class BreadthFirstSearch;
 
 class Spaceship : public Entity
 {
@@ -32,7 +31,6 @@ public:
 
 private:
 	std::unique_ptr<SpaceshipFSM> m_fsm;
-	std::unique_ptr<BreadthFirstSearch> m_bfs;
 
 	int32_t m_health;
 	int32_t m_ammo;

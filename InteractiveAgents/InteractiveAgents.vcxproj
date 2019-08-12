@@ -42,7 +42,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Binaries\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -65,10 +68,10 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\SDL2.dll $(SolutionDir)x64\Debug
-copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\SDL2_image.dll $(SolutionDir)x64\Debug
-copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\libpng16-16.dll $(SolutionDir)x64\Debug
-copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)x64\Debug</Command>
+      <Command>copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\SDL2.dll $(SolutionDir)Binaries\x64\Debug
+copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\SDL2_image.dll $(SolutionDir)Binaries\x64\Debug
+copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\libpng16-16.dll $(SolutionDir)Binaries\x64\Debug
+copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\x64\Debug</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -87,7 +90,6 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)x64\Debug
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\AI\Navigation\Grid.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\Steering.cpp" />
@@ -103,7 +105,6 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)x64\Debug
     <ClCompile Include="Source\Game\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\AI\Navigation\Grid.h" />
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\Steering.h" />

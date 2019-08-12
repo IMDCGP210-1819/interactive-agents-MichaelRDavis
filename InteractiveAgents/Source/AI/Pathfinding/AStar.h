@@ -2,9 +2,7 @@
 
 #include <map>
 #include <vector>
-
-struct NavNode;
-struct NavPath;
+#include "AI/Navigation/NavGraph.h"
 
 class AStar
 {

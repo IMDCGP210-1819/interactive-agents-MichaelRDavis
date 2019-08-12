@@ -3,6 +3,8 @@
 #include <vmath.h>
 #include <vector>
 
+struct NavLink;
+
 struct NavNode
 {
 	Vector2f position;

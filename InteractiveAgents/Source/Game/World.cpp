@@ -2,14 +2,11 @@
 #include "Entity.h"
 #include "Spaceship.h"
 #include "Asteroid.h"
-#include "AI/Navigation/Grid.h"
 
 World::World(SDL_Renderer* renderer)
 	: m_pRenderer(renderer)
 {
 	m_numAsteroids = 5;
-
-	m_grid = std::make_shared<Grid>(1920, 1080);
 
 	m_background = std::make_unique<Entity>(this);
 	m_background->CreateTexture("Content/Background.png");

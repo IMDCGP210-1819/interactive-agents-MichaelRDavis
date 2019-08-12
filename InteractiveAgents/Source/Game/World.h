@@ -8,7 +8,6 @@
 
 class Entity;
 class Spaceship;
-class Grid;
 class Asteroid;
 
 class World
@@ -33,11 +32,6 @@ public:
 	}
 #endif
 
-	inline std::shared_ptr<Grid> GetGrid() const
-	{
-		return m_grid;
-	}
-
 	inline SDL_Renderer* GetRenderer() const
 	{
 		return m_pRenderer;
@@ -47,7 +41,6 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 	std::vector<Entity*> m_entities;
-	std::shared_ptr<Grid> m_grid;
 	std::unique_ptr<Entity> m_background;
 	std::unique_ptr<Spaceship> m_spaceship;
 	std::unique_ptr<Asteroid> m_asteroid;
