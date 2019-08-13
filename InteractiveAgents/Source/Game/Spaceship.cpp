@@ -25,6 +25,15 @@ void Spaceship::MoveTo()
 
 }
 
+void Spaceship::UseAmmo()
+{
+	m_ammo--;
+	if (m_ammo <= 0)
+	{
+		m_ammo = 0;
+	}
+}
+
 void Spaceship::Fire()
 {
 	if (CanFire())

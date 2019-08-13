@@ -13,6 +13,8 @@ public:
 	~Spaceship();
 
 	void MoveTo();
+
+	void UseAmmo();
 	void Fire();
 
 	void Update(float deltaTime) override;

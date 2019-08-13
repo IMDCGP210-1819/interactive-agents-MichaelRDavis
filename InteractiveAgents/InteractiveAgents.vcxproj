@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\include;$(SolutionDir)ThirdPartySDKs\vmath;$(SolutionDir)Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\include;$(SolutionDir)ThirdPartySDKs\vmath;$(SolutionDir)ThirdPartySDKs\imgui;$(SolutionDir)ThirdPartySDKs\imgui_sdl-master;$(SolutionDir)Source</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UndefinePreprocessorDefinitions>
       </UndefinePreprocessorDefinitions>
@@ -104,6 +104,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="Source\Game\SpaceshipTransitions.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Game\World.cpp" />
+    <ClCompile Include="Source\UI\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AI\Components\AIController.h" />
@@ -128,6 +129,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Game\World.h" />
     <ClInclude Include="Source\Math\Math.h" />
     <ClInclude Include="Source\Rendering\Drawing.h" />
+    <ClInclude Include="Source\UI\Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
