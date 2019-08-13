@@ -16,14 +16,28 @@ AStar::~AStar()
 
 NavPath* AStar::Search(NavNode* startNode, NavNode* goalNode)
 {
+	// If the goal start nodes are equal return null
+	if (startNode == goalNode)
+	{
+		return nullptr;
+	}
+
 	m_startNode = startNode;
 	m_goalNode = goalNode;
 
+	// Add the start node to the open set
+	AddToOpenSet(m_startNode, nullptr);
+
+	// While the open set of navigation nodes to check is not empty
 	while (!m_openSet.empty())
 	{
+		// Get the first navigation node in the open set
 		NavPathNode* path = m_openSet.front();
+
+		// If the first navigation node in the open set is the goal, then this is the navigation path
 		if (path->pathNode == m_goalNode)
 		{
+			// Remake the navigation path and return the valid navigation path
 			NavPath* newPath = new NavPath;
 			NavPathNode* node = path;
 			while (node)
@@ -95,10 +109,45 @@ NavPathNode* AStar::AddToOpenSet(NavNode* node, NavPathNode* prevNode)
 
 void AStar::Insert(NavPathNode* node)
 {
+	assert(node);
 
+	// If the open set is empty, add the node to the empty set
+	if (m_openSet.empty())
+	{
+		m_openSet.push_back(node);
+		return;
+	}
+
+	// Else, insert the the node into the open set via an insertion sort
+	auto it = m_openSet.begin();
+	NavPathNode* compareNode = *it;
+	while (compareNode->fitness < node->fitness)
+	{
+		++it;
+		if (it != m_openSet.end())
+		{
+			compareNode = *it;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	m_openSet.insert(it, node);
 }
 
 void AStar::ReInsert(NavPathNode* node)
 {
+	for (auto it = m_openSet.begin(); it != m_openSet.end(); ++it)
+	{
+		if (node == *it)
+		{
+			m_openSet.erase(it);
+			Insert(node);
+			return;
+		}
+	}
 
+	Insert(node);
 }

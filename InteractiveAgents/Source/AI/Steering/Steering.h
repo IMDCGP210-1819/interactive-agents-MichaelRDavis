@@ -11,7 +11,12 @@ public:
 	Steering(Entity* entity);
 	~Steering() = default;
 
+	Vector2f Seek(Entity* target);
+	Vector2f Flee(Entity* target);
+	Vector2f Arrive(Entity* target);
 	Vector2f Wander(float deltaTime);
+
+	float CalculateOrientation(float currentOrientation, Vector2f currentVelocity);
 
 	void SetOwner(Entity* newOwner);
 	void SetForce(Vector2f newForce);
