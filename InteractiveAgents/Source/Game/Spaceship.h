@@ -3,6 +3,7 @@
 #include "Entity.h"
 
 class SpaceshipFSM;
+class Projectile;
 
 class Spaceship : public Entity
 {
@@ -11,8 +12,14 @@ public:
 	~Spaceship();
 
 	void MoveTo();
+	void Fire();
 
 	void Update(float deltaTime) override;
+
+	void CanSeeEnemy();
+
+	bool IsDead();
+	bool CanFire();
 
 	inline int32_t GetHealth() const
 	{
@@ -31,6 +38,7 @@ public:
 
 private:
 	std::unique_ptr<SpaceshipFSM> m_fsm;
+	std::unique_ptr<Projectile> m_bullet;
 
 	int32_t m_health;
 	int32_t m_ammo;

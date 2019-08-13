@@ -1,6 +1,8 @@
 #include "NavGraph.h"
+#include <cstdint>
 
-NavGraph::NavGraph()
+NavGraph::NavGraph(World* world)
+	: m_cachedWorld(world)
 {
 
 }
@@ -10,7 +12,29 @@ NavGraph::~NavGraph()
 
 }
 
+NavNode* NavGraph::GetRandomNode()
+{
+	return nullptr;
+}
+
 void NavGraph::BuildGraph()
 {
+	for (int32_t x = -100.0f; x < 100.0f; x += 10.0f)
+	{
+		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
+		{
 
+		}
+	}
+}
+
+void NavGraph::DrawGraph()
+{
+	for (int32_t x = -100.0f; x < 100.0f; x += 10.0f)
+	{
+		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
+		{
+			
+		}
+	}
 }

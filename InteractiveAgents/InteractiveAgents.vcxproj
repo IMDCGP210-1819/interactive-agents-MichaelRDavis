@@ -90,6 +90,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AI\AIController.cpp" />
     <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\AI\Steering\Steering.cpp" />
@@ -105,7 +106,12 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="Source\Game\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\AI\AIController.h" />
     <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
+    <ClInclude Include="Source\AI\Navigation\NavLink.h" />
+    <ClInclude Include="Source\AI\Navigation\NavNode.h" />
+    <ClInclude Include="Source\AI\Navigation\NavPath.h" />
+    <ClInclude Include="Source\AI\Navigation\NavPathNode.h" />
     <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\AI\Steering\Steering.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
@@ -121,6 +127,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Game\SpaceshipTransitions.h" />
     <ClInclude Include="Source\Game\World.h" />
     <ClInclude Include="Source\Math\Math.h" />
+    <ClInclude Include="Source\Rendering\Drawing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

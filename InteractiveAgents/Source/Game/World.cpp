@@ -2,11 +2,14 @@
 #include "Entity.h"
 #include "Spaceship.h"
 #include "Asteroid.h"
+#include "AI/Navigation/NavGraph.h"
 
 World::World(SDL_Renderer* renderer)
 	: m_pRenderer(renderer)
 {
 	m_numAsteroids = 5;
+
+	m_graph = std::make_unique<NavGraph>(this);
 
 	m_background = std::make_unique<Entity>(this);
 	m_background->CreateTexture("Content/Background.png");

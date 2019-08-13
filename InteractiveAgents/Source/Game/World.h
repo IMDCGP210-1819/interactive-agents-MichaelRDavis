@@ -9,6 +9,7 @@
 class Entity;
 class Spaceship;
 class Asteroid;
+class NavGraph;
 
 class World
 {
@@ -41,6 +42,7 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 	std::vector<Entity*> m_entities;
+	std::unique_ptr<NavGraph> m_graph;
 	std::unique_ptr<Entity> m_background;
 	std::unique_ptr<Spaceship> m_spaceship;
 	std::unique_ptr<Asteroid> m_asteroid;
