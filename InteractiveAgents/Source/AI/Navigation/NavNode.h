@@ -27,4 +27,23 @@ struct NavNode
 			outNeighbours.push_back(link->GetNeighbour(this));
 		}
 	}
+
+	NavLink* GetLink(NavNode* linkedNode)
+	{
+		for (auto it = links.begin(); it != links.end(); ++it)
+		{
+			NavLink* link = *it;
+			if (link->GetNeighbour(this) == linkedNode)
+			{
+				return link;
+			}
+		}
+	}
+
+	float CalculateCost(NavNode* node)
+	{
+		NavLink* link = GetLink(node);
+		Vector2f diff = node->position - position;
+		return weight * diff.length();
+	}
 };

@@ -54,7 +54,7 @@
     <ClCompile Include="Source\AI\Pathfinding\AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AI\AIController.cpp">
+    <ClCompile Include="Source\AI\Components\AIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,9 +107,6 @@
     <ClInclude Include="Source\AI\Pathfinding\AStar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\AI\AIController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Rendering\Drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -123,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\AI\Navigation\NavLink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AI\Components\AIController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

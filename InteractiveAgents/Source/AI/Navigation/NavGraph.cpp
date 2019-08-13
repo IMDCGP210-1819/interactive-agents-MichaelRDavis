@@ -17,6 +17,11 @@ NavNode* NavGraph::GetRandomNode()
 	return nullptr;
 }
 
+NavPath* NavGraph::FindPath(const Vector2f startPosition, const Vector2f endPosition)
+{
+	return nullptr;
+}
+
 void NavGraph::BuildGraph()
 {
 	for (int32_t x = -100.0f; x < 100.0f; x += 10.0f)

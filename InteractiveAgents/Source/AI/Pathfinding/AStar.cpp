@@ -5,7 +5,8 @@
 
 AStar::AStar()
 {
-
+	m_goalNode = nullptr;
+	m_startNode = nullptr;
 }
 
 AStar::~AStar()
@@ -49,6 +50,55 @@ NavPath* AStar::Search(NavNode* startNode, NavNode* goalNode)
 			{
 				continue;
 			}
+
+			float pathCost = path->goal + node->CalculateCost(path->pathNode);
+			bool isBetterNavPath = false;
+
+			NavPathNode* evaluatedNavPath = nullptr;
+			if (found != m_map.end())
+			{
+				evaluatedNavPath = found->second;
+			}
+
+			if (!evaluatedNavPath)
+			{
+				evaluatedNavPath = AddToOpenSet(node, path);
+			}
+			else if (pathCost < evaluatedNavPath->goal)
+			{
+				isBetterNavPath = true;
+			}
+
+			if (isBetterNavPath)
+			{
+				evaluatedNavPath->prevNode = path;
+				evaluatedNavPath->CalculateHeuristic();
+				ReInsert(evaluatedNavPath);
+			}
 		}
 	}
+
+	return nullptr;
+}
+
+NavPathNode* AStar::AddToOpenSet(NavNode* node, NavPathNode* prevNode)
+{
+	auto it = m_map.find(node);
+	NavPathNode* pathNode = nullptr;
+	if (it == m_map.end())
+	{
+		pathNode = new NavPathNode(prevNode, node, m_goalNode);
+	}
+
+	return pathNode;
+}
+
+void AStar::Insert(NavPathNode* node)
+{
+
+}
+
+void AStar::ReInsert(NavPathNode* node)
+{
+
 }

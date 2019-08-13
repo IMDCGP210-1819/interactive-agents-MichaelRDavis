@@ -2,11 +2,13 @@
 #include "SpaceshipFSM.h"
 #include "World.h"
 #include "Projectile.h"
+#include "AI/Components/AIController.h"
 
 Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
 	m_fsm = std::make_unique<SpaceshipFSM>();
+	m_ai = std::make_unique<AIController>(this);
 
 	m_health = 100;
 	m_ammo = 50;

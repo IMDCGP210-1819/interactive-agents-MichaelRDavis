@@ -2,6 +2,7 @@
 
 #include "Entity.h"
 
+class AIController;
 class SpaceshipFSM;
 class Projectile;
 
@@ -37,6 +38,7 @@ public:
 	}
 
 private:
+	std::unique_ptr<AIController> m_ai;
 	std::unique_ptr<SpaceshipFSM> m_fsm;
 	std::unique_ptr<Projectile> m_bullet;
 
