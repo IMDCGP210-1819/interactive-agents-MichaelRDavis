@@ -23,7 +23,7 @@ void Attack::OnEnter(std::shared_ptr<Spaceship> owner)
 
 void Attack::OnUpdate(std::shared_ptr<Spaceship> owner)
 {
-	owner->Fire();
+	//owner->Fire();
 }
 
 void Attack::OnExit(std::shared_ptr<Spaceship> owner)

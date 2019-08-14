@@ -39,7 +39,7 @@ void Spaceship::Fire()
 
 void Spaceship::Update(float deltaTime)
 {
-	m_fsm->Update();
+	//m_fsm->Update();
 }
 
 void Spaceship::CanSeeEnemy()

@@ -1,4 +1,5 @@
 #include "NavGraph.h"
+#include "NavNode.h"
 #include <cstdint>
 
 NavGraph::NavGraph(World* world)
@@ -39,7 +40,8 @@ void NavGraph::DrawGraph()
 	{
 		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
 		{
-			
+			NavNode* node = new NavNode(Vector2f(x, y));
+			m_nodes.push_back(node);
 		}
 	}
 }

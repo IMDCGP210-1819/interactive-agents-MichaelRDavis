@@ -3,6 +3,7 @@
 #include "Spaceship.h"
 #include "Asteroid.h"
 #include "AI/Navigation/NavGraph.h"
+#include "Rendering/Drawing.h"
 
 World::World(SDL_Renderer* renderer)
 	: m_pRenderer(renderer)
@@ -10,6 +11,7 @@ World::World(SDL_Renderer* renderer)
 	m_numAsteroids = 5;
 
 	m_graph = std::make_unique<NavGraph>(this);
+	m_graph->BuildGraph();
 
 	m_background = std::make_unique<Entity>(this);
 	m_background->CreateTexture("Content/Background.png");
@@ -27,6 +29,7 @@ World::World(SDL_Renderer* renderer)
 
 	m_entities.push_back(m_background.get());
 	m_entities.push_back(m_spaceship.get());
+
 
 	LogEntityList();
 }
