@@ -97,6 +97,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\Entity.cpp" />
     <ClCompile Include="Source\Game\GameApp.cpp" />
+    <ClCompile Include="Source\Game\Pickup.cpp" />
     <ClCompile Include="Source\Game\Projectile.cpp" />
     <ClCompile Include="Source\Game\Spaceship.cpp" />
     <ClCompile Include="Source\Game\SpaceshipFSM.cpp" />
@@ -104,7 +105,11 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="Source\Game\SpaceshipTransitions.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Game\World.cpp" />
-    <ClCompile Include="Source\UI\Menu.cpp" />
+    <ClCompile Include="ThirdPartySDKs\imgui\imgui.cpp" />
+    <ClCompile Include="ThirdPartySDKs\imgui\imgui_demo.cpp" />
+    <ClCompile Include="ThirdPartySDKs\imgui\imgui_draw.cpp" />
+    <ClCompile Include="ThirdPartySDKs\imgui\imgui_impl_sdl.cpp" />
+    <ClCompile Include="ThirdPartySDKs\imgui_sdl-master\imgui_sdl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AI\Components\AIController.h" />
@@ -121,6 +126,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Game\GameApp.h" />
     <ClInclude Include="Source\AI\FSM\State.h" />
     <ClInclude Include="Source\AI\FSM\Transition.h" />
+    <ClInclude Include="Source\Game\Pickup.h" />
     <ClInclude Include="Source\Game\Projectile.h" />
     <ClInclude Include="Source\Game\Spaceship.h" />
     <ClInclude Include="Source\Game\SpaceshipFSM.h" />
@@ -129,7 +135,14 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Game\World.h" />
     <ClInclude Include="Source\Math\Math.h" />
     <ClInclude Include="Source\Rendering\Drawing.h" />
-    <ClInclude Include="Source\UI\Menu.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\imconfig.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\imgui.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\imgui_impl_sdl.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\imgui_internal.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\stb_rect_pack.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\stb_textedit.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui\stb_truetype.h" />
+    <ClInclude Include="ThirdPartySDKs\imgui_sdl-master\imgui_sdl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

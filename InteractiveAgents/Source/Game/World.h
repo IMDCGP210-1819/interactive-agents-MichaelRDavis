@@ -38,11 +38,16 @@ public:
 		return m_pRenderer;
 	}
 
+	inline std::shared_ptr<NavGraph> GetNavGraph() const
+	{
+		return m_graph;
+	}
+
 private:
 	SDL_Renderer* m_pRenderer;
 
 	std::vector<Entity*> m_entities;
-	std::unique_ptr<NavGraph> m_graph;
+	std::shared_ptr<NavGraph> m_graph;
 	std::unique_ptr<Entity> m_background;
 	std::unique_ptr<Spaceship> m_spaceship;
 	std::unique_ptr<Asteroid> m_asteroid;

@@ -8,7 +8,7 @@ void Patrol::OnEnter(std::shared_ptr<Spaceship> owner)
 
 void Patrol::OnUpdate(std::shared_ptr<Spaceship> owner)
 {
-	owner->MoveTo();
+	
 }
 
 void Patrol::OnExit(std::shared_ptr<Spaceship> owner)

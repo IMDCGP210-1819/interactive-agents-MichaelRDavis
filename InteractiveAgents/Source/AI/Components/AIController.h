@@ -12,7 +12,9 @@ public:
 	AIController(Entity* entity);
 	~AIController();
 
-	void SearchNavigationGraph(Vector2f& startLocation, Vector2f& endLocation);
+	void MoveTo(Vector2f position);
+
+	void FindPoint();
 
 	void UpdateAIController();
 

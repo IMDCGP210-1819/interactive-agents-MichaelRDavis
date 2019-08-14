@@ -8,7 +8,7 @@ Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
 	m_fsm = std::make_unique<SpaceshipFSM>();
-	m_ai = std::make_unique<AIController>(this);
+	m_ai = std::make_shared<AIController>(this);
 
 	m_health = 100;
 	m_ammo = 50;
@@ -16,11 +16,6 @@ Spaceship::Spaceship(World* world)
 }
 
 Spaceship::~Spaceship()
-{
-
-}
-
-void Spaceship::MoveTo()
 {
 
 }

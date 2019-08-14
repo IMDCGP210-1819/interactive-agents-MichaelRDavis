@@ -8,6 +8,7 @@ class World;
 class Entity
 {
 public:
+	Entity() = default;
 	Entity(World* world);
 	~Entity();
 

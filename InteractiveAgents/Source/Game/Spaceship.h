@@ -12,8 +12,6 @@ public:
 	Spaceship(World* world);
 	~Spaceship();
 
-	void MoveTo();
-
 	void UseAmmo();
 	void Fire();
 
@@ -39,8 +37,13 @@ public:
 		return m_isDead;
 	}
 
+	inline std::shared_ptr<AIController> GetAIController()
+	{
+		return m_ai;
+	}
+
 private:
-	std::unique_ptr<AIController> m_ai;
+	std::shared_ptr<AIController> m_ai;
 	std::unique_ptr<SpaceshipFSM> m_fsm;
 	std::unique_ptr<Projectile> m_bullet;
 
