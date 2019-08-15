@@ -3,12 +3,21 @@
 #include <SDL.h>
 #include <vmath.h>
 
+/**
+ * Debug drawing
+ */
 class Drawing
 {
 public:
+	/** Draws a point */
 	static void DrawPoint(SDL_Renderer* renderer, int32_t xPos, int32_t yPos, Vector4f color)
 	{
 		SDL_SetRenderDrawColor(renderer, color.x, color.y, color.z, color.w);
 		SDL_RenderDrawPoint(renderer, xPos, yPos);
+	}
+
+	static void DrawLine(SDL_Renderer* renderer)
+	{
+
 	}
 };

@@ -1,5 +1,5 @@
 #include "SpaceshipTransitions.h"
-#include "Game/SpaceshipStates.h"
+#include "SpaceshipStates.h"
 
 FoundEnemy::FoundEnemy()
 {

@@ -1,7 +1,7 @@
 #include "SpaceshipStates.h"
-#include "Spaceship.h"
 #include "AI/Components/AIController.h"
-#include "Game/SpaceshipTransitions.h"
+#include "Spaceship.h"
+#include "SpaceshipTransitions.h"
 
 Patrol::Patrol()
 {

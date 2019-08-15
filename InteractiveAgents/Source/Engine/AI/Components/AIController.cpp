@@ -1,10 +1,10 @@
 #include "AIController.h"
 #include "AI/Pathfinding/AStar.h"
-#include "Game/Entity.h"
-#include "Game/World.h"
 #include "AI/Navigation/NavGraph.h"
 #include "AI/Navigation/NavPath.h"
 #include "AI/Navigation/NavNode.h"
+#include "Entity.h"
+#include "World.h"
 
 AIController::AIController(Entity* entity)
 	: m_owner(entity)

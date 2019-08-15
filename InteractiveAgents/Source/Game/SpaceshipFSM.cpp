@@ -1,7 +1,7 @@
 #include "SpaceshipFSM.h"
 #include "AI/FSM/State.h"
 #include "AI/FSM/Transition.h"
-#include "Game/SpaceshipStates.h"
+#include "SpaceshipStates.h"
 
 SpaceshipFSM::SpaceshipFSM()
 {

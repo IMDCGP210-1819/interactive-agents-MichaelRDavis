@@ -3,6 +3,9 @@
 #include <random>
 #include <vmath.h>
 
+/**
+ * 
+ */
 class Random
 {
 public:
@@ -25,6 +28,9 @@ private:
 	std::mt19937 m_mt;
 };
 
+/**
+ * 
+ */
 class VectorUtilities
 {
 public:

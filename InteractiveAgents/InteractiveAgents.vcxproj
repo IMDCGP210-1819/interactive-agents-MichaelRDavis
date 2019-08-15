@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\include;$(SolutionDir)ThirdPartySDKs\vmath;$(SolutionDir)ThirdPartySDKs\imgui;$(SolutionDir)ThirdPartySDKs\imgui_sdl-master;$(SolutionDir)Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\include;$(SolutionDir)ThirdPartySDKs\vmath;$(SolutionDir)ThirdPartySDKs\imgui;$(SolutionDir)ThirdPartySDKs\imgui_sdl-master;$(SolutionDir)Source\Engine;$(SolutionDir)Source\Game;$(SolutionDir)ThirdPartySDKs\Box2D</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UndefinePreprocessorDefinitions>
       </UndefinePreprocessorDefinitions>
@@ -60,8 +60,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdPartySDKs\SDL2\lib\x64;$(SolutionDir)ThirdPartySDKs\Box2D\x86_64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2_image.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -90,10 +90,10 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\AI\Components\AIController.cpp" />
-    <ClCompile Include="Source\AI\Navigation\NavGraph.cpp" />
-    <ClCompile Include="Source\AI\Pathfinding\AStar.cpp" />
-    <ClCompile Include="Source\AI\Steering\Steering.cpp" />
+    <ClCompile Include="Source\Engine\AI\Components\AIController.cpp" />
+    <ClCompile Include="Source\Engine\AI\Navigation\NavGraph.cpp" />
+    <ClCompile Include="Source\Engine\AI\Pathfinding\AStar.cpp" />
+    <ClCompile Include="Source\Engine\AI\Steering\Steering.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Game\Entity.cpp" />
     <ClCompile Include="Source\Game\GameApp.cpp" />
@@ -112,20 +112,21 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="ThirdPartySDKs\imgui_sdl-master\imgui_sdl.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\AI\Components\AIController.h" />
-    <ClInclude Include="Source\AI\Navigation\NavGraph.h" />
-    <ClInclude Include="Source\AI\Navigation\NavLink.h" />
-    <ClInclude Include="Source\AI\Navigation\NavNode.h" />
-    <ClInclude Include="Source\AI\Navigation\NavPath.h" />
-    <ClInclude Include="Source\AI\Navigation\NavPathNode.h" />
-    <ClInclude Include="Source\AI\Pathfinding\AStar.h" />
-    <ClInclude Include="Source\AI\Steering\Steering.h" />
+    <ClInclude Include="Source\Engine\AI\Components\AIController.h" />
+    <ClInclude Include="Source\Engine\AI\Navigation\NavGraph.h" />
+    <ClInclude Include="Source\Engine\AI\Navigation\NavLink.h" />
+    <ClInclude Include="Source\Engine\AI\Navigation\NavNode.h" />
+    <ClInclude Include="Source\Engine\AI\Navigation\NavPath.h" />
+    <ClInclude Include="Source\Engine\AI\Navigation\NavPathNode.h" />
+    <ClInclude Include="Source\Engine\AI\Pathfinding\AStar.h" />
+    <ClInclude Include="Source\Engine\AI\Steering\Steering.h" />
+    <ClInclude Include="Source\Engine\Physics\RayCasting.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
     <ClInclude Include="Source\Game\Entity.h" />
-    <ClInclude Include="Source\AI\FSM\FSM.h" />
+    <ClInclude Include="Source\Engine\AI\FSM\FSM.h" />
     <ClInclude Include="Source\Game\GameApp.h" />
-    <ClInclude Include="Source\AI\FSM\State.h" />
-    <ClInclude Include="Source\AI\FSM\Transition.h" />
+    <ClInclude Include="Source\Engine\AI\FSM\State.h" />
+    <ClInclude Include="Source\Engine\AI\FSM\Transition.h" />
     <ClInclude Include="Source\Game\Pickup.h" />
     <ClInclude Include="Source\Game\Projectile.h" />
     <ClInclude Include="Source\Game\Spaceship.h" />
@@ -133,8 +134,8 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Game\SpaceshipStates.h" />
     <ClInclude Include="Source\Game\SpaceshipTransitions.h" />
     <ClInclude Include="Source\Game\World.h" />
-    <ClInclude Include="Source\Math\Math.h" />
-    <ClInclude Include="Source\Rendering\Drawing.h" />
+    <ClInclude Include="Source\Engine\Math\Math.h" />
+    <ClInclude Include="Source\Engine\Rendering\Drawing.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imconfig.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imgui.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imgui_impl_sdl.h" />
