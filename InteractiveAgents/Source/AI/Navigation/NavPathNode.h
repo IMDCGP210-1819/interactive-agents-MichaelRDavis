@@ -2,8 +2,12 @@
 
 #include "AI/Navigation/NavNode.h"
 
+/**
+ * 
+ */
 struct NavPathNode
 {
+	/**  */
 	NavPathNode(NavPathNode* inPrevNode, NavNode* inPathNode, NavNode* inGoalNode)
 	{
 		prevNode = inPrevNode;
@@ -17,6 +21,7 @@ struct NavPathNode
 		CalculateHeuristic();
 	}
 
+	/**  */
 	void CalculateHeuristic()
 	{
 		if (prevNode)
@@ -34,6 +39,7 @@ struct NavPathNode
 		fitness = goal + heuristic;
 	}
 
+	/**  */
 	NavPathNode* prevNode;
 	NavNode* pathNode;
 	NavNode* goalNode;

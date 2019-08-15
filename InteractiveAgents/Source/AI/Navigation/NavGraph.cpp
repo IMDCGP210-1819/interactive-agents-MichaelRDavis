@@ -2,6 +2,7 @@
 #include "NavNode.h"
 #include "Rendering/Drawing.h"
 #include "Game/World.h"
+#include "Math/Math.h"
 #include <cstdint>
 
 NavGraph::NavGraph(World* world)
@@ -17,11 +18,10 @@ NavGraph::~NavGraph()
 
 NavNode* NavGraph::GetRandomNode()
 {
-	return nullptr;
-}
+	Random rand;
+	uint32_t nodes = m_nodes.size();
+	uint32_t node = rand.GetRangei(0, nodes);
 
-NavPath* NavGraph::FindPath(const Vector2f startPosition, const Vector2f endPosition)
-{
 	return nullptr;
 }
 

@@ -9,10 +9,15 @@ public:
 	Random() = default;
 	~Random() = default;
 
-	template<typename T>
-	T GetRange(T min, T max)
+	float GetRangef(float min, float max)
 	{
-		std::uniform_real_distribution<T> dist(min, max);
+		std::uniform_real_distribution<float> dist(min, max);
+		return dist(m_mt);
+	}
+
+	int32_t GetRangei(int32_t min, int32_t max)
+	{
+		std::uniform_int_distribution<int32_t> dist(min, max);
 		return dist(m_mt);
 	}
 

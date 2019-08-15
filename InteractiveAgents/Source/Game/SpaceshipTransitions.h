@@ -5,7 +5,7 @@
 class Spaceship;
 class Attack;
 
-class FoundEnemy : Transition<Spaceship>
+class FoundEnemy : public Transition<Spaceship>
 {
 public:
 	FoundEnemy();

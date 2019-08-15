@@ -17,7 +17,7 @@ public:
 
 	void MoveTo(Vector2f position);
 
-	void FindPoint();
+	void MoveToRandomNode();
 
 	void SetOwner(Entity* newOwner);
 

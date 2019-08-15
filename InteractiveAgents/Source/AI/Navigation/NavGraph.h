@@ -23,9 +23,6 @@ public:
 	/** Returns a random node from the graph */
 	NavNode* GetRandomNode();
 
-	/** Returns a path object */
-	NavPath* FindPath(const Vector2f startPosition, const Vector2f endPosition);
-
 	/** Create the navigation graph */
 	void BuildGraph();
 

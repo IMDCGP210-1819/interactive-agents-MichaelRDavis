@@ -1,6 +1,10 @@
 #include "AIController.h"
 #include "AI/Pathfinding/AStar.h"
 #include "Game/Entity.h"
+#include "Game/World.h"
+#include "AI/Navigation/NavGraph.h"
+#include "AI/Navigation/NavPath.h"
+#include "AI/Navigation/NavNode.h"
 
 AIController::AIController(Entity* entity)
 	: m_owner(entity)
@@ -20,9 +24,16 @@ void AIController::MoveTo(Vector2f position)
 	m_owner->SetRotation(angle);
 }
 
-void AIController::FindPoint()
+void AIController::MoveToRandomNode()
 {
+	NavNode* startNode = m_owner->GetWorld()->GetNavGraph()->GetRandomNode();
+	NavNode* goalNode = m_owner->GetWorld()->GetNavGraph()->GetRandomNode();
 
+	NavPath* path = m_navigation->Search(startNode, goalNode);
+	for (auto node : path->path)
+	{
+		MoveTo(node->position);
+	}
 }
 
 void AIController::SetOwner(Entity* newOwner)
