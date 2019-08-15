@@ -1,8 +1,8 @@
 #include "Spaceship.h"
 #include "SpaceshipFSM.h"
-#include "World.h"
+#include "GameObject/World.h"
 #include "Projectile.h"
-#include "AI/Components/AIController.h"
+#include "GameObject/AIController.h"
 
 Spaceship::Spaceship(World* world)
 	: Entity(world)
@@ -33,18 +33,19 @@ void Spaceship::Fire()
 {
 	if (CanFire())
 	{
+		UseAmmo();
 		m_bullet = std::make_unique<Projectile>(GetWorld());
 	}
 }
 
 void Spaceship::Update(float deltaTime)
 {
-	//m_fsm->Update();
+	m_fsm->Update();
 }
 
 void Spaceship::CanSeeEnemy()
 {
-
+	// TODO: Ray trace for an enemy spaceship
 }
 
 bool Spaceship::CanFire()

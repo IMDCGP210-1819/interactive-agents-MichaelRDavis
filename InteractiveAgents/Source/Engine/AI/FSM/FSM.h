@@ -15,6 +15,11 @@ public:
 
 	virtual void Update() = 0;
 
+	virtual void SetActiveState(std::shared_ptr<State<T>> newState)
+	{
+		m_activeState = newState;
+	}
+
 protected:
 	std::list<std::shared_ptr<State<T>>> m_states;
 	std::shared_ptr<T> m_owner;

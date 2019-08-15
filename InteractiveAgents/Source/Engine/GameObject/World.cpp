@@ -1,6 +1,7 @@
 #include "World.h"
 #include "Entity.h"
 #include "Spaceship.h"
+#include "EnemySpaceship.h"
 #include "Asteroid.h"
 #include "AI/Navigation/NavGraph.h"
 #include "Rendering/Drawing.h"
@@ -19,6 +20,9 @@ World::World(SDL_Renderer* renderer)
 	m_spaceship = std::make_unique<Spaceship>(this);
 	m_spaceship->CreateTexture("Content/Mantis.png");
 
+	m_enemySpaceship = std::make_unique<EnemySpaceship>(this);
+	m_enemySpaceship->CreateTexture("Content/Scarab.png");
+
 	m_asteroid = std::make_unique<Asteroid>(this);
 	m_asteroid->CreateTexture("Content/Asteroid.png");
 
@@ -34,11 +38,6 @@ World::World(SDL_Renderer* renderer)
 }
 
 World::~World()
-{
-
-}
-
-void World::CreateGrid()
 {
 
 }

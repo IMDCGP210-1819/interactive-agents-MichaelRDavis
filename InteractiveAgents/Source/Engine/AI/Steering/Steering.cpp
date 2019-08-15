@@ -1,6 +1,6 @@
 #include "Steering.h"
 #include "Math/Math.h"
-#include "Entity.h"
+#include "GameObject/Entity.h"
 
 Steering::Steering()
 {

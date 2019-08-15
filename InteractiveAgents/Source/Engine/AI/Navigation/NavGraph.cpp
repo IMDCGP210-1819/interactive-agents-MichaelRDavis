@@ -1,7 +1,7 @@
 #include "NavGraph.h"
 #include "NavNode.h"
 #include "Rendering/Drawing.h"
-#include "World.h"
+#include "GameObject/World.h"
 #include "Math/Math.h"
 #include <cstdint>
 

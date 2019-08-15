@@ -1,5 +1,5 @@
 #include "SpaceshipStates.h"
-#include "AI/Components/AIController.h"
+#include "GameObject/AIController.h"
 #include "Spaceship.h"
 #include "SpaceshipTransitions.h"
 
@@ -7,11 +7,6 @@ Patrol::Patrol()
 {
 	m_foundEnemy = std::make_shared<FoundEnemy>();
 	m_transitions.push_back(m_foundEnemy);
-}
-
-Patrol::~Patrol()
-{
-
 }
 
 void Patrol::OnEnter(std::shared_ptr<Spaceship> owner)
@@ -31,12 +26,8 @@ void Patrol::OnExit(std::shared_ptr<Spaceship> owner)
 
 Attack::Attack()
 {
-
-}
-
-Attack::~Attack()
-{
-
+	m_foundPath = std::make_shared<FoundPath>();
+	m_transitions.push_back(m_foundPath);
 }
 
 void Attack::OnEnter(std::shared_ptr<Spaceship> owner)

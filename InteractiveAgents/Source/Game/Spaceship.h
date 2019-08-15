@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entity.h"
+#include "GameObject/Entity.h"
 
 class AIController;
 class SpaceshipFSM;
@@ -9,17 +9,24 @@ class Projectile;
 class Spaceship : public Entity
 {
 public:
+	/** Default Spaceship constructor */
 	Spaceship(World* world);
-	~Spaceship();
 
-	void UseAmmo();
-	void Fire();
+	/** Default Spaceship destructor */
+	~Spaceship();
 
 	void Update(float deltaTime) override;
 
+	void UseAmmo();
+
+	void Fire();
+
 	void CanSeeEnemy();
 
+	/** Returns true if spaceship destroyed */
 	bool IsDead();
+
+	/** Returns true if we can fire  */
 	bool CanFire();
 
 	inline int32_t GetHealth() const

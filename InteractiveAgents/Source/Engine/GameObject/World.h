@@ -8,6 +8,7 @@
 
 class Entity;
 class Spaceship;
+class EnemySpaceship;
 class Asteroid;
 class NavGraph;
 
@@ -16,8 +17,6 @@ class World
 public:
 	World(SDL_Renderer* renderer);
 	~World();
-
-	void CreateGrid();
 
 	void UpdateEntities(float deltaTime);
 	void Draw();
@@ -50,6 +49,7 @@ private:
 	std::shared_ptr<NavGraph> m_graph;
 	std::unique_ptr<Entity> m_background;
 	std::unique_ptr<Spaceship> m_spaceship;
+	std::unique_ptr<EnemySpaceship> m_enemySpaceship;
 	std::unique_ptr<Asteroid> m_asteroid;
 
 	int32_t m_numAsteroids;
