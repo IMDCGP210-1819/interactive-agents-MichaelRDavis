@@ -16,8 +16,10 @@ public:
 		SDL_RenderDrawPoint(renderer, xPos, yPos);
 	}
 
-	static void DrawLine(SDL_Renderer* renderer)
+	/** Draws a line */
+	static void DrawLine(SDL_Renderer* renderer, Vector2i startLocation, Vector2i endLocation, Vector4f color)
 	{
-
+		SDL_SetRenderDrawColor(renderer, color.x, color.y, color.z, color.w);
+		SDL_RenderDrawLine(renderer, startLocation.x, startLocation.y, endLocation.x, endLocation.y);
 	}
 };

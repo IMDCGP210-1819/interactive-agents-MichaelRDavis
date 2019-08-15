@@ -1,5 +1,5 @@
 #include "GameApp.h"
-#include "World.h"
+#include "GameObject/World.h"
 #include <SDL_image.h>
 
 GameApp::GameApp()
@@ -59,10 +59,6 @@ void GameApp::Init()
 	}
 
 	m_pWorld = std::make_unique<World>(m_pRenderer);
-	if (m_pWorld)
-	{
-		m_pWorld->CreateGrid();
-	}
 }
 
 void GameApp::Shutdown()

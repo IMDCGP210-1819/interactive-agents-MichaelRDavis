@@ -51,7 +51,7 @@ public:
 
 private:
 	std::shared_ptr<AIController> m_ai;
-	std::unique_ptr<SpaceshipFSM> m_fsm;
+	std::shared_ptr<SpaceshipFSM> m_fsm;
 	std::unique_ptr<Projectile> m_bullet;
 
 	int32_t m_health;

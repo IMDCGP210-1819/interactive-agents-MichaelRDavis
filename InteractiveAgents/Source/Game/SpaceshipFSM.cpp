@@ -9,7 +9,7 @@ SpaceshipFSM::SpaceshipFSM()
 	m_patrol = std::make_shared<Patrol>();
 	m_states.push_back(m_attack);
 	m_states.push_back(m_patrol);
-	//m_activeState = m_patrol;
+	m_activeState = m_patrol;
 }
 
 SpaceshipFSM::~SpaceshipFSM()
@@ -34,5 +34,5 @@ void SpaceshipFSM::Update()
 	//	}
 	//}
 
-	//m_activeState->OnUpdate(m_owner);
+	m_activeState->OnUpdate(m_owner);
 }

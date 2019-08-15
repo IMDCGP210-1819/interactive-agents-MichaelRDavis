@@ -7,7 +7,8 @@
 Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
-	m_fsm = std::make_unique<SpaceshipFSM>();
+	m_fsm = std::make_shared<SpaceshipFSM>();
+	//m_fsm->SetOwner(std::make_shared<Spaceship>(this));
 	m_ai = std::make_shared<AIController>(this);
 
 	m_health = 100;
@@ -40,7 +41,7 @@ void Spaceship::Fire()
 
 void Spaceship::Update(float deltaTime)
 {
-	m_fsm->Update();
+	//m_fsm->Update();
 }
 
 void Spaceship::CanSeeEnemy()

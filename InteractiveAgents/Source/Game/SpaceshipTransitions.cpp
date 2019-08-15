@@ -4,7 +4,7 @@
 
 FoundEnemy::FoundEnemy()
 {
-	m_attack = std::make_shared<Attack>();
+	//m_attack = std::make_shared<Attack>();
 }
 
 bool FoundEnemy::IsValid()
@@ -15,7 +15,8 @@ bool FoundEnemy::IsValid()
 
 std::shared_ptr<State<Spaceship>> FoundEnemy::GetNextState()
 {
-	return m_attack;
+	//return m_attack;
+	return nullptr;
 }
 
 void FoundEnemy::OnTransition()
@@ -25,7 +26,7 @@ void FoundEnemy::OnTransition()
 
 FoundPath::FoundPath()
 {
-	m_patrol = std::make_shared<Patrol>();
+	//m_patrol = std::make_shared<Patrol>();
 }
 
 bool FoundPath::IsValid()
@@ -36,7 +37,8 @@ bool FoundPath::IsValid()
 
 std::shared_ptr<State<Spaceship>> FoundPath::GetNextState()
 {
-	return m_patrol;
+	//return m_patrol;
+	return nullptr;
 }
 
 void FoundPath::OnTransition()

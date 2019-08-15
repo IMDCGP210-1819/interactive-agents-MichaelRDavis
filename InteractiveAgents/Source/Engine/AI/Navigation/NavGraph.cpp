@@ -58,7 +58,7 @@ void NavGraph::DrawGraph()
 	{
 		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
 		{
-			Drawing::DrawPoint(m_cachedWorld->GetRenderer(), x, y, Vector4f(0.0f, 0.0f, 0.0f, 1.0f));
+			Drawing::DrawPoint(m_cachedWorld->GetRenderer(), x, y, Vector4f(1.0f, 1.0f, 1.0f, 1.0f));
 		}
 	}
 }

@@ -19,9 +19,11 @@ World::World(SDL_Renderer* renderer)
 
 	m_spaceship = std::make_unique<Spaceship>(this);
 	m_spaceship->CreateTexture("Content/Mantis.png");
+	m_spaceship->SetPosition(Vector2f(100.0f, 100.0f));
 
 	m_enemySpaceship = std::make_unique<EnemySpaceship>(this);
 	m_enemySpaceship->CreateTexture("Content/Scarab.png");
+	m_enemySpaceship->SetPosition(Vector2f(250.0f, 250.0f));
 
 	m_asteroid = std::make_unique<Asteroid>(this);
 	m_asteroid->CreateTexture("Content/Asteroid.png");
@@ -33,6 +35,7 @@ World::World(SDL_Renderer* renderer)
 
 	m_entities.push_back(m_background.get());
 	m_entities.push_back(m_spaceship.get());
+	m_entities.push_back(m_enemySpaceship.get());
 
 	LogEntityList();
 }

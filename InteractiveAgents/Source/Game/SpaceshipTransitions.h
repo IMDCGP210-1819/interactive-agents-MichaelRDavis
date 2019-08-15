@@ -17,7 +17,7 @@ public:
 	void OnTransition();
 
 private:
-	std::shared_ptr<Attack> m_attack;
+	//std::shared_ptr<Attack> m_attack;
 };
 
 class FoundPath : public Transition<Spaceship>
@@ -31,5 +31,5 @@ public:
 	void OnTransition();
 
 private:
-	std::shared_ptr<Patrol> m_patrol;
+	//std::shared_ptr<Patrol> m_patrol;
 };
