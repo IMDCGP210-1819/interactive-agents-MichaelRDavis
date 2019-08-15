@@ -22,12 +22,7 @@ void AIController::MoveTo(Vector2f position)
 
 void AIController::FindPoint()
 {
-	
-}
 
-void AIController::UpdateAIController()
-{
-	
 }
 
 void AIController::SetOwner(Entity* newOwner)

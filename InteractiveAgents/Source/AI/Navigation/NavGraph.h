@@ -33,6 +33,10 @@ public:
 	void DrawGraph();
 
 private:
+	/** Links two nodes together by forming a navigation link between them */
+	void LinkNodes(NavNode* firstNode, NavNode* secondNode);
+
+private:
 	/** List of all graph navigation nodes */
 	std::vector<NavNode*> m_nodes;
 

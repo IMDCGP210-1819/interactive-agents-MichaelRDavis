@@ -30,7 +30,6 @@ World::World(SDL_Renderer* renderer)
 	m_entities.push_back(m_background.get());
 	m_entities.push_back(m_spaceship.get());
 
-
 	LogEntityList();
 }
 
@@ -57,5 +56,6 @@ void World::Draw()
 	for (auto entity : m_entities)
 	{
 		entity->Draw();
+		m_graph->DrawGraph();
 	}
 }

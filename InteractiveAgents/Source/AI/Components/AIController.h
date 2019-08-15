@@ -6,6 +6,9 @@
 class AStar;
 class Entity;
 
+/**
+ * 
+ */
 class AIController
 {
 public:
@@ -15,8 +18,6 @@ public:
 	void MoveTo(Vector2f position);
 
 	void FindPoint();
-
-	void UpdateAIController();
 
 	void SetOwner(Entity* newOwner);
 
