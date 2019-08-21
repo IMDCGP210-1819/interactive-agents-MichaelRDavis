@@ -14,6 +14,12 @@ Entity::Entity(World* world)
 	m_speed = 0.0f;
 	m_mass = 1.0f;
 	m_collisionRadius = 0.0f;
+
+	m_bodyDefinition.type = b2_kinematicBody;
+	m_bodyDefinition.position.Set(m_position.x, m_position.y);
+	m_bodyDefinition.angle = m_rotation;
+
+	m_dynamicBody = GetWorld()->GetPhysicsWorld()->CreateBody(&m_bodyDefinition);
 }
 
 Entity::~Entity()

@@ -94,9 +94,12 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClCompile Include="Source\Engine\AI\Navigation\NavGraph.cpp" />
     <ClCompile Include="Source\Engine\AI\Pathfinding\AStar.cpp" />
     <ClCompile Include="Source\Engine\AI\Steering\Steering.cpp" />
+    <ClCompile Include="Source\Engine\GameObject\Component.cpp" />
+    <ClCompile Include="Source\Engine\GameObject\Components\CollisionComponent.cpp" />
     <ClCompile Include="Source\Game\Asteroid.cpp" />
     <ClCompile Include="Source\Engine\GameObject\Entity.cpp" />
     <ClCompile Include="Source\Engine\AppFramework\GameApp.cpp" />
+    <ClCompile Include="Source\Game\Drone.cpp" />
     <ClCompile Include="Source\Game\EnemySpaceship.cpp" />
     <ClCompile Include="Source\Game\Pickup.cpp" />
     <ClCompile Include="Source\Game\Projectile.cpp" />
@@ -121,6 +124,8 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Engine\AI\Navigation\NavPathNode.h" />
     <ClInclude Include="Source\Engine\AI\Pathfinding\AStar.h" />
     <ClInclude Include="Source\Engine\AI\Steering\Steering.h" />
+    <ClInclude Include="Source\Engine\GameObject\Component.h" />
+    <ClInclude Include="Source\Engine\GameObject\Components\CollisionComponent.h" />
     <ClInclude Include="Source\Engine\Math\MathWrapper.h" />
     <ClInclude Include="Source\Engine\Physics\RayCasting.h" />
     <ClInclude Include="Source\Game\Asteroid.h" />
@@ -129,6 +134,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2\lib\x64\zlib1.dll $(SolutionDir)Binaries\
     <ClInclude Include="Source\Engine\AppFramework\GameApp.h" />
     <ClInclude Include="Source\Engine\AI\FSM\State.h" />
     <ClInclude Include="Source\Engine\AI\FSM\Transition.h" />
+    <ClInclude Include="Source\Game\Drone.h" />
     <ClInclude Include="Source\Game\EnemySpaceship.h" />
     <ClInclude Include="Source\Game\Pickup.h" />
     <ClInclude Include="Source\Game\Projectile.h" />

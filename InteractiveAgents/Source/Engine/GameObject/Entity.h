@@ -2,6 +2,7 @@
 
 #include <vmath.h>
 #include <SDL.h>
+#include <Box2D/Box2D.h>
 
 class World;
 
@@ -39,6 +40,8 @@ public:
 protected:
 	SDL_Texture* m_texture;
 	World* m_world;
+	b2BodyDef m_bodyDefinition;
+	b2Body* m_dynamicBody;
 	Vector2f m_position;
 	Vector2f m_velocity;
 	int32_t m_texWidth;
