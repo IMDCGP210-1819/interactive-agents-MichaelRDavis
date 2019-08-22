@@ -21,6 +21,14 @@ Spaceship::~Spaceship()
 
 }
 
+void Spaceship::TakeDamage(int32_t damage)
+{
+	if (damage > 0)
+	{
+		m_health -= damage;
+	}
+}
+
 void Spaceship::UseAmmo()
 {
 	m_ammo--;

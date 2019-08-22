@@ -8,6 +8,8 @@ public:
 	Projectile(World* world);
 	~Projectile();
 
+	void ApplyDamage(Entity* damagedActor);
+
 	void SetOwner(std::shared_ptr<Entity> owner);
 
 	inline std::shared_ptr<Entity> GetOwner() const

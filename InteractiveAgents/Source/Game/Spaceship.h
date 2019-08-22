@@ -15,10 +15,16 @@ public:
 	/** Default Spaceship destructor */
 	~Spaceship();
 
+	/** Take damage on hit */
+	void TakeDamage(int32_t damage);
+
+	/** Called once per frame */
 	void Update(float deltaTime) override;
 
+	/** Use ammo, if firing */
 	void UseAmmo();
 
+	/** Fire projectile */
 	void Fire();
 
 	void CanSeeEnemy();
