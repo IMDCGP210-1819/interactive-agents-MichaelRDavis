@@ -9,7 +9,7 @@ Patrol::Patrol()
 
 void Patrol::OnEnter(std::shared_ptr<Spaceship> owner)
 {
-	
+	std::cout << "Patrolling" << std::endl;
 }
 
 void Patrol::OnUpdate(std::shared_ptr<Spaceship> owner)

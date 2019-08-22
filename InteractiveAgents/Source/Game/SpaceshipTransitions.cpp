@@ -11,7 +11,7 @@ FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
 bool FoundEnemy::IsValid()
 {
 	// TODO: Check if enemy is spotted
-	return true;
+	return false;
 }
 
 std::shared_ptr<State<Spaceship>> FoundEnemy::GetNextState()
@@ -33,7 +33,7 @@ FoundPath::FoundPath(std::shared_ptr<Patrol> state)
 bool FoundPath::IsValid()
 {
 	// TODO: Check if a valid path is found
-	return true;
+	return false;
 }
 
 std::shared_ptr<State<Spaceship>> FoundPath::GetNextState()
@@ -55,7 +55,7 @@ CanFlee::CanFlee(std::shared_ptr<Flee> state)
 bool CanFlee::IsValid()
 {
 	// TODO: Check if we can flee
-	return true;
+	return false;
 }
 
 std::shared_ptr<State<Spaceship>> CanFlee::GetNextState()

@@ -67,6 +67,10 @@ void Spaceship::MoveToRandomNode()
 		for (auto node : path->path)
 		{
 			MoveTo(node->position);
+			if (node == goalNode)
+			{
+				goalNode = m_world->GetNavGraph()->GetRandomNode();
+			}
 		}
 
 	} while (goalNode != startNode);
