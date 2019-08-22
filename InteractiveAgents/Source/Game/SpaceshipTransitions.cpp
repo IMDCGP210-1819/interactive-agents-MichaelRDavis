@@ -1,5 +1,6 @@
 #include "SpaceshipTransitions.h"
 #include "SpaceshipStates.h"
+#include "Spaceship.h"
 #include <iostream>
 
 FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
@@ -8,9 +9,13 @@ FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
 	m_nextState = state;
 }
 
-bool FoundEnemy::IsValid()
+bool FoundEnemy::IsValid(std::shared_ptr<Spaceship> owner)
 {
-	// TODO: Check if enemy is spotted
+	if (owner->CanSeeEnemy() && owner->CanFire())
+	{
+		return true;
+	}
+
 	return false;
 }
 
@@ -30,9 +35,9 @@ FoundPath::FoundPath(std::shared_ptr<Patrol> state)
 	m_nextState = state;
 }
 
-bool FoundPath::IsValid()
+bool FoundPath::IsValid(std::shared_ptr<Spaceship> owner)
 {
-	// TODO: Check if a valid path is found
+	// TODO: Check if a random node is found
 	return false;
 }
 
@@ -52,9 +57,13 @@ CanFlee::CanFlee(std::shared_ptr<Flee> state)
 	m_nextState = state;
 }
 
-bool CanFlee::IsValid()
+bool CanFlee::IsValid(std::shared_ptr<Spaceship> owner)
 {
-	// TODO: Check if we can flee
+	if (owner->GetHealth() < 5)
+	{
+		return true;
+	}
+
 	return false;
 }
 

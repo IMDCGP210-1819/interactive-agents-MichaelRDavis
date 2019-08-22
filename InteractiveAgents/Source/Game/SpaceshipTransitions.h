@@ -13,7 +13,7 @@ public:
 	FoundEnemy(std::shared_ptr<Attack> state);
 	~FoundEnemy() = default;
 
-	bool IsValid();
+	bool IsValid(std::shared_ptr<Spaceship> owner);
 	std::shared_ptr<State<Spaceship>> GetNextState();
 	void OnTransition();
 };
@@ -24,7 +24,7 @@ public:
 	FoundPath(std::shared_ptr<Patrol> state);
 	~FoundPath() = default;
 
-	bool IsValid();
+	bool IsValid(std::shared_ptr<Spaceship> owner);
 	std::shared_ptr<State<Spaceship>> GetNextState();
 	void OnTransition();
 };
@@ -35,7 +35,7 @@ public:
 	CanFlee(std::shared_ptr<Flee> state);
 	~CanFlee() = default;
 
-	bool IsValid();
+	bool IsValid(std::shared_ptr<Spaceship> owner);
 	std::shared_ptr<State<Spaceship>> GetNextState();
 	void OnTransition();
 };

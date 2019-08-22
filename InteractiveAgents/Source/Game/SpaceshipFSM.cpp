@@ -26,7 +26,7 @@ void SpaceshipFSM::Update()
 {
 	for (auto transition : m_activeState->GetTransitions())
 	{
-		if (transition->IsValid())
+		if (transition->IsValid(m_owner))
 		{
 			m_activeState->OnExit(m_owner);
 			m_activeState = transition->GetNextState();
