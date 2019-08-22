@@ -78,10 +78,10 @@ private:
 	std::unique_ptr<Entity> m_background;
 
 	/** AI controlled Spaceship */
-	std::unique_ptr<Spaceship> m_spaceship;
+	std::shared_ptr<Spaceship> m_spaceship;
 
 	/** AI controlled enemy spaceship */
-	std::unique_ptr<Spaceship> m_enemySpaceship;
+	std::shared_ptr<Spaceship> m_enemySpaceship;
 
 	/** Wandering asteroids */
 	std::unique_ptr<Asteroid> m_asteroid;

@@ -8,7 +8,7 @@ class Projectile;
 class AStar;
 class Steering;
 
-class Spaceship : public Entity
+class Spaceship : public Entity, public std::enable_shared_from_this<Spaceship>
 {
 public:
 	/** Default Spaceship constructor */
@@ -16,6 +16,13 @@ public:
 
 	/** Default Spaceship destructor */
 	~Spaceship();
+
+	/** Factory function to create a spaceship */
+	template<typename ... T>
+	static std::shared_ptr<Spaceship> CreateSpaceship(T&& ... args)
+	{
+		return std::shared_ptr<Spaceship>(new Spaceship(std::forward<T>(args)...));
+	}
 
 	/** Take damage on hit */
 	void TakeDamage(int32_t damage);
@@ -60,6 +67,11 @@ public:
 	inline bool IsDead() const
 	{
 		return m_isDead;
+	}
+
+	std::shared_ptr<Spaceship> GetSpaceship()
+	{
+		return shared_from_this();
 	}
 
 private:

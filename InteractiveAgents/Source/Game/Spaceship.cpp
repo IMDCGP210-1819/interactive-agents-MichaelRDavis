@@ -12,6 +12,7 @@ Spaceship::Spaceship(World* world)
 {
 	m_navigation = std::make_shared<AStar>();
 	m_fsm = std::make_shared<SpaceshipFSM>();
+	m_fsm->SetOwner(GetSpaceship());
 
 	m_health = 100;
 	m_ammo = 50;
