@@ -2,9 +2,10 @@
 #include "SpaceshipStates.h"
 #include <iostream>
 
-FoundEnemy::FoundEnemy()
+FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
+	: Transition(state)
 {
-	//m_attack = std::make_shared<Attack>();
+	m_nextState = state;
 }
 
 bool FoundEnemy::IsValid()
@@ -15,8 +16,7 @@ bool FoundEnemy::IsValid()
 
 std::shared_ptr<State<Spaceship>> FoundEnemy::GetNextState()
 {
-	//return m_attack;
-	return nullptr;
+	return m_nextState;
 }
 
 void FoundEnemy::OnTransition()
@@ -24,9 +24,10 @@ void FoundEnemy::OnTransition()
 	std::cout << "Enemy spaceship detected" << std::endl;
 }
 
-FoundPath::FoundPath()
+FoundPath::FoundPath(std::shared_ptr<Patrol> state)
+	: Transition(state)
 {
-	//m_patrol = std::make_shared<Patrol>();
+	m_nextState = state;
 }
 
 bool FoundPath::IsValid()
@@ -37,8 +38,7 @@ bool FoundPath::IsValid()
 
 std::shared_ptr<State<Spaceship>> FoundPath::GetNextState()
 {
-	//return m_patrol;
-	return nullptr;
+	return m_nextState;
 }
 
 void FoundPath::OnTransition()

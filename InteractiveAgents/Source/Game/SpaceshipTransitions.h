@@ -9,27 +9,21 @@ class Patrol;
 class FoundEnemy : public Transition<Spaceship>
 {
 public:
-	FoundEnemy();
+	FoundEnemy(std::shared_ptr<Attack> state);
 	~FoundEnemy() = default;
 
 	bool IsValid();
 	std::shared_ptr<State<Spaceship>> GetNextState();
 	void OnTransition();
-
-private:
-	//std::shared_ptr<Attack> m_attack;
 };
 
 class FoundPath : public Transition<Spaceship>
 {
 public:
-	FoundPath();
+	FoundPath(std::shared_ptr<Patrol> state);
 	~FoundPath() = default;
 
 	bool IsValid();
 	std::shared_ptr<State<Spaceship>> GetNextState();
 	void OnTransition();
-
-private:
-	//std::shared_ptr<Patrol> m_patrol;
 };

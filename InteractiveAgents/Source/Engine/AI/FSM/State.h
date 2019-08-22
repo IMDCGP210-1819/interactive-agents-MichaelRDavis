@@ -17,6 +17,11 @@ public:
 	virtual void OnUpdate(std::shared_ptr<T> owner) = 0;
 	virtual void OnExit(std::shared_ptr<T> owner) = 0;
 
+	inline void AddTransition(std::shared_ptr<Transition<T>> transition)
+	{
+		m_transitions.push_back(transition);
+	}
+
 	inline std::list<std::shared_ptr<Transition<T>>> GetTransitions() const
 	{
 		return m_transitions;
