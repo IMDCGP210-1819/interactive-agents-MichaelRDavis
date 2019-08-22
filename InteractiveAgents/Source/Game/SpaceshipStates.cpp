@@ -1,5 +1,4 @@
 #include "SpaceshipStates.h"
-#include "GameObject/AIController.h"
 #include "Spaceship.h"
 #include "SpaceshipTransitions.h"
 
@@ -10,12 +9,12 @@ Patrol::Patrol()
 
 void Patrol::OnEnter(std::shared_ptr<Spaceship> owner)
 {
-
+	
 }
 
 void Patrol::OnUpdate(std::shared_ptr<Spaceship> owner)
 {
-	owner->GetAIController()->MoveToRandomNode();
+	owner->MoveToRandomNode();
 }
 
 void Patrol::OnExit(std::shared_ptr<Spaceship> owner)
@@ -39,6 +38,26 @@ void Attack::OnUpdate(std::shared_ptr<Spaceship> owner)
 }
 
 void Attack::OnExit(std::shared_ptr<Spaceship> owner)
+{
+
+}
+
+Flee::Flee()
+{
+
+}
+
+void Flee::OnEnter(std::shared_ptr<Spaceship> owner)
+{
+
+}
+
+void Flee::OnUpdate(std::shared_ptr<Spaceship> owner)
+{
+
+}
+
+void Flee::OnExit(std::shared_ptr<Spaceship> owner)
 {
 
 }

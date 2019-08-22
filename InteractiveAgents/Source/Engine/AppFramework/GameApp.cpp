@@ -59,6 +59,10 @@ void GameApp::Init()
 	}
 
 	m_pWorld = std::make_unique<World>(m_pRenderer);
+	if (m_pWorld)
+	{
+		std::cout << "World Created" << std::endl;
+	}
 }
 
 void GameApp::Shutdown()

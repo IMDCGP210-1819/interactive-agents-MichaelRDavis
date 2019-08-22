@@ -27,3 +27,14 @@ public:
 	void OnUpdate(std::shared_ptr<Spaceship> owner);
 	void OnExit(std::shared_ptr<Spaceship> owner);
 };
+
+class Flee : public State<Spaceship>
+{
+public:
+	Flee();
+	~Flee() = default;
+
+	void OnEnter(std::shared_ptr<Spaceship> owner);
+	void OnUpdate(std::shared_ptr<Spaceship> owner);
+	void OnExit(std::shared_ptr<Spaceship> owner);
+};

@@ -2,14 +2,16 @@
 #include "SpaceshipFSM.h"
 #include "GameObject/World.h"
 #include "Projectile.h"
-#include "GameObject/AIController.h"
+#include "AI/Navigation/NavNode.h"
+#include "AI/Navigation/NavGraph.h"
+#include "AI/Pathfinding/AStar.h"
+#include "AI/Navigation/NavPath.h"
 
 Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
+	m_navigation = std::make_shared<AStar>();
 	m_fsm = std::make_shared<SpaceshipFSM>();
-	//m_fsm->SetOwner(std::make_shared<Spaceship>(this));
-	m_ai = std::make_shared<AIController>(this);
 
 	m_health = 100;
 	m_ammo = 50;
@@ -47,14 +49,43 @@ void Spaceship::Fire()
 	}
 }
 
-void Spaceship::Update(float deltaTime)
+void Spaceship::MoveTo(Vector2f position)
 {
-	//m_fsm->Update();
+	Vector2f direction = position - GetPosition();
+	float angle = atan2(-direction.y, direction.x);
+	SetRotation(angle);
 }
 
-void Spaceship::CanSeeEnemy()
+void Spaceship::MoveToRandomNode()
+{
+	NavNode* startNode = m_world->GetNavGraph()->GetRandomNode();
+	NavNode* goalNode = m_world->GetNavGraph()->GetRandomNode();
+
+	NavPath* path = m_navigation->Search(startNode, goalNode);
+	do
+	{
+		for (auto node : path->path)
+		{
+			MoveTo(node->position);
+		}
+
+	} while (goalNode != startNode);
+}
+
+void Spaceship::Update(float deltaTime)
+{
+	m_fsm->Update();
+}
+
+bool Spaceship::CanSeeEnemy()
 {
 	// TODO: Ray trace for an enemy spaceship
+	return true;
+}
+
+void Spaceship::SetTargetEnemy(Spaceship* target)
+{
+	m_target = target;
 }
 
 bool Spaceship::CanFire()

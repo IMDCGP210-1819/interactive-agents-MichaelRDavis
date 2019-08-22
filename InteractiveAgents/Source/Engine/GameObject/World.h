@@ -58,7 +58,7 @@ public:
 	/** Returns the physics world object */
 	inline b2World* GetPhysicsWorld() const
 	{
-		return m_worldObject;
+		return m_physicsWorld;
 	}
 
 private:
@@ -66,7 +66,7 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 	/** Main Box2D world object */
-	b2World* m_worldObject;
+	b2World* m_physicsWorld;
 
 	/** List of entities within the game world */
 	std::vector<Entity*> m_entities;
@@ -81,7 +81,7 @@ private:
 	std::unique_ptr<Spaceship> m_spaceship;
 
 	/** AI controlled enemy spaceship */
-	std::unique_ptr<EnemySpaceship> m_enemySpaceship;
+	std::unique_ptr<Spaceship> m_enemySpaceship;
 
 	/** Wandering asteroids */
 	std::unique_ptr<Asteroid> m_asteroid;

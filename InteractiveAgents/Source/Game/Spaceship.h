@@ -5,6 +5,8 @@
 class AIController;
 class SpaceshipFSM;
 class Projectile;
+class AStar;
+class Steering;
 
 class Spaceship : public Entity
 {
@@ -27,7 +29,17 @@ public:
 	/** Fire projectile */
 	void Fire();
 
-	void CanSeeEnemy();
+	/** Move to position; */
+	void MoveTo(Vector2f position);
+
+	/** Move to a random node */
+	void MoveToRandomNode();
+
+	/** Returns true if enemy is within sight */
+	bool CanSeeEnemy();
+
+	/** Set the target enemy to follow */
+	void SetTargetEnemy(Spaceship* target);
 
 	/** Returns true if spaceship destroyed */
 	bool IsDead();
@@ -50,15 +62,12 @@ public:
 		return m_isDead;
 	}
 
-	inline std::shared_ptr<AIController> GetAIController()
-	{
-		return m_ai;
-	}
-
 private:
-	std::shared_ptr<AIController> m_ai;
+	std::shared_ptr<AStar> m_navigation;
 	std::shared_ptr<SpaceshipFSM> m_fsm;
+	std::shared_ptr<Steering> m_steering;
 	std::unique_ptr<Projectile> m_bullet;
+	Spaceship* m_target;
 
 	int32_t m_health;
 	int32_t m_ammo;

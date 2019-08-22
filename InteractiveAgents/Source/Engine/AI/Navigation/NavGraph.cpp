@@ -21,8 +21,24 @@ NavNode* NavGraph::GetRandomNode()
 	Random rand;
 	uint32_t nodes = m_nodes.size();
 	uint32_t node = rand.GetRangei(0, nodes);
-
-	return nullptr;
+	if (node <= nodes / 2)
+	{
+		auto it = m_nodes.begin();
+		for (uint32_t i = 0; i < node; i++)
+		{
+			++it;
+			return (*it);
+		}
+	}
+	else
+	{
+		auto it = m_nodes.end();
+		for (uint32_t i = 0; i >= node; i--)
+		{
+			--it;
+			return (*it);
+		}
+	}
 }
 
 void NavGraph::BuildGraph()

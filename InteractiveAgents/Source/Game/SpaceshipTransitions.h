@@ -5,6 +5,7 @@
 class Spaceship;
 class Attack;
 class Patrol;
+class Flee;
 
 class FoundEnemy : public Transition<Spaceship>
 {
@@ -22,6 +23,17 @@ class FoundPath : public Transition<Spaceship>
 public:
 	FoundPath(std::shared_ptr<Patrol> state);
 	~FoundPath() = default;
+
+	bool IsValid();
+	std::shared_ptr<State<Spaceship>> GetNextState();
+	void OnTransition();
+};
+
+class CanFlee : public Transition<Spaceship>
+{
+public:
+	CanFlee(std::shared_ptr<Flee> state);
+	~CanFlee() = default;
 
 	bool IsValid();
 	std::shared_ptr<State<Spaceship>> GetNextState();

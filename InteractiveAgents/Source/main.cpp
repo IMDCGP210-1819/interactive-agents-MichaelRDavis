@@ -1,18 +1,27 @@
 #include <memory>
+#include <iostream>
 #include "Engine/AppFramework/GameApp.h"
 
 int main()
 {
-	std::unique_ptr<GameApp> app = std::make_unique<GameApp>();
-	app->Init();
-
-	while(!app->GetIsShutdown())
+	try
 	{
-		float deltaTime = SDL_GetTicks();
-		app->Update(deltaTime);
-	}
+		std::unique_ptr<GameApp> app = std::make_unique<GameApp>();
+		app->Init();
 
-	app->Shutdown();
+		while (!app->GetIsShutdown())
+		{
+			float deltaTime = SDL_GetTicks();
+			app->Update(deltaTime);
+		}
+
+		app->Shutdown();
+
+	}
+	catch (const std::exception& exception)
+	{
+		std::cout << exception.what() << std::endl;
+	}
 
 	return 0;
 }

@@ -10,8 +10,8 @@ FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
 
 bool FoundEnemy::IsValid()
 {
-	// TODO: Check if enemy is in range 
-	return false;
+	// TODO: Check if enemy is spotted
+	return true;
 }
 
 std::shared_ptr<State<Spaceship>> FoundEnemy::GetNextState()
@@ -44,4 +44,26 @@ std::shared_ptr<State<Spaceship>> FoundPath::GetNextState()
 void FoundPath::OnTransition()
 {
 	std::cout << "Navigation path found" << std::endl;
+}
+
+CanFlee::CanFlee(std::shared_ptr<Flee> state)
+	: Transition(state)
+{
+	m_nextState = state;
+}
+
+bool CanFlee::IsValid()
+{
+	// TODO: Check if we can flee
+	return true;
+}
+
+std::shared_ptr<State<Spaceship>> CanFlee::GetNextState()
+{
+	return m_nextState;
+}
+
+void CanFlee::OnTransition()
+{
+	std::cout << "Low on Health and Ammo find some!" << std::endl;
 }

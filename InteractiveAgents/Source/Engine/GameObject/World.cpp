@@ -1,15 +1,16 @@
 #include "World.h"
 #include "Entity.h"
 #include "Spaceship.h"
-#include "EnemySpaceship.h"
 #include "Asteroid.h"
 #include "AI/Navigation/NavGraph.h"
 #include "Rendering/Drawing.h"
+#include "Math/MathWrapper.h"
 
 World::World(SDL_Renderer* renderer)
 	: m_pRenderer(renderer)
 {
-	m_numAsteroids = 5;
+	Vector2f gravity(0.0f, 0.0f);
+	m_physicsWorld = new b2World(MathWrapper::ConvertVector(gravity));
 
 	m_graph = std::make_unique<NavGraph>(this);
 	m_graph->BuildGraph();
@@ -21,13 +22,17 @@ World::World(SDL_Renderer* renderer)
 	m_spaceship->CreateTexture("Content/Mantis.png");
 	m_spaceship->SetPosition(Vector2f(100.0f, 100.0f));
 
-	m_enemySpaceship = std::make_unique<EnemySpaceship>(this);
+	m_enemySpaceship = std::make_unique<Spaceship>(this);
 	m_enemySpaceship->CreateTexture("Content/Scarab.png");
 	m_enemySpaceship->SetPosition(Vector2f(250.0f, 250.0f));
+
+	m_spaceship->SetTargetEnemy(m_enemySpaceship.get());
+	m_enemySpaceship->SetTargetEnemy(m_spaceship.get());
 
 	m_asteroid = std::make_unique<Asteroid>(this);
 	m_asteroid->CreateTexture("Content/Asteroid.png");
 
+	m_numAsteroids = 5;
 	for (int32_t i = 0; i < m_numAsteroids; i++)
 	{
 		m_entities.push_back(m_asteroid.get());
