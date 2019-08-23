@@ -84,6 +84,11 @@ public:
 		return shared_from_this();
 	}
 
+	inline std::shared_ptr<SpaceshipFSM> GetStateMachine() const
+	{
+		return m_fsm;
+	}
+
 private:
 	std::shared_ptr<AStar> m_navigation;
 	std::shared_ptr<SpaceshipFSM> m_fsm;

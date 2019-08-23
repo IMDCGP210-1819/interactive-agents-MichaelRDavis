@@ -61,6 +61,16 @@ public:
 		return m_physicsWorld;
 	}
 
+	inline std::shared_ptr<Spaceship> GetSpaceship() const
+	{
+		return m_spaceship;
+	}
+
+	inline std::shared_ptr<Spaceship> GetEnemySpaceship() const
+	{
+		return m_enemySpaceship;
+	}
+
 private:
 	/** Pointer to the SDL renderer */
 	SDL_Renderer* m_pRenderer;
