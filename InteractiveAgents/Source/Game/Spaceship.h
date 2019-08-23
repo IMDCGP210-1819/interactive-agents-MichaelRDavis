@@ -39,8 +39,8 @@ public:
 	/** Move to position; */
 	void MoveTo(Vector2f position);
 
-	/** Move to a random node */
-	void MoveToRandomNode();
+	/** Makes the AI move along a navigation path */
+	void FollowNavigationPath();
 
 	/** Returns true if enemy is within sight */
 	bool CanSeeEnemy();
@@ -48,27 +48,37 @@ public:
 	/** Set the target enemy to follow */
 	void SetTargetEnemy(Spaceship* target);
 
+	/** Seek enemy spaceship */
+	void SeekEnemy();
+
+	/** Flee from the enemy spaceship */
+	void FleeFromEnemy();
+
 	/** Returns true if spaceship destroyed */
 	bool IsDead();
 
 	/** Returns true if we can fire  */
 	bool CanFire();
 
+	/** Returns the current health */
 	inline int32_t GetHealth() const
 	{
 		return m_health;
 	}
 
+	/** Returns the current ammo count */
 	inline int32_t GetAmmo() const
 	{
 		return m_ammo;
 	}
 
+	/** Returns true if spaceship is destroyed, i.e. when out of health */
 	inline bool IsDead() const
 	{
 		return m_isDead;
 	}
 
+	/** Returns a this pointer to the the spaceship */
 	std::shared_ptr<Spaceship> GetSpaceship()
 	{
 		return shared_from_this();

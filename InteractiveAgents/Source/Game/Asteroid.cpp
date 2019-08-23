@@ -7,6 +7,7 @@ Asteroid::Asteroid(World* world)
 {
 	m_behavior = std::make_unique<Steering>();
 	m_behavior->SetOwner(this);
+	m_speed = 0.2f;
 }
 
 Asteroid::~Asteroid()

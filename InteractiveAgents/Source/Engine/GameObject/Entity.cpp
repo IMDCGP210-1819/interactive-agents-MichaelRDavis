@@ -11,7 +11,7 @@ Entity::Entity(World* world)
 	m_drawOrder = 0;
 	m_scale = 1.0f;
 	m_rotation = 0.0f;
-	m_speed = 0.0f;
+	m_speed = 1.0f;
 	m_mass = 1.0f;
 	m_collisionRadius = 0.0f;
 

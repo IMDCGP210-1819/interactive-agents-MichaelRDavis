@@ -6,13 +6,16 @@
 #include "AI/Navigation/NavGraph.h"
 #include "AI/Pathfinding/AStar.h"
 #include "AI/Navigation/NavPath.h"
+#include "AI/Steering/Steering.h"
 
 Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
 	m_navigation = std::make_shared<AStar>();
 	m_fsm = std::make_shared<SpaceshipFSM>();
-	m_fsm->SetOwner(GetSpaceship());
+	//m_fsm->SetOwner(GetSpaceship());
+	m_steering = std::make_shared<Steering>();
+	m_steering->SetOwner(this);
 
 	m_health = 100;
 	m_ammo = 50;
@@ -57,29 +60,25 @@ void Spaceship::MoveTo(Vector2f position)
 	SetRotation(angle);
 }
 
-void Spaceship::MoveToRandomNode()
+void Spaceship::FollowNavigationPath()
 {
 	NavNode* startNode = m_world->GetNavGraph()->GetRandomNode();
 	NavNode* goalNode = m_world->GetNavGraph()->GetRandomNode();
 
-	NavPath* path = m_navigation->Search(startNode, goalNode);
-	do
+	while (startNode != goalNode)
 	{
+		NavPath* path = m_navigation->Search(startNode, goalNode);
+
 		for (auto node : path->path)
 		{
 			MoveTo(node->position);
-			if (node == goalNode)
-			{
-				goalNode = m_world->GetNavGraph()->GetRandomNode();
-			}
 		}
-
-	} while (goalNode != startNode);
+	}
 }
 
 void Spaceship::Update(float deltaTime)
 {
-	m_fsm->Update();
+	//m_fsm->Update();
 }
 
 bool Spaceship::CanSeeEnemy()
@@ -91,6 +90,22 @@ bool Spaceship::CanSeeEnemy()
 void Spaceship::SetTargetEnemy(Spaceship* target)
 {
 	m_target = target;
+}
+
+void Spaceship::SeekEnemy()
+{
+	if (m_target)
+	{
+		m_steering->Seek(m_target);
+	}
+}
+
+void Spaceship::FleeFromEnemy()
+{
+	if (m_target)
+	{
+		m_steering->Flee(m_target);
+	}
 }
 
 bool Spaceship::CanFire()

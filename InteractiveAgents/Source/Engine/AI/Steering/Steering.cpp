@@ -96,7 +96,7 @@ void Steering::SetDisplacement(float newDisplacement)
 Vector2f Steering::Wander(float deltaTime)
 { 
 	Random rand;
-	float randVal = rand.GetRangef(-1000.0f, 1000.0f);
+	float randVal = rand.GetRangef(-10000.0f, 10000.0f);
 	float displacementTime = m_displacement * deltaTime;
 	m_force += Vector2f(randVal, randVal);
 	m_force.normalize();
