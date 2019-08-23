@@ -64,11 +64,10 @@ void Spaceship::FollowNavigationPath()
 {
 	NavNode* startNode = m_world->GetNavGraph()->GetRandomNode();
 	NavNode* goalNode = m_world->GetNavGraph()->GetRandomNode();
+	NavPath* path = m_navigation->Search(startNode, goalNode);
 
-	while (startNode != goalNode)
+	if (startNode != goalNode)
 	{
-		NavPath* path = m_navigation->Search(startNode, goalNode);
-
 		for (auto node : path->GetNavigationPath())
 		{
 			MoveTo(node->position);
@@ -84,7 +83,7 @@ void Spaceship::Update(float deltaTime)
 bool Spaceship::CanSeeEnemy()
 {
 	// TODO: Ray trace for an enemy spaceship
-	return true;
+	return false;
 }
 
 void Spaceship::SetTargetEnemy(Spaceship* target)

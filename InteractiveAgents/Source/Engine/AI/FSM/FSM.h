@@ -25,6 +25,11 @@ public:
 		m_owner = newOwner;
 	}
 
+	inline std::shared_ptr<State<T>> GetActiveState() const
+	{
+		return m_activeState;
+	}
+
 protected:
 	std::list<std::shared_ptr<State<T>>> m_states;
 	T* m_owner;

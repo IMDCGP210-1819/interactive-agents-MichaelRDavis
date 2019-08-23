@@ -1,6 +1,8 @@
 #include "GameApp.h"
 #include "GameObject/World.h"
 #include <SDL_image.h>
+#include <imgui.h>
+#include <imgui_sdl.h>
 
 GameApp::GameApp()
 {
@@ -52,6 +54,9 @@ void GameApp::Init()
 	{
 		SDL_Log("Failed to create renderer: %s", SDL_GetError());
 	}
+
+	ImGui::CreateContext();
+	ImGuiSDL::Initialize(m_pRenderer, m_windowWidth, m_windowHeight);
 
 	if (IMG_Init(IMG_INIT_PNG) == 0)
 	{
