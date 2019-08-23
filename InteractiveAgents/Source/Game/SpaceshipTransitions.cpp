@@ -9,7 +9,7 @@ FoundEnemy::FoundEnemy(std::shared_ptr<Attack> state)
 	m_nextState = state;
 }
 
-bool FoundEnemy::IsValid(std::shared_ptr<Spaceship> owner)
+bool FoundEnemy::IsValid(Spaceship* owner)
 {
 	if (owner->CanSeeEnemy() && owner->CanFire())
 	{
@@ -35,7 +35,7 @@ FoundPath::FoundPath(std::shared_ptr<Patrol> state)
 	m_nextState = state;
 }
 
-bool FoundPath::IsValid(std::shared_ptr<Spaceship> owner)
+bool FoundPath::IsValid(Spaceship* owner)
 {
 	// TODO: Check if a random node is found
 	return false;
@@ -57,7 +57,7 @@ CanFlee::CanFlee(std::shared_ptr<Flee> state)
 	m_nextState = state;
 }
 
-bool CanFlee::IsValid(std::shared_ptr<Spaceship> owner)
+bool CanFlee::IsValid(Spaceship* owner)
 {
 	if (owner->GetHealth() < 5)
 	{

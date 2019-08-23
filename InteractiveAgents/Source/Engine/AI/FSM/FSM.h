@@ -20,14 +20,14 @@ public:
 		m_activeState = newState;
 	}
 
-	virtual void SetOwner(std::shared_ptr<T> newOwner)
+	virtual void SetOwner(T* newOwner)
 	{
 		m_owner = newOwner;
 	}
 
 protected:
 	std::list<std::shared_ptr<State<T>>> m_states;
-	std::shared_ptr<T> m_owner;
+	T* m_owner;
 	std::shared_ptr<State<T>> m_initialState;
 	std::shared_ptr<State<T>> m_activeState;
 };

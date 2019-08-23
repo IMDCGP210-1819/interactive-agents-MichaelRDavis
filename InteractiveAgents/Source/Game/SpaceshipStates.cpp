@@ -7,17 +7,17 @@ Patrol::Patrol()
 
 }
 
-void Patrol::OnEnter(std::shared_ptr<Spaceship> owner)
+void Patrol::OnEnter(Spaceship* owner)
 {
-	owner->SetSpeed(0.5f);
+	owner->SetSpeed(1.2f);
 }
 
-void Patrol::OnUpdate(std::shared_ptr<Spaceship> owner)
+void Patrol::OnUpdate(Spaceship* owner)
 {
 	owner->FollowNavigationPath();
 }
 
-void Patrol::OnExit(std::shared_ptr<Spaceship> owner)
+void Patrol::OnExit(Spaceship* owner)
 {
 	owner->SetSpeed(1.0f);
 }
@@ -27,12 +27,12 @@ Attack::Attack()
 
 }
 
-void Attack::OnEnter(std::shared_ptr<Spaceship> owner)
+void Attack::OnEnter(Spaceship* owner)
 {
 	owner->SetSpeed(1.5f);
 }
 
-void Attack::OnUpdate(std::shared_ptr<Spaceship> owner)
+void Attack::OnUpdate(Spaceship* owner)
 {
 	owner->SeekEnemy();
 
@@ -40,7 +40,7 @@ void Attack::OnUpdate(std::shared_ptr<Spaceship> owner)
 	owner->Fire();
 }
 
-void Attack::OnExit(std::shared_ptr<Spaceship> owner)
+void Attack::OnExit(Spaceship* owner)
 {
 	owner->SetSpeed(1.0f);
 }
@@ -50,17 +50,17 @@ Flee::Flee()
 
 }
 
-void Flee::OnEnter(std::shared_ptr<Spaceship> owner)
+void Flee::OnEnter(Spaceship* owner)
 {
 	owner->SetSpeed(2.5f);
 }
 
-void Flee::OnUpdate(std::shared_ptr<Spaceship> owner)
+void Flee::OnUpdate(Spaceship* owner)
 {
 	owner->FleeFromEnemy();
 }
 
-void Flee::OnExit(std::shared_ptr<Spaceship> owner)
+void Flee::OnExit(Spaceship* owner)
 {
 	owner->SetSpeed(1.0f);
 }

@@ -13,9 +13,9 @@ public:
 	State() = default;
 	virtual ~State() = default;
 
-	virtual void OnEnter(std::shared_ptr<T> owner) = 0;
-	virtual void OnUpdate(std::shared_ptr<T> owner) = 0;
-	virtual void OnExit(std::shared_ptr<T> owner) = 0;
+	virtual void OnEnter(T* owner) = 0;
+	virtual void OnUpdate(T* owner) = 0;
+	virtual void OnExit(T* owner) = 0;
 
 	inline void AddTransition(std::shared_ptr<Transition<T>> transition)
 	{

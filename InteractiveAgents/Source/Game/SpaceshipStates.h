@@ -12,9 +12,9 @@ public:
 	Patrol();
 	~Patrol() = default;
 
-	void OnEnter(std::shared_ptr<Spaceship> owner);
-	void OnUpdate(std::shared_ptr<Spaceship> owner);
-	void OnExit(std::shared_ptr<Spaceship> owner);
+	void OnEnter(Spaceship* owner);
+	void OnUpdate(Spaceship* owner);
+	void OnExit(Spaceship* owner);
 };
 
 class Attack : public State<Spaceship>
@@ -23,9 +23,9 @@ public:
 	Attack();
 	~Attack() = default;
 
-	void OnEnter(std::shared_ptr<Spaceship> owner);
-	void OnUpdate(std::shared_ptr<Spaceship> owner);
-	void OnExit(std::shared_ptr<Spaceship> owner);
+	void OnEnter(Spaceship* owner);
+	void OnUpdate(Spaceship* owner);
+	void OnExit(Spaceship* owner);
 };
 
 class Flee : public State<Spaceship>
@@ -34,7 +34,7 @@ public:
 	Flee();
 	~Flee() = default;
 
-	void OnEnter(std::shared_ptr<Spaceship> owner);
-	void OnUpdate(std::shared_ptr<Spaceship> owner);
-	void OnExit(std::shared_ptr<Spaceship> owner);
+	void OnEnter(Spaceship* owner);
+	void OnUpdate(Spaceship* owner);
+	void OnExit(Spaceship* owner);
 };

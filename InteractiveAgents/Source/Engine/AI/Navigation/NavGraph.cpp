@@ -44,9 +44,9 @@ NavNode* NavGraph::GetRandomNode()
 void NavGraph::BuildGraph()
 {
 	int32_t index = 0;
-	for (int32_t x = -100.0f; x < 100.0f; x += 10.0f)
+	for (int32_t x = -1000.0f; x < 1000.0f; x += 10.0f)
 	{
-		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
+		for (int32_t y = -1000.0f; y < 1000.0f; y += 10.0f)
 		{
 			NavNode* node = new NavNode(Vector2f(x, y));
 			m_nodes.push_back(node);
@@ -70,9 +70,9 @@ void NavGraph::BuildGraph()
 
 void NavGraph::DrawGraph()
 {
-	for (int32_t x = -100.0f; x < 100.0f; x += 10.0f)
+	for (int32_t x = -1000.0f; x < 1000.0f; x += 10.0f)
 	{
-		for (int32_t y = -100.0f; y < 100.0f; y += 10.0f)
+		for (int32_t y = -1000.0f; y < 1000.0f; y += 10.0f)
 		{
 			Drawing::DrawPoint(m_cachedWorld->GetRenderer(), x, y, Vector4f(1.0f, 1.0f, 1.0f, 1.0f));
 		}

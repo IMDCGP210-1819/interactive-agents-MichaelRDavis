@@ -11,9 +11,9 @@
 Spaceship::Spaceship(World* world)
 	: Entity(world)
 {
-	m_navigation = std::make_shared<AStar>();
 	m_fsm = std::make_shared<SpaceshipFSM>();
-	//m_fsm->SetOwner(GetSpaceship());
+	m_fsm->SetOwner(this);
+	m_navigation = std::make_shared<AStar>();
 	m_steering = std::make_shared<Steering>();
 	m_steering->SetOwner(this);
 
@@ -69,7 +69,7 @@ void Spaceship::FollowNavigationPath()
 	{
 		NavPath* path = m_navigation->Search(startNode, goalNode);
 
-		for (auto node : path->path)
+		for (auto node : path->GetNavigationPath())
 		{
 			MoveTo(node->position);
 		}
@@ -78,7 +78,7 @@ void Spaceship::FollowNavigationPath()
 
 void Spaceship::Update(float deltaTime)
 {
-	//m_fsm->Update();
+	m_fsm->Update();
 }
 
 bool Spaceship::CanSeeEnemy()

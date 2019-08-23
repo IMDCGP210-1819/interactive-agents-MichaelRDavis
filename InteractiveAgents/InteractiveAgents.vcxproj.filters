@@ -75,6 +75,9 @@
     <ClCompile Include="Source\Game\Drone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Engine\GameObject\CollisionComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Game\Spaceship.h">
@@ -174,6 +177,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\Drone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\GameObject\CollisionComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
