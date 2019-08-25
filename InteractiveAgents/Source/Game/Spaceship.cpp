@@ -2,10 +2,7 @@
 #include "SpaceshipFSM.h"
 #include "GameObject/World.h"
 #include "Projectile.h"
-#include "AI/Navigation/NavNode.h"
-#include "AI/Navigation/NavGraph.h"
 #include "AI/Pathfinding/AStar.h"
-#include "AI/Navigation/NavPath.h"
 #include "AI/Steering/Steering.h"
 
 Spaceship::Spaceship(World* world)
@@ -46,11 +43,7 @@ void Spaceship::UseAmmo()
 
 void Spaceship::Fire()
 {
-	if (CanFire())
-	{
-		UseAmmo();
-		m_bullet = std::make_unique<Projectile>(GetWorld());
-	}
+	m_bullet = std::make_unique<Projectile>(GetWorld());
 }
 
 void Spaceship::MoveTo(Vector2f position)
@@ -58,21 +51,6 @@ void Spaceship::MoveTo(Vector2f position)
 	Vector2f direction = position - GetPosition();
 	float angle = atan2(-direction.y, direction.x);
 	SetRotation(angle);
-}
-
-void Spaceship::FollowNavigationPath()
-{
-	NavNode* startNode = m_world->GetNavGraph()->GetRandomNode();
-	NavNode* goalNode = m_world->GetNavGraph()->GetRandomNode();
-	NavPath* path = m_navigation->Search(startNode, goalNode);
-
-	if (startNode != goalNode)
-	{
-		for (auto node : path->GetNavigationPath())
-		{
-			MoveTo(node->position);
-		}
-	}
 }
 
 void Spaceship::Update(float deltaTime)
@@ -91,20 +69,9 @@ void Spaceship::SetTargetEnemy(Spaceship* target)
 	m_target = target;
 }
 
-void Spaceship::SeekEnemy()
-{
-	if (m_target)
-	{
-		m_steering->Seek(m_target);
-	}
-}
-
 void Spaceship::FleeFromEnemy()
 {
-	if (m_target)
-	{
-		m_steering->Flee(m_target);
-	}
+
 }
 
 bool Spaceship::CanFire()

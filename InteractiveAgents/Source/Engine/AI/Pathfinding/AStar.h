@@ -22,6 +22,9 @@ public:
 	/** The A Star search algorithm, takes in a start node and a goal nodes has parameters */
 	NavPath* Search(NavNode* startNode, NavNode* goalNode);
 
+	/** Find a navigation path */
+	NavPath* Find(NavNode* startNode, NavNode* goalNode);
+
 private:
 	/**  */
 	NavPathNode* AddToOpenSet(NavNode* node, NavPathNode* prevNode);

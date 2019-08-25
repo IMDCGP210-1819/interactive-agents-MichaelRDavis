@@ -39,17 +39,11 @@ public:
 	/** Move to position; */
 	void MoveTo(Vector2f position);
 
-	/** Makes the AI move along a navigation path */
-	void FollowNavigationPath();
-
 	/** Returns true if enemy is within sight */
 	bool CanSeeEnemy();
 
 	/** Set the target enemy to follow */
 	void SetTargetEnemy(Spaceship* target);
-
-	/** Seek enemy spaceship */
-	void SeekEnemy();
 
 	/** Flee from the enemy spaceship */
 	void FleeFromEnemy();
@@ -78,15 +72,37 @@ public:
 		return m_isDead;
 	}
 
+	inline bool HasTarget() const
+	{
+		return m_target != nullptr;
+	}
+
 	/** Returns a this pointer to the the spaceship */
 	std::shared_ptr<Spaceship> GetSpaceship()
 	{
 		return shared_from_this();
 	}
 
+	/** Returns a pointer to the state machine */
 	inline std::shared_ptr<SpaceshipFSM> GetStateMachine() const
 	{
 		return m_fsm;
+	}
+
+	/** Returns a pointer a pointer to the navigation system */
+	inline std::shared_ptr<AStar> GetNavigation() const
+	{
+		return m_navigation;
+	}
+
+	inline std::shared_ptr<Steering> GetSteering() const
+	{
+		return m_steering;
+	}
+
+	inline Spaceship* GetTargetEnemy() const
+	{
+		return m_target;
 	}
 
 private:

@@ -95,6 +95,11 @@ NavPath* AStar::Search(NavNode* startNode, NavNode* goalNode)
 	return nullptr;
 }
 
+NavPath* AStar::Find(NavNode* startNode, NavNode* goalNode)
+{
+	return Search(startNode, goalNode);
+}
+
 NavPathNode* AStar::AddToOpenSet(NavNode* node, NavPathNode* prevNode)
 {
 	auto it = m_map.find(node);

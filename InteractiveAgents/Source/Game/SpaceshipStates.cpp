@@ -1,6 +1,12 @@
 #include "SpaceshipStates.h"
 #include "Spaceship.h"
 #include "SpaceshipTransitions.h"
+#include "AI/Navigation/NavPath.h"
+#include "AI/Navigation/NavNode.h"
+#include "AI/Pathfinding/AStar.h"
+#include "AI/Navigation/NavGraph.h"
+#include "GameObject/World.h"
+#include "AI/Steering/Steering.h"
 
 Patrol::Patrol()
 {
@@ -14,7 +20,22 @@ void Patrol::OnEnter(Spaceship* owner)
 
 void Patrol::OnUpdate(Spaceship* owner)
 {
-	owner->FollowNavigationPath();
+	NavNode* startNode = owner->GetWorld()->GetNavGraph()->GetRandomNode();
+	NavNode* goalNode = owner->GetWorld()->GetNavGraph()->GetRandomNode();
+	NavPath* path = owner->GetNavigation()->Find(startNode, goalNode);
+
+	while (startNode != goalNode)
+	{
+		for (auto node : path->GetNavigationPath())
+		{
+			owner->MoveTo(node->position);
+
+			if (node == goalNode)
+			{
+				goalNode = owner->GetWorld()->GetNavGraph()->GetRandomNode();
+			}
+		}
+	}
 }
 
 void Patrol::OnExit(Spaceship* owner)
@@ -30,14 +51,20 @@ Attack::Attack()
 void Attack::OnEnter(Spaceship* owner)
 {
 	owner->SetSpeed(1.5f);
+	if (owner->HasTarget())
+	{
+		owner->GetSteering()->Seek(owner->GetTargetEnemy());
+	}
 }
 
 void Attack::OnUpdate(Spaceship* owner)
 {
-	owner->SeekEnemy();
-
 	// TODO: Check if facing enemy spaceship
-	owner->Fire();
+	if (owner->CanFire())
+	{
+		owner->UseAmmo();
+		owner->Fire();
+	}
 }
 
 void Attack::OnExit(Spaceship* owner)
@@ -57,10 +84,14 @@ void Flee::OnEnter(Spaceship* owner)
 
 void Flee::OnUpdate(Spaceship* owner)
 {
-	owner->FleeFromEnemy();
+	if (owner->HasTarget())
+	{
+		owner->GetSteering()->Flee(owner->GetTargetEnemy());
+	}
 }
 
 void Flee::OnExit(Spaceship* owner)
 {
 	owner->SetSpeed(1.0f);
+	owner->SetTargetEnemy(nullptr);
 }
